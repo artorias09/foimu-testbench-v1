@@ -1,0 +1,4 @@
+{
+  "packets": 1000,
+  "faults": {"checksum_every": 10}
+}
