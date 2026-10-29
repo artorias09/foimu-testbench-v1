@@ -1,0 +1,10 @@
+[project]
+name = "foimu-testbench"
+version = "0.1.0"
+description = "Reproducible digital interface testbench for the supplied FO-IMU gateway snapshot"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.foimu-testbench]
+protocol = "gateway53-fletcher16-le-v1"
+reference_gateway_commit = "7e0b963b646d343559ff8ee0116c4e270f39bdaa"

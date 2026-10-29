@@ -1,0 +1,2 @@
+# Core, TCP, replay and tests use the Python standard library only.
+# No pip installation is required for Phase 1. No unpinned third-party dependencies.
