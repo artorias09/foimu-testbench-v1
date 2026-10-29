@@ -1,0 +1,6 @@
+{
+  "packets": 2880000,
+  "rate_hz": 100.0,
+  "chunk_sizes": [53],
+  "stream_timeout_s": 0.25
+}

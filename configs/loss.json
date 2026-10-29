@@ -1,0 +1,4 @@
+{
+  "packets": 1001,
+  "faults": {"drop_every": 10}
+}

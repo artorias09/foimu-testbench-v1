@@ -1,0 +1,5 @@
+{
+  "seed": 20261028,
+  "packets": 1000,
+  "faults": {"jitter_s": 0.001}
+}
