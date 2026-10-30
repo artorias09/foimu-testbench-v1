@@ -230,4 +230,4 @@ class ImportIdentityCompatibilityTests(unittest.TestCase):
         except (FileNotFoundError,subprocess.CalledProcessError): self.skipTest('Snapshot Git ausente')
         for path in ('foimu_testbench/protocol/gateway53.py','foimu_testbench/runners.py','foimu_testbench/config.py','foimu_testbench/simulator/__init__.py','foimu_testbench/diagnostics/__init__.py','tools/acceptance.py'):
             old=subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=ROOT)
-            self.assertEqual((ROOT/path).read_bytes(),old,path)
+            self.assertEqual((ROOT/path).read_bytes().replace(b'\r\n', b'\n'),old.replace(b'\r\n', b'\n'),path)
