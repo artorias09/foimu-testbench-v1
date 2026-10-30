@@ -1,6 +1,8 @@
 """Legacy observations, not desired v2 behavior. No hardware or wall-clock waits."""
 import ast
 import inspect
+import io
+import contextlib
 import json
 import tempfile
 import unittest
@@ -48,9 +50,23 @@ class LegacyCharacterization(unittest.TestCase):
     def test_b06_legacy_acceptance_has_optimization_sensitive_asserts(self):
         source = inspect.getsource(acceptance)
         self.assertTrue(any(isinstance(n, ast.Assert) for n in ast.walk(ast.parse(source))))
-        self.assertFalse(any(isinstance(n, ast.Assert) for n in ast.walk(ast.parse('pass'))))
         self.assertTrue(unittest.TestResult().wasSuccessful())  # zero tests is not a gate
         self.assertIn('"passed": True', source)
+
+    def test_b06_zero_tests_and_bad_scenarios_can_report_passed(self):
+        def fake_demo(config, out, record=True):
+            normal = config['packets'] == 2
+            metrics = dict(packets_received=2 if normal else -99, packets_lost=0,
+                checksum_errors=0, framing_errors=0, counter_discontinuities=0,
+                duplicates=0, truncated_tails=0, buffer_peak_bytes=53,
+                resync_events=0, jitter_max_s=0)
+            return dict(metrics=metrics, source_sha256='fake', python='test', platform='test')
+        with tempfile.TemporaryDirectory() as tmp, patch('sys.argv',['acceptance','--out',str(Path(tmp)/'run'),'--packets','2']), patch.object(acceptance.unittest.defaultTestLoader,'discover',return_value=unittest.TestSuite()), patch.object(acceptance,'demo',side_effect=fake_demo), contextlib.redirect_stdout(io.StringIO()):
+            acceptance.main()
+            summary=json.loads((Path(tmp)/'run/summary.json').read_text())
+            self.assertTrue(summary['passed'])
+            self.assertEqual(summary['unit_integration_tests'],0)
+            self.assertEqual(summary['scenarios']['checksum']['packets_received'],-99)
 
     def test_b07_parser_returns_packets_without_byte_spans(self):
         parser = StreamParser()
