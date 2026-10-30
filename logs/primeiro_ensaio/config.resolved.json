@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "protocol": "gateway53-fletcher16-le-v1",
+  "seed": 20261028,
+  "rate_hz": 100.0,
+  "packets": 1000,
+  "chunk_sizes": [
+    1,
+    7,
+    19,
+    53
+  ],
+  "stream_timeout_s": 0.25,
+  "faults": {
+    "drop_every": 0,
+    "checksum_every": 0,
+    "byte_every": 0,
+    "header_every": 0,
+    "truncate_every": 0,
+    "jitter_s": 0.0
+  }
+}
