@@ -350,6 +350,7 @@ class RunController:
     def _finalize(self, scenario, alive):
         from .validation import evaluate_run, truth_summary
         from .reporting import report_text
+        candidate=self.run
         metrics=self.processing.metrics() if self.processing and 'processing' not in alive else {}
         health=dict(schema_version=2,rx=self.rx.snapshot(),writer=self.writes.snapshot(),
                     failures=list(self.failure_by_worker.values()),workers_alive=alive,
@@ -359,31 +360,31 @@ class RunController:
         complete=not self.failure_by_worker and not alive and self.processing is not None and self.processing.ended
         status='completed' if complete else ('aborted' if alive else 'failed')
         if complete and self.stop_command: status='cancelled'
-        reason=self.run.stop_reason or ('Condição de término atingida' if complete else 'Falha operacional')
+        reason=candidate.stop_reason or ('Condição de término atingida' if complete else 'Falha operacional')
         if not complete: reason='Falha operacional: '+', '.join(self.failure_by_worker)
-        previous_status=self.run.execution_status
+        previous_status=candidate.execution_status
         if status in TRANSITIONS[previous_status]:
-            self.run=self.run.transition(status,reason)
-        self.run=replace(self.run,execution_status=status,integrity_status='complete' if complete else 'partial',
+            candidate=candidate.transition(status,reason)
+        candidate=replace(candidate,execution_status=status,integrity_status='complete' if complete else 'partial',
                          stop_reason=reason,ended_at=TimePoint(clock_id='catalog-utc',meaning='catalog',value=time.time_ns()))
         try:
             final_identity=collect_identity(self.source_root)
-            changed=final_identity.hashes!=self.run.code_identity.hashes or final_identity.commit!=self.run.code_identity.commit
-            self.run=replace(self.run,final_code_identity=final_identity,sources_changed=changed,
-                limitations=self.run.limitations+(['Fontes mudaram durante a Run; reprodução exata não demonstrada'] if changed else []))
+            changed=final_identity.hashes!=candidate.code_identity.hashes or final_identity.commit!=candidate.code_identity.commit
+            candidate=replace(candidate,final_code_identity=final_identity,sources_changed=changed,
+                limitations=candidate.limitations+(['Fontes mudaram durante a Run; reprodução exata não demonstrada'] if changed else []))
             truth=truth_summary(self.out) if not alive else None
-            self.run=evaluate_run(self.run,metrics,truth)
+            candidate=evaluate_run(candidate,metrics,truth)
             atomic_json(self.out/'diagnostics/metrics.json',dict(schema_version=2,domain='observed_and_diagnostic',metrics=metrics))
             atomic_json(self.out/'system/pipeline.json',health)
-            atomic_json(self.out/'validation/results.json',dict(schema_version=2,evaluation_status=self.run.evaluation_status,
-                results=[r.to_dict() for r in self.run.results]))
+            atomic_json(self.out/'validation/results.json',dict(schema_version=2,evaluation_status=candidate.evaluation_status,
+                results=[r.to_dict() for r in candidate.results]))
             # Single controller-owned emergency/terminal journal, never shared with the data writer.
             with (self.out/'storage/terminal.jsonl').open('ab',buffering=0) as f:
-                f.write(dumps(dict(schema_version=2,kind='execution_transition',from_status=previous_status,to_status=self.run.execution_status,execution_status=self.run.execution_status,
-                    integrity_status=self.run.integrity_status,stop_reason=reason,failures=health['failures'],
+                f.write(dumps(dict(schema_version=2,kind='execution_transition_prepared',committed_by='run.json',from_status=previous_status,to_status=candidate.execution_status,execution_status=candidate.execution_status,
+                    integrity_status=candidate.integrity_status,stop_reason=reason,failures=health['failures'],
                     commands=[dict(a,effective_status=status) for a in self.commands.values()]))+b'\n')
             if not alive:
-                self.run=replace(self.run,artifacts=self.writer.manifest(self.run.integrity_status))
+                candidate=replace(candidate,artifacts=self.writer.manifest(candidate.integrity_status))
             from .evidence import loads
             events=[]
             if not alive:
@@ -396,16 +397,28 @@ class RunController:
                                 if not line: break
                                 try: events.append(loads(line))
                                 except ValueError: break
-            (self.out/'report.md').write_text(report_text(self.run,scenario,metrics,truth,health,events),encoding='utf-8')
+            (self.out/'report.md').write_text(report_text(candidate,scenario,metrics,truth,health,events),encoding='utf-8')
             if not alive:
-                self.run=replace(self.run,artifacts=self.writer.manifest(self.run.integrity_status))
-            atomic_json(self.out/'run.json',self.run.to_dict())
+                candidate=replace(candidate,artifacts=self.writer.manifest(candidate.integrity_status))
+            self.writer.check_disk_budget(replacement_run=candidate.to_dict())
+            atomic_json(self.out/'run.json',candidate.to_dict())
         except BaseException as exc:
             self._failure('finalization',exc)
-            self.run=replace(self.run,execution_status='failed',integrity_status='partial',
-                evaluation_status='inconclusive' if self.run.criteria else 'not_evaluated',results=[],
+            candidate=replace(candidate,execution_status='failed',integrity_status='partial',
+                evaluation_status='inconclusive' if candidate.criteria else 'not_evaluated',results=[],
                 stop_reason='Falha na finalização: '+str(exc))
-            try: atomic_json(self.out/'run.json',self.run.to_dict())
-            except OSError: pass  # Caller still receives structured failure; old running metadata enables recovery.
+            health['failures']=list(self.failure_by_worker.values())
+            try:
+                atomic_json(self.out/'run.json',candidate.to_dict())
+                with (self.out/'storage/finalization_error.jsonl').open('ab') as f:
+                    f.write(dumps(dict(schema_version=2,worker='finalization',error_type=type(exc).__name__,message=str(exc)))+b'\n')
+                atomic_json(self.out/'system/pipeline.json',health)
+                atomic_json(self.out/'validation/results.json',dict(schema_version=2,
+                    evaluation_status=candidate.evaluation_status,results=[]))
+                (self.out/'report.md').write_text(report_text(candidate,scenario,metrics,None,health),encoding='utf-8')
+                if not alive: candidate=replace(candidate,artifacts=self.writer.manifest('partial'))
+                atomic_json(self.out/'run.json',candidate.to_dict())
+            except OSError: pass  # The API still returns failure; old nonterminal metadata enables recovery.
+        self.run=candidate
         self.health=health
         return self.run

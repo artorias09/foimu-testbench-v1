@@ -129,3 +129,15 @@ RunController(import_v1({'packets':100,'chunk_sizes':[53]}),sys.argv[1],writer_h
             self.assertNotEqual(a.run.integrity_status,'complete')
             self.assertEqual(a.confirmed.get('observed/wire.bin',{}).get('size_bytes',0),0)
             with self.assertRaises(ValueError):RunReader(p)
+
+    def test_malformed_checkpoint_structure_keeps_valid_prefix(self):
+        bad_rows=[1,{'schema_version':2,'generation':2,'artifacts':[],'durability':'x'},
+                  {'schema_version':True,'generation':2,'artifacts':{},'durability':'x'}]
+        for row in bad_rows:
+            with self.subTest(row=row),tempfile.TemporaryDirectory() as tmp:
+                p=Path(tmp)/'r';s=import_v1({});w=RunWriter(p,new_run(s,tmp,run_id='r'),s)
+                w.append(WriteBatch((WriteItem('observed/wire.bin',b'abc'),)));w.close()
+                with (p/'storage/checkpoints.jsonl').open('ab') as f:f.write(dumps(row)+b'\n')
+                reader=RunReader(p,strict=False)
+                self.assertEqual(reader.confirmed['observed/wire.bin']['size_bytes'],3)
+                self.assertTrue(reader.issues)

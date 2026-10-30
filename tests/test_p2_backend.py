@@ -254,3 +254,31 @@ class BackendTests(unittest.TestCase):
     def test_invalid_capacity_rejected_before_resources(self):
         with self.assertRaises(ValueError):BackendOptions(rx_bytes=True)
         with self.assertRaises(ValueError):BackendOptions(checkpoint_every=0)
+
+    def test_disk_budget_cannot_report_complete(self):
+        from foimu_testbench.scenarios import ResourceLimits
+        with tempfile.TemporaryDirectory() as t:
+            s=replace(import_v1({'packets':200}),resource_limits=ResourceLimits(max_disk_bytes=50000))
+            c=RunController(s,Path(t)/'r',source_root=t);r=c.execute()
+            self.assertNotEqual(r.execution_status,'completed')
+            self.assertEqual(r.integrity_status,'partial')
+
+    def test_failure_in_finalization_cannot_publish_completed_or_stale_report(self):
+        from unittest.mock import patch
+        from foimu_testbench.storage import RunWriter
+        checked=[];original=RunWriter.check_disk_budget
+        with tempfile.TemporaryDirectory() as t:
+            s=replace(import_v1({'packets':2}),acceptance_criteria=[criterion(2)])
+            c=RunController(s,Path(t)/'r')
+            def fail(writer,replacement_run=None):
+                if replacement_run is not None:
+                    checked.append(c.run.execution_status)
+                    raise OSError(28,'Falha ao confirmar finalização')
+                return original(writer)
+            with patch.object(RunWriter,'check_disk_budget',fail):r=c.execute()
+            self.assertEqual(checked,['finalizing'])
+            self.assertEqual(r.execution_status,'failed')
+            self.assertEqual(r.evaluation_status,'inconclusive')
+            self.assertIn('**failed**',(c.out/'report.md').read_text())
+            self.assertNotIn('**passed**',(c.out/'report.md').read_text())
+            self.assertEqual(json.loads((c.out/'validation/results.json').read_text())['evaluation_status'],'inconclusive')

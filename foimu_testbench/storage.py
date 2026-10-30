@@ -89,7 +89,16 @@ class RunWriter:
         if self.batches%self.checkpoint_every==0:
             self.checkpoint()
 
+    def check_disk_budget(self, replacement_run=None):
+        if self.max_disk_bytes is None: return
+        total=sum(p.stat().st_size for p in self.root.rglob('*') if p.is_file())
+        if replacement_run is not None:
+            total += len(dumps(replacement_run))+1-(self.root/'run.json').stat().st_size
+        if total>self.max_disk_bytes:
+            raise OSError(28,'Orçamento total da Run excedido; evidências preservadas')
+
     def checkpoint(self):
+        self.check_disk_budget()
         entries = {}
         for name,f in self.files.items():
             f.flush()
@@ -192,9 +201,17 @@ class RunReader:
                 try:
                     require(line.endswith(b'\n'),'Cauda de checkpoint parcial')
                     row = loads(line)
+                    require(type(row) is dict,'Checkpoint deve ser objeto JSON')
                     require(set(row)=={'schema_version','generation','artifacts','durability'},'Campos de checkpoint inválidos')
                     require(type(row['schema_version']) is int and row['schema_version']==2,'Schema de checkpoint inválido')
                     require(type(row['generation']) is int and row['generation']==generation+1,'Geração de checkpoint inválida')
+                    require(type(row['artifacts']) is dict and 'scenario.resolved.json' in row['artifacts'], 'Checkpoint requer mapa de artefatos e Scenario')
+                    require(type(row['durability']) is str and bool(row['durability']), 'Política de durabilidade ausente')
+                    for name, entry in row['artifacts'].items():
+                        require(type(entry) is dict and set(entry)=={'size_bytes','sha256'}, 'Entrada de checkpoint inválida')
+                        require(entry['size_bytes'] is not None and entry['sha256'] is not None, 'Checkpoint requer tamanho/hash conhecido')
+                        ArtifactReference(artifact_id=name,path=name,domain='observed',
+                            size_bytes=entry['size_bytes'],sha256=entry['sha256'])
                     generation += 1
                     positions.append(position)
                 except (ValueError,KeyError):
