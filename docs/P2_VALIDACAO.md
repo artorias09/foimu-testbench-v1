@@ -227,3 +227,43 @@ continuam sem relação demonstrada com amostragem física. Truth sintético nã
 valida erro físico do sensor, sincronismo ou revisão instalada no IEAv.
 
 A etapa termina na P2. P3 e GUI não foram iniciadas.
+
+
+## Correção posterior: orçamento independente de shutdown (2026-10-30)
+
+O gate original acima permanece histórico. Antes da correção, o novo teste
+`test_p2_shutdown.py` reproduziu deterministicamente RX=1 s de orçamento,
+processamento=0,1 s e writer=0, com aborted/partial. Essa caracterização foi
+registrada no commit 4f0a10b. O teste foi então atualizado para a semântica corrigida:
+RX e processamento consomem 0,9 s cada, writer recebe seu próprio 1 s e drena em
+0,5 s, terminando cancelled/complete após interrupção solicitada. Usa workers
+simulados e relógio controlado, sem sleeps; os testes existentes continuam cobrindo
+o pipeline real.
+
+Runtime corrigido: `f80f7eb2e746566ed253653936a86b944bcd2bb9`.
+
+- Suíte P2 direcionada: 44 testes passaram.
+- Suíte completa, chamada pelo acceptance P2: 108 testes passaram, 107 preservados.
+- Primeira tentativa (`p2-shutdown-acceptance`): suíte e milhão passaram; normal v2
+  falhou por worker_progress nos três workers antes dos joins finais. Os atrasos
+  de detecção registrados foram aproximadamente 1,23 a 1,33 s além do limiar de
+  5 s. Nenhum worker ficou vivo ao final. Causa da falta de progresso não determinada;
+  não foi demonstrado vínculo com a alteração dos joins.
+- Repetição sem mudar código ou limites (`p2-shutdown-recheck`): gate completo
+  passou, com 1 milhão legado sem erros, 6000 frames v2 sem erros, replay idêntico,
+  checksum, writer lento, overload e recuperação de prefixo de 106 bytes.
+- Tempo total da repetição: 251.422 s. Não representa taxa sustentada.
+
+Comandos executados:
+
+```text
+python -m unittest discover -s tests -p test_p2_shutdown.py -v
+python -m unittest discover -s tests -p 'test_p2*.py' -q
+python -m tools.acceptance_p2 --out /workspace/scratch/daa2df17b73e/p2-shutdown-acceptance
+python -m tools.acceptance_p2 --out /workspace/scratch/daa2df17b73e/p2-shutdown-recheck
+```
+
+O acceptance chama a suíte completa e a ferramenta legada, incluindo o milhão.
+Nenhum teste anterior, protocolo ou parâmetro de watchdog foi alterado. O timeout
+agora é independente por join final de RX, processamento e writer, conforme
+P2_BACKEND.md; não é um limite total do execute. P3 não foi iniciada.

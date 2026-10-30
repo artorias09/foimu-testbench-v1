@@ -356,3 +356,23 @@ Mudança detectada recebe ressalva de reprodutibilidade, sem falsificar a identi
 
 Classificações não atribuem correções ao firmware original nem ao caminho v1.
 As limitações da FO-IMU física permanecem as da auditoria de Fase 0.
+
+## Correção posterior ao gate original: orçamento de shutdown
+
+O gate original da P2 não cobria o consumo acumulado dos joins. Um teste com
+workers simulados e relógio controlado confirmou o deadline compartilhado:
+com T=1 s, RX consumia 0,9 s, processamento recebia apenas 0,1 s e writer
+recebia zero. O estado resultante era aborted/partial.
+
+Agora shutdown_timeout_ns define orçamento independente para cada join final:
+RX recebe T; processamento recebe T; após fechar a entrada do writer, seu join
+recebe T. Tempo consumido em uma fase não reduz o orçamento da seguinte.
+O teste corrigido simula RX e processamento consumindo 0,9 s cada e writer
+saudável drenando em 0,5 s. A interrupção solicitada termina cancelled/complete,
+sem falsa classificação aborted/partial. Não usa sleeps nem threads reais.
+
+A janela de observação após Stop no loop ativo continua separada dos joins e
+limitada por T. Assim, T não é limite total do execute: podem existir essa janela,
+até três esperas finais de T e o trabalho de finalização. O timeout limita espera
+por worker; não cancela I/O do kernel nem limita fsync/relatório/identidade.
+Workers ainda vivos após os joins continuam produzindo aborted/partial.
