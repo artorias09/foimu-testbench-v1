@@ -114,3 +114,18 @@ RunController(import_v1({'packets':100,'chunk_sizes':[53]}),sys.argv[1],writer_h
             reader=RunReader(p,strict=False)
             self.assertEqual(reader.confirmed['observed/wire.bin']['size_bytes'],3)
             self.assertTrue(any('parcial' in x for x in reader.issues))
+
+    def test_failure_between_wire_and_index_preserves_unindexed_tail(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp)/'r'
+            def hook(path,body):
+                if path=='observed/chunks.jsonl' and b'"kind":"chunk"' in body:
+                    raise OSError(28,'Disco cheio depois dos bytes e antes do índice')
+            c=RunController(import_v1({'packets':2,'chunk_sizes':[53]}),p,writer_hook=hook)
+            r=c.execute()
+            self.assertEqual(r.execution_status,'failed')
+            self.assertEqual((p/'observed/wire.bin').stat().st_size,53)
+            a=RunReader(p,strict=False)
+            self.assertNotEqual(a.run.integrity_status,'complete')
+            self.assertEqual(a.confirmed.get('observed/wire.bin',{}).get('size_bytes',0),0)
+            with self.assertRaises(ValueError):RunReader(p)

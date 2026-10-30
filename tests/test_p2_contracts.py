@@ -9,3 +9,9 @@ class P2ContractTests(unittest.TestCase):
         r = r.transition('stopping', 'Solicitado pelo operador')
         self.assertEqual(r.transition('finalizing').stop_reason, 'Solicitado pelo operador')
         self.assertEqual(r.transition('finalizing', 'Falha no dreno').stop_reason, 'Falha no dreno')
+
+    def test_final_identity_cannot_silently_claim_no_change(self):
+        r=run()
+        with self.assertRaises(ValueError):replace(r,sources_changed=False)
+        with self.assertRaises(ValueError):replace(r,final_code_identity=r.code_identity,sources_changed=True)
+        self.assertFalse(replace(r,final_code_identity=r.code_identity,sources_changed=False).sources_changed)

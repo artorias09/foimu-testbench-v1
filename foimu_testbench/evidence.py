@@ -32,7 +32,7 @@ class ChunkRecord(Model):
     def validate(self):
         from .core.contracts import sha
         require(self.read_seq >= 0 and self.global_offset >= 0 and 0 <= self.size <= 65536, 'Sequência/offset/tamanho negativo')
-        require(self.time.meaning == 'host_receive' and self.time.value is not None, 'Recepção requer clock e tempo conhecido')
+        require(self.time.meaning == 'host_receive' and self.time.value is not None and self.time.value>=0, 'Recepção requer clock e tempo conhecido')
         require((self.kind == 'chunk') == (self.size > 0), 'Somente chunk possui bytes')
         require((self.kind == 'chunk') == (self.sha256 is not None), 'Chunk requer hash dos bytes')
         sha(self.sha256)

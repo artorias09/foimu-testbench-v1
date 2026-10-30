@@ -11,11 +11,11 @@ from .core import CodeIdentity, TimePoint, Run, ClockDefinition
 def collect_identity(root):
     root=Path(root).resolve()
     hashes={}
-    for folder in ('foimu_testbench','tests','configs'):
+    for folder in ('foimu_testbench','tests','configs','tools'):
         for path in sorted((root/folder).rglob('*')):
             if path.is_file() and '__pycache__' not in path.parts:
                 hashes[path.relative_to(root).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
-    for name in ('pyproject.toml','requirements.txt','tools/acceptance.py'):
+    for name in ('pyproject.toml','requirements.txt'):
         if (root/name).is_file(): hashes[name]=hashlib.sha256((root/name).read_bytes()).hexdigest()
     def git(*args):
         return subprocess.run(['git','-C',str(root),*args],capture_output=True,text=True,check=True,timeout=5).stdout.strip()

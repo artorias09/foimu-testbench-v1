@@ -252,6 +252,17 @@ class Run(Model):
         clocks={c.clock_id:c for c in self.clocks}
         require(self.code_identity.collected_at.clock_id in clocks,'Clock de identidade não registrado')
         validate_time(self.code_identity.collected_at,clocks[self.code_identity.collected_at.clock_id])
+        for point in (self.started_at, self.ended_at,
+                      self.final_code_identity.collected_at if self.final_code_identity else None):
+            if point is not None:
+                require(point.clock_id in clocks and point.meaning=='catalog', 'Tempo de catálogo não registrado')
+                validate_time(point,clocks[point.clock_id])
+        if self.final_code_identity is None:
+            require(self.sources_changed is None, 'Mudança de fontes requer identidade final')
+        else:
+            changed=(self.code_identity.hashes!=self.final_code_identity.hashes or
+                     self.code_identity.commit!=self.final_code_identity.commit)
+            require(self.sources_changed is changed, 'Indicador de mudança incompatível com identidades')
         unique([c.clock_id for c in self.clocks],'clocks')
         unique([c.criterion_id for c in self.criteria],'criteria')
         unique([r.criterion_id for r in self.results],'results')

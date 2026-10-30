@@ -18,7 +18,7 @@ class EvidenceTests(unittest.TestCase):
         rng=random.Random(42)
         bad=bytearray(GOLDEN);bad[51]^=1
         wire=b'\xa0'+GOLDEN+bytes(bad)+b'noise'*900+GOLDEN*100+GOLDEN[:20]
-        for size in [1,7,19,53,4096,65536]:
+        for size in [*range(1,54),4096,65536]:
             events=[]; a=LocatedParser(lambda *e:events.append(e)); b=StreamParser()
             pa=[];pb=[]
             for i in range(0,len(wire),size):

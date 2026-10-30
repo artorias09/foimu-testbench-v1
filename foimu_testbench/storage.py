@@ -44,6 +44,7 @@ def atomic_json(path, value):
 
 class RunWriter:
     def __init__(self, out, run, scenario, *, checkpoint_every=128, max_disk_bytes=None, hook=None):
+        require(type(checkpoint_every) is int and checkpoint_every>0,'Checkpoint requer intervalo inteiro positivo')
         self.root = Path(out)
         self.root.mkdir(parents=True, exist_ok=False)
         self.files = {}
@@ -57,7 +58,11 @@ class RunWriter:
         self.confirmed = {}
         atomic_json(self.root/'run.json', run.to_dict())
         atomic_json(self.root/'scenario.resolved.json', scenario.to_dict())
-        self.checkpoint()
+        try:
+            self.checkpoint()
+        except BaseException:
+            self.close(checkpoint=False)
+            raise
 
     def _append(self, path, body):
         if self.max_disk_bytes is not None and sum(self.sizes.values())+len(body)>self.max_disk_bytes:
@@ -102,13 +107,18 @@ class RunWriter:
         self.generation += 1
 
     def close(self, checkpoint=True):
+        error = None
         try:
             if checkpoint:
                 self.checkpoint()
-        finally:
-            for f in self.files.values():
-                f.close()
-            self.closed = True
+        except BaseException as exc:
+            error = exc
+        for f in self.files.values():
+            try: f.close()
+            except BaseException as exc:
+                if error is None: error = exc
+        self.closed = True
+        if error is not None: raise error
 
     def manifest(self, integrity):
         result = []
@@ -144,6 +154,8 @@ class RunReader:
             self.validate_timeline()
         except (ValueError,OSError) as exc:
             self.issues.append(str(exc))
+        if terminal and not self.issues and self.run.integrity_status=='complete':
+            self.tails = {}  # The final verified manifest confirms derived artifacts too.
         if self.issues and terminal:
             self.run = replace(self.run,integrity_status='corrupt',
                 evaluation_status='inconclusive' if self.run.criteria else 'not_evaluated',results=[])
