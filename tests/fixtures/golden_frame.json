@@ -1,0 +1,6 @@
+{
+  "origin": "Compiled host C using original packed struct and checksum function; no STM32 execution",
+  "compiler": "cc -std=c11 -Wall -Wextra -Werror",
+  "hex": "a0a05a0000803f000000c00000003f34127856bc9af0de0000ca410000803e000000be000080410000c03fc3f51cc10000d941545f",
+  "sha256": "6b501065bb1db9a60ba51def38ffb3b43c6b9c47957c1a66d5777912f689c80b"
+}
