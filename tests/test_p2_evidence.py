@@ -40,6 +40,23 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(f['chunk_refs'],[1,2])
         self.assertEqual(f['time']['value'],2)
 
+    def test_epoch_discard_retains_byte_origin_and_detection_time(self):
+        p=Processing('r',100,250_000_000)
+        p.consume(ObservedChunk.make(b'',ns=0,offset=0,seq=0,kind='epoch'))
+        p.consume(ObservedChunk.make(GOLDEN[:10],ns=10,offset=0,seq=1))
+        batch=p.consume(ObservedChunk.make(b'',ns=20,offset=10,seq=2,kind='epoch',epoch='1'))
+        event=loads(next(x.body for x in batch.items if x.path=='observed/events.jsonl'))
+        self.assertEqual(event['kind'],'discard')
+        self.assertEqual(event['epoch_id'],'0')
+        self.assertEqual(event['byte_span'],{'schema_version':2,'start':0,'end':10})
+        self.assertEqual(event['observation_refs'],['chunk:1'])
+        self.assertEqual(event['time']['value'],20)
+        batch=p.consume(ObservedChunk.make(GOLDEN,ns=30,offset=10,seq=3,epoch='1'))
+        frame=loads(next(x.body for x in batch.items if x.path=='observed/frames.jsonl'))
+        self.assertEqual(frame['epoch_id'],'1')
+        self.assertEqual(frame['byte_span']['start'],10)
+        self.assertEqual(frame['chunk_refs'],[3])
+
     def test_watchdogs_garbage_and_total_silence(self):
         events=[]; w=SilenceWatchdogs(10,lambda *e:events.append(e))
         for ns in range(1,31):

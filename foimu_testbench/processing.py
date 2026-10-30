@@ -72,13 +72,13 @@ class Processing:
         self.watchdogs = SilenceWatchdogs(timeout_ns, self._watchdog_event)
         self.ended = False
 
-    def _event(self, kind, domain, payload, span=None, refs=()):
+    def _event(self, kind, domain, payload, span=None, refs=(), epoch_id=None):
         rec = self.current
         e = Event(event_id=f'processing:{self.seq}', run_id=self.run_id, producer_id='processing',
             producer_seq=self.seq, domain=domain, epistemic_status='inference' if domain=='diagnostic' else 'observed_fact',
             kind=kind, component_path='FO-IMU/Host', facet='Timing' if span is None else 'Protocolo',
             severity='info' if kind=='resync' else 'warning', time=rec.time,
-            stream_id=rec.stream_id, epoch_id=rec.epoch_id, byte_span=span,
+            stream_id=rec.stream_id, epoch_id=rec.epoch_id if epoch_id is None else epoch_id, byte_span=span,
             observation_refs=[f'chunk:{n}' for n in refs], rule_version='observed-v2.1', payload=payload)
         self.seq += 1
         folder = 'diagnostics' if domain=='diagnostic' else 'observed'
@@ -86,7 +86,9 @@ class Processing:
 
     def _parser_event(self, kind, start, end):
         refs = [n for a,b,n in self.refs if a < end and b > start]
-        self._event(kind, 'observed', {}, ByteSpan(start=start, end=end), refs)
+        # new_epoch() discards the previous connection's buffered bytes. Detection
+        # time belongs to the new read, but the byte span retains its old epoch.
+        self._event(kind, 'observed', {}, ByteSpan(start=start, end=end), refs, epoch_id=self.epoch)
 
     def _watchdog_event(self, kind, payload):
         self._event(kind, 'diagnostic', payload)

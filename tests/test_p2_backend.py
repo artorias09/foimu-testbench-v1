@@ -208,6 +208,26 @@ class BackendTests(unittest.TestCase):
             self.assertEqual((a/'observed/wire.bin').read_bytes(),(c/'observed/wire.bin').read_bytes())
             self.assertEqual(RunReader(a).run,r)
 
+    def test_replay_preserves_epoch_boundaries_and_partial_discard(self):
+        frame=encode(synthetic_packet(0,100))
+        reads=[ReadResult(frame[:10],10),ReadResult(b'',20,'epoch','1'),
+               ReadResult(frame,30,epoch='1')]
+        with tempfile.TemporaryDirectory() as t:
+            a,b=[Path(t)/x for x in 'ab']
+            r=RunController(import_v1({}),a,source_factory=lambda *args:IterableSource(reads)).execute()
+            repeated=replay_run(a,b)
+            self.assertEqual(r.execution_status,'completed')
+            self.assertEqual(repeated.execution_status,'completed')
+            self.assertEqual(metrics(a),metrics(b))
+            self.assertEqual(metrics(a)['reconnections'],1)
+            for name in ('wire.bin','chunks.jsonl','frames.jsonl'):
+                self.assertEqual((a/'observed'/name).read_bytes(),(b/'observed'/name).read_bytes())
+            events=[json.loads(x) for x in (b/'observed/events.jsonl').read_text().splitlines()]
+            discarded=next(x for x in events if x['kind']=='discard')
+            self.assertEqual(discarded['epoch_id'],'0')
+            self.assertEqual(discarded['byte_span']['end'],10)
+            RunReader(b)
+
     def test_unit_mismatch_and_missing_truth_inconclusive(self):
         with tempfile.TemporaryDirectory() as t:
             criteria=[replace(criterion(3),unit='wrong'),AcceptanceCriterion(criterion_id='truth',domain='truth',metric='dropped',operator='eq',expected=0,unit='frames')]

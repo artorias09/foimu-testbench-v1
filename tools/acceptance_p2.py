@@ -34,7 +34,7 @@ def main():
     with (root/'legacy-console.txt').open('w',encoding='utf-8') as log:
         subprocess.run([sys.executable,'-m','tools.acceptance','--out',str(root/'legacy')],stdout=log,stderr=subprocess.STDOUT,check=True)
     legacy=json.loads((root/'legacy/summary.json').read_text())
-    check(legacy['unit_integration_tests']>=105,'Descoberta incompleta de testes')
+    check(legacy['unit_integration_tests']>=107,'Descoberta incompleta de testes')
     check(legacy['normal_packets']==1_000_000,'Milhão não executado')
     check(legacy['normal_metrics']['packets_received']==1_000_000,'Contagem normal legada')
     for key in ('packets_lost','checksum_errors','framing_errors'):
