@@ -41,6 +41,7 @@ class StorageTests(unittest.TestCase):
 
     def test_timeline_validated_even_without_manifest_trust(self):
         mutations=[lambda rows:rows[2]['time'].update(value=-1),
+                   lambda rows:rows[-1]['time'].update(value=0),
                    lambda rows:rows[2].update(global_offset=99),
                    lambda rows:rows[2].update(epoch_id='unknown'),
                    lambda rows:rows[2].update(read_seq=0),
