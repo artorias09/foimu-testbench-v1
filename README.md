@@ -4,6 +4,23 @@
 
 Você precisa apenas do PC e Python 3.11 ou superior. Esta etapa não requer ESP32, Raspberry, LabVIEW, pip ou Docker. O código foi executado em Python 3.12.14/Linux neste ambiente; a execução no seu Windows ainda precisa ser confirmada.
 
+## Incremento v0.2 P2: backend sem GUI
+
+O caminho v2 acrescenta RunController, três workers com filas limitadas, evidências
+separadas de truth/observed, checkpoints, replay validado e critérios explícitos.
+Os comandos v1 abaixo permanecem disponíveis.
+
+```powershell
+py -3 -m foimu_testbench run-v2 --scenario configs/v2/normal.json --out logs/p2_normal
+py -3 -m foimu_testbench inspect-v2 --run logs/p2_normal
+py -3 -m foimu_testbench replay-v2 --run logs/p2_normal --out logs/p2_replay
+```
+
+Leia [P2_BACKEND.md](docs/P2_BACKEND.md) para uso, arquitetura e limites, e
+[P2_VALIDACAO.md](docs/P2_VALIDACAO.md) para resultados e cobertura executada.
+P2 usa transporte virtual e replay. Não inclui GUI nem captura TCP v2.
+Conclusão da execução, aprovação e integridade são estados independentes.
+
 ## Primeiro ensaio no Windows
 
 Extraia o ZIP e abra o PowerShell **dentro da pasta `foimu-testbench`**, onde está este README.
