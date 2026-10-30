@@ -31,7 +31,7 @@ class ChunkRecord(Model):
 
     def validate(self):
         from .core.contracts import sha
-        require(self.read_seq >= 0 and self.global_offset >= 0 and self.size >= 0, 'Sequência/offset/tamanho negativo')
+        require(self.read_seq >= 0 and self.global_offset >= 0 and 0 <= self.size <= 65536, 'Sequência/offset/tamanho negativo')
         require(self.time.meaning == 'host_receive' and self.time.value is not None, 'Recepção requer clock e tempo conhecido')
         require((self.kind == 'chunk') == (self.size > 0), 'Somente chunk possui bytes')
         require((self.kind == 'chunk') == (self.sha256 is not None), 'Chunk requer hash dos bytes')
@@ -92,10 +92,16 @@ class WriteItem:
     path: str
     body: bytes
 
+    def __post_init__(self):
+        require(type(self.path) is str and type(self.body) is bytes, 'Registro requer caminho e bytes imutáveis')
+
 
 @dataclass(frozen=True, slots=True)
 class WriteBatch:
     items: tuple[WriteItem, ...]
+
+    def __post_init__(self):
+        require(type(self.items) is tuple and all(type(x) is WriteItem for x in self.items), 'Lote requer tupla imutável de registros')
 
     @property
     def weight(self):

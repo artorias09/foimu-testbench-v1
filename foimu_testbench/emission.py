@@ -30,6 +30,9 @@ class VirtualSource:
         self.count = 0
         self.closed = False
         self.end_ns = 0
+        self.processed_actions = set()
+        self.complete = False
+        self.injector = None
         self.iterator = self._generate()
 
     def _truth(self, kind, index, ns, payload, path='truth/faults.jsonl'):
@@ -53,6 +56,7 @@ class VirtualSource:
         for r in rules.values():
             cfg[r.kind] = (r.jitter.value if r.kind=='jitter_s' else r.every) if r.enabled else 0
         injector = Injector(cfg, s.seed)
+        self.injector = injector
         fragmenter = Fragmenter(s.fragmentation.chunk_sizes)
         actions = iter(sorted(s.scheduled_actions,key=lambda a:(a.at_opportunity,a.sequence_id)))
         next_action = next(actions, None)
@@ -61,6 +65,7 @@ class VirtualSource:
             while next_action is not None and next_action.at_opportunity == i:
                 rule = next(r for r in rules.values() if r.rule_id==next_action.rule_id)
                 cfg[rule.kind] = (rule.jitter.value if rule.kind=='jitter_s' else rule.every) if next_action.enabled else 0
+                self.processed_actions.add(next_action.action_id)
                 self._truth('scheduled_action_applied', i, round(i/rate*1e9), next_action.to_dict())
                 next_action = next(actions, None)
             frame = encode(synthetic_packet(i,rate))
@@ -108,18 +113,28 @@ class VirtualSource:
             else:
                 yield ReadResult(b'', self.end_ns, 'tick')
         while next_action is not None:
+            self.processed_actions.add(next_action.action_id)
             self._truth('scheduled_action_not_reached',count,self.end_ns,
                         dict(action_id=next_action.action_id,result='not_reached'))
             next_action = next(actions,None)
         self.end_ns = max(self.end_ns, round(count/rate*1e9))
         if s.stop_condition.kind=='duration':
             self.end_ns = max(self.end_ns,round(s.stop_condition.duration.value*1e9))
+        self.complete = True
         yield ReadResult(b'', self.end_ns, 'end')
 
     def read(self):
         return None if self.closed else next(self.iterator, None)
 
     def close(self):
+        if not self.closed:
+            for action in self.scenario.scheduled_actions:
+                if action.action_id not in self.processed_actions:
+                    self._truth('scheduled_action_not_reached',self.count,self.end_ns,
+                        dict(action_id=action.action_id,result='not_reached'))
+            self.sink(WriteBatch((record_item('truth/summary.jsonl',dict(schema_version=2,
+                opportunities=self.count,complete=self.complete,
+                **(self.injector.counts if self.injector else {}))),)))
         self.closed = True
 
 
