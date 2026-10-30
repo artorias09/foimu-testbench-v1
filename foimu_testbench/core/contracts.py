@@ -239,6 +239,12 @@ class Run(Model):
     seed: int | None = None
     protocol_profile: str | None = None
     metric_policy_version: str = 'legacy_v1'
+    final_code_identity: CodeIdentity | None = None
+    sources_changed: bool | None = None
+    started_at: TimePoint | None = None
+    ended_at: TimePoint | None = None
+    operation: Literal['acquisition','replay'] = 'acquisition'
+    limitations: list[str] = field(default_factory=list)
     def validate(self):
         sha(self.scenario_sha256)
         require(self.seed is None or self.seed>=0,'Seed negativa')
@@ -271,7 +277,7 @@ class Run(Model):
         self.__post_init__()
         require(target in TRANSITIONS[self.execution_status],f'Transição inválida: {self.execution_status} -> {target}')
         require(target!='prepared' or bool(self.clocks) and bool(self.fidelity),'Preparação requer clocks e fidelidade')
-        return replace(self,execution_status=target,stop_reason=reason)
+        return replace(self,execution_status=target,stop_reason=self.stop_reason if reason is None else reason)
 
     def validate_event(self, event):
         event.__post_init__()
