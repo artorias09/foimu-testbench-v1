@@ -1,0 +1,38 @@
+test_constant_not_declared_failure (test_diagnostics.DiagnosticsTests.test_constant_not_declared_failure) ... ok
+test_counter_cannot_reveal256_lost (test_diagnostics.DiagnosticsTests.test_counter_cannot_reveal256_lost) ... ok
+test_duplicate_not255_losses (test_diagnostics.DiagnosticsTests.test_duplicate_not255_losses) ... ok
+test_known_jitter (test_diagnostics.DiagnosticsTests.test_known_jitter) ... ok
+test_nonfinite_does_not_poison_stats (test_diagnostics.DiagnosticsTests.test_nonfinite_does_not_poison_stats) ... ok
+test_out_of_order_does_not_rewind_anchor (test_diagnostics.DiagnosticsTests.test_out_of_order_does_not_rewind_anchor) ... ok
+test_remove_counter100_oracle (test_diagnostics.DiagnosticsTests.test_remove_counter100_oracle) ... ok
+test_rollover (test_diagnostics.DiagnosticsTests.test_rollover) ... ok
+test_tail_gap (test_diagnostics.DiagnosticsTests.test_tail_gap) ... ok
+test_temperature_slot_and_unknown_timeouts (test_diagnostics.DiagnosticsTests.test_temperature_slot_and_unknown_timeouts) ... ok
+test_broken_replay_timeline_fails (test_pipeline.PipelineTests.test_broken_replay_timeline_fails) ... ok
+test_drop_every10 (test_pipeline.PipelineTests.test_drop_every10) ... ok
+test_faults_with_explicit_oracles (test_pipeline.PipelineTests.test_faults_with_explicit_oracles) ... ok
+test_invalid_configs_rejected (test_pipeline.PipelineTests.test_invalid_configs_rejected) ... ok
+test_no_overwrite (test_pipeline.PipelineTests.test_no_overwrite) ... ok
+test_normal_logging_and_replay (test_pipeline.PipelineTests.test_normal_logging_and_replay) ... ok
+test_seed_reproducibility (test_pipeline.PipelineTests.test_seed_reproducibility) ... ok
+test_all_split_positions (test_protocol.ProtocolTests.test_all_split_positions) ... ok
+test_burst_and_large_noise_bounded (test_protocol.ProtocolTests.test_burst_and_large_noise_bounded) ... ok
+test_byte_at_a_time (test_protocol.ProtocolTests.test_byte_at_a_time) ... ok
+test_checksum_known_collision_is_not_hidden (test_protocol.ProtocolTests.test_checksum_known_collision_is_not_hidden) ... ok
+test_corrupt_then_valid (test_protocol.ProtocolTests.test_corrupt_then_valid) ... ok
+test_every_single_bit_change_rejected (test_protocol.ProtocolTests.test_every_single_bit_change_rejected) ... ok
+test_float_nonfinite_supported_by_wire (test_protocol.ProtocolTests.test_float_nonfinite_supported_by_wire) ... ok
+test_header_inside_payload (test_protocol.ProtocolTests.test_header_inside_payload) ... ok
+test_independent_c_reference (test_protocol.ProtocolTests.test_independent_c_reference) ... ok
+test_offsets_independent_literal_bytes (test_protocol.ProtocolTests.test_offsets_independent_literal_bytes) ... ok
+test_partial_final_frame (test_protocol.ProtocolTests.test_partial_final_frame) ... ok
+test_truncated_then_valid (test_protocol.ProtocolTests.test_truncated_then_valid) ... ok
+test_uint16_not_signed_or_float (test_protocol.ProtocolTests.test_uint16_not_signed_or_float) ... ok
+test_wrong_header_is_framing_not_checksum (test_protocol.ProtocolTests.test_wrong_header_is_framing_not_checksum) ... ok
+test_silence_timeout_then_data_recovers_without_disconnect (test_transport.TransportTests.test_silence_timeout_then_data_recovers_without_disconnect) ... ok
+test_two_processes_reconnect (test_transport.TransportTests.test_two_processes_reconnect) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 1.242s
+
+OK

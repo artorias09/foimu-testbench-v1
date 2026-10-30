@@ -1,0 +1,2705 @@
+{
+  "audit_date": "2026-10-28",
+  "archive_metadata_note": "ZIP comment contains an apparent Git commit SHA. No .git history supplied; branch inferred only from archive root. ZIP dates are archive entry dates, not independently verified commit dates.",
+  "archives": [
+    {
+      "filename": "Fiber_Optic_IMU_Manual___IFO___IEAv(3).pdf",
+      "sha256": "611e98cdbac7fbe87e31bd31520ab89087461c6602f3f601788f9afd4d921811",
+      "size": 1897014
+    },
+    {
+      "filename": "Microcontroller-Based_Embedded_System_for_Inertial-Class_Closed-Loop_Interferometric_Fiber-Optic_Gyroscopes(1).pdf",
+      "sha256": "e071c77770405a86393998ee083aa6619c3c26d5ba2c9f8992d28b49d951333f",
+      "size": 1233951
+    },
+    {
+      "filename": "firmware-ifog-acc-ad24bit-main(1)(1).zip",
+      "sha256": "4742440101075e0394b0d270ea2e40e9c4dc4f095077a2e762009f53f01360ca",
+      "size": 121921,
+      "zip_comment": "22633326c15c204f10ae92ebb8769e6c4c063c05",
+      "entries": 32,
+      "zip_dates": [
+        "(2026, 5, 8, 12, 19, 16)"
+      ],
+      "root": "firmware-ifog-acc-ad24bit-main"
+    },
+    {
+      "filename": "firmware-ifog-acc-ad24bit-main(2).zip",
+      "sha256": "4742440101075e0394b0d270ea2e40e9c4dc4f095077a2e762009f53f01360ca",
+      "size": 121921,
+      "zip_comment": "22633326c15c204f10ae92ebb8769e6c4c063c05",
+      "entries": 32,
+      "zip_dates": [
+        "(2026, 5, 8, 12, 19, 16)"
+      ],
+      "root": "firmware-ifog-acc-ad24bit-main"
+    },
+    {
+      "filename": "ifog-communication-main(1).zip",
+      "sha256": "7db433d17c26ddd4e508596752cf53596e7433b0430b75c0844d876d3968eff4",
+      "size": 170879,
+      "zip_comment": "44e11ccfc6e82a850249637eb3c7a4be7018b609",
+      "entries": 14,
+      "zip_dates": [
+        "(2026, 9, 18, 6, 46, 6)"
+      ],
+      "root": "ifog-communication-main"
+    },
+    {
+      "filename": "ifog-firmware-main(1).zip",
+      "sha256": "dc3d67a68844a5fd726c25eb96eff2b2e4d18f59f4aa2732dad5f1f0ef82be1b",
+      "size": 273261,
+      "zip_comment": "ea67728d0c496e2f7f259a80234ab0599c5a29b9",
+      "entries": 100,
+      "zip_dates": [
+        "(2026, 9, 23, 18, 3, 2)"
+      ],
+      "root": "ifog-firmware-main"
+    },
+    {
+      "filename": "imu-gateway-firmware-main(1).zip",
+      "sha256": "1b17a26637155cd8e9fcc4449e1c683b28e276cc128c9ea713013d80fc19eef2",
+      "size": 2815393,
+      "zip_comment": "7e0b963b646d343559ff8ee0116c4e270f39bdaa",
+      "entries": 131,
+      "zip_dates": [
+        "(2026, 10, 22, 12, 39, 46)"
+      ],
+      "root": "imu-gateway-firmware-main"
+    },
+    {
+      "filename": "imu-gateway-pcb-main(1).zip",
+      "sha256": "101017c87e89fb401e6b7c5a7ec948150b7bb1042fef0a94959fe570b9809ced",
+      "size": 106552681,
+      "zip_comment": "2b78ca4ed5d94d9d7f9f1fc6d8665cb5f50eb40d",
+      "entries": 346,
+      "zip_dates": [
+        "(2026, 10, 1, 5, 43, 54)"
+      ],
+      "root": "imu-gateway-pcb-main"
+    },
+    {
+      "filename": "pcb-ifog-acc-ad24bit-master(1).zip",
+      "sha256": "4cdf3ec956182e628ae334f7ba00fd63300903804d2ad10b8401fd165e9c22f7",
+      "size": 12893275,
+      "zip_comment": "5020e5a6b53827b7ace413fd3d95a4d2f0a06b58",
+      "entries": 20,
+      "zip_dates": [
+        "(2026, 6, 15, 10, 58, 46)"
+      ],
+      "root": "pcb-ifog-acc-ad24bit-master"
+    }
+  ],
+  "files": [
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/.cproject",
+      "bytes": 27334,
+      "sha256": "ee7c1d5baa9eee90c261db2e2e1abf8c5d7a1821c2e2aed26f7571602323a4c7"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/.gitignore",
+      "bytes": 941,
+      "sha256": "0d7b77ca06e16aad37b6aa01c7647abf4762d20cf3baed104caad935fafa8bb9"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/.mxproject",
+      "bytes": 9421,
+      "sha256": "d933012bcd9ad17edaeea9ef6f974a1a8230df3e95b9126d8e0e537bfafac281"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/.project",
+      "bytes": 1191,
+      "sha256": "9af31cd7487e5d4327fd7b069eae802b8c31a39bca71b3c274c9a3fff58bcfce"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Inc/ads1256.h",
+      "bytes": 5518,
+      "sha256": "29e7b7a291ba1819bc2cfdee151d3c919e445dc9b94c4d4a327b408efa8288ac"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Inc/main.h",
+      "bytes": 2250,
+      "sha256": "2e3acbb15e6ff6cfe0713eeea04b86e69e89df062daf488d73a4df269f4002b7"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Inc/mcp9808.h",
+      "bytes": 990,
+      "sha256": "021f322523f660b84fd34f843a55a992d5e2b0b7a690255815a6028ab82c84bd"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Inc/quadrature.h",
+      "bytes": 308,
+      "sha256": "5454db9563198cd44bdf62ea4393ea114ec5e199932362ee5e559a0b27ddf310"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Inc/stm32f4xx_hal_conf.h",
+      "bytes": 19531,
+      "sha256": "11331d3058e06b2efbf6323345645d02e7da6ab5995a5a1b4900d274992564b6"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Inc/stm32f4xx_it.h",
+      "bytes": 2009,
+      "sha256": "727f2e2a01a2ae59806a5b9e98285bace512ba1df99a256026481f6d3d2231eb"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/ads1256.c",
+      "bytes": 6538,
+      "sha256": "eed83a17c69292ef367031cbb98b4c8d450e7faa7b6f73d8c492cd8f4b1ecb8a"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/main.c",
+      "bytes": 21883,
+      "sha256": "e233ed0fe3d99733e16934e335df1f6f92ce70f59e23273fe737e554ec555c6e"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/mcp9808.c",
+      "bytes": 1288,
+      "sha256": "271f7fa457697a5e37af366c00527ed416f712531dcc8e7976c87ea4f7bf340c"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/quadrature.c",
+      "bytes": 1005,
+      "sha256": "f91f48746bc3812d4faa3f0bb610b2b45ebedb5f7fed12fc37e0dd7c760d6a3e"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/stm32f4xx_hal_msp.c",
+      "bytes": 13275,
+      "sha256": "c0fe1ce02db7af7c5da41fab276f3874a02b15eb013ab672cf2acb8e0b50e341"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/stm32f4xx_it.c",
+      "bytes": 6792,
+      "sha256": "407d7d084687fd913191daf4f62791fb659bed31cb647e24c2473d63d803c5af"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/syscalls.c",
+      "bytes": 2847,
+      "sha256": "ab00c3df1417d6249b5c9c13c4e7b926f1fec9cd10961861d3f3c8d34983b913"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/sysmem.c",
+      "bytes": 2726,
+      "sha256": "67f3125e749700183d510a14cb979e5acee05ebe29d1972eceaa55aa4ac25366"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Src/system_stm32f4xx.c",
+      "bytes": 26839,
+      "sha256": "661b9a7a0d3a3f5d92811049ac7cd07050b7044ff4e0d65e21474abe6deaccaf"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/Core/Startup/startup_stm32f411ceux.s",
+      "bytes": 20260,
+      "sha256": "8289f87711423a048339cf8b54fd1ed8a9cdd23c19176132ae6cd371119b0060"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/README.md",
+      "bytes": 1494,
+      "sha256": "e64cd1b7a4e83654b59194da539fa921aa910bdc83753f1a8b5641c4d3b75a72"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/doc/schematic.png",
+      "bytes": 82120,
+      "sha256": "f82b915607dfd98712fb9f7e879186fd07d376f498d741b2bf6404b9e6082e1a"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/smo-ifog-firmware.ioc",
+      "bytes": 9174,
+      "sha256": "9d02aa59ceb3986a90e5d6475322f2f69e53528529cb662a7286221852bbe9ff"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/test/Makefile",
+      "bytes": 506,
+      "sha256": "f5dc8ba7997bd9abd08c5c21d92b1d89a6c600e80f6e337c3107e21e7fee323f"
+    },
+    {
+      "path": "firmware-ifog-acc-ad24bit-main/test/test.c",
+      "bytes": 1069,
+      "sha256": "ddc5b6edccabcb245dff31eedc35e18e3cf5d6f7e756f2d980c402b296c690fb"
+    },
+    {
+      "path": "ifog-communication-main/.gitignore",
+      "bytes": 149,
+      "sha256": "298f8cd6056d1455b9451e80e0121785e096dffbf8852da871091acb99cdf2f5"
+    },
+    {
+      "path": "ifog-communication-main/README.md",
+      "bytes": 245,
+      "sha256": "8b3fe0f48f0f4dbd5cc36a319cf92caa2b13ba7159f03e106de0d0e73ca315f8"
+    },
+    {
+      "path": "ifog-communication-main/ifog-communication.lvproj",
+      "bytes": 1169,
+      "sha256": "396540398c834ee35c4d8a3a84eedfb7f808ee58f17c521d23d978e3587819a0"
+    },
+    {
+      "path": "ifog-communication-main/src/Control_panel.vi",
+      "bytes": 120321,
+      "sha256": "dba11f405d45b3dd59a76f011fbb7a8b4daa5fe4a634244aff59700abb64deae"
+    },
+    {
+      "path": "ifog-communication-main/src/get_data.vi",
+      "bytes": 11828,
+      "sha256": "6df1ac38959aaaebef1b01774aeb089dd9be6312bcbd1466ce412384c87c79c5"
+    },
+    {
+      "path": "ifog-communication-main/src/subVI_integrate_rate.vi",
+      "bytes": 7820,
+      "sha256": "ea957f96ee32dee65f61fe533e3cf4ba757fb642e22dd3045d1370e190879ebe"
+    },
+    {
+      "path": "ifog-communication-main/src/subVI_spectrum_analysis.vi",
+      "bytes": 87087,
+      "sha256": "16c55676ac7daa540b7b184c7d46a8d21c964a095ffe1a3533a7ab9d8acfe31a"
+    },
+    {
+      "path": "ifog-communication-main/typedefs/commands.ctl",
+      "bytes": 4185,
+      "sha256": "542170af719e1652bf269908b803b8b6478ca5c14f12e8065cd894a53c60ae29"
+    },
+    {
+      "path": "ifog-communication-main/typedefs/program_states.ctl",
+      "bytes": 3959,
+      "sha256": "b5b0c652e00683842af859e0eddf97da281d4dfe037c5a1ed39c6adfe24bfd90"
+    },
+    {
+      "path": "ifog-communication-main/typedefs/propagation_time.ctl",
+      "bytes": 3905,
+      "sha256": "c8d2a5ead9e9be8b767f951e778c93d6a469977c2feafcacd04a991c54e7c8da"
+    },
+    {
+      "path": "ifog-communication-main/typedefs/scale_factor.ctl",
+      "bytes": 3917,
+      "sha256": "73a6dbdaf8cc44323351f0e594a1b20df96f6e5ed44b55313f5f40f353546698"
+    },
+    {
+      "path": "ifog-firmware-main/.ccsproject",
+      "bytes": 168,
+      "sha256": "3e843c01a5eadf99587128b84f65f06ae8545f1a67591fabbc39ec9b4f020529"
+    },
+    {
+      "path": "ifog-firmware-main/.clangd",
+      "bytes": 152,
+      "sha256": "1f1d471d105b49ed4fe72fe62263340ed93c9156fca0781675ff05869ce3631a"
+    },
+    {
+      "path": "ifog-firmware-main/.cproject",
+      "bytes": 66748,
+      "sha256": "b46b36e88ad56a03e62343d89532f828878c5b44f2b0dcb4642a854a5469517d"
+    },
+    {
+      "path": "ifog-firmware-main/.gitattributes",
+      "bytes": 82,
+      "sha256": "ac82e17a5bc8cd61f862a3fa6aafa0b90cdcdca687c94714baf32cdba0310c05"
+    },
+    {
+      "path": "ifog-firmware-main/.gitignore",
+      "bytes": 92,
+      "sha256": "4f05f760309f3cf3fb09142e1e17aa6243c5608f04e4cd7cf3ac67800bf717f9"
+    },
+    {
+      "path": "ifog-firmware-main/.gitmodules",
+      "bytes": 222,
+      "sha256": "033b69b5aad8668f3ee1b87a00f09ad05f762693d1b3ca390fc66cadd0ae2c2d"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/AD9850_test.launch",
+      "bytes": 4560,
+      "sha256": "da450041e70a2640f9ca94d197caaee7f02c4f1fb6a1f7e069e0215f00443655"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/ADS1255_test.launch",
+      "bytes": 4567,
+      "sha256": "c0ff5f90bec7dc89d39134121981f1ec31812604cb0f7524fe1b66a55d75f58d"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/Gyro 1.0.launch",
+      "bytes": 4815,
+      "sha256": "347883dbcca3fbd5555363ac5427e5f7c2c85cee075a0021f96eb1083734b59f"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/Gyro2022-0.0.0.launch",
+      "bytes": 5842,
+      "sha256": "fad25dd391d1b4df4e9b1cf41eaccdc9904271148dcbe16f879ae6371e054862"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/New Gyro 10.4.1 (4 phases, new modulation 90, no reset).launch",
+      "bytes": 4876,
+      "sha256": "7aa032cc2e84e1c1944f533549e64ebe49a0ba8e6ef996102ce44f085635850a"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/New Gyro 10.4.2 (4 phases, new modulation 160-200, no reset).launch",
+      "bytes": 4911,
+      "sha256": "4d51312d5571e018b18d5d2bccfa37fdd61f562d6e18a541c712c2f391345725"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/New Gyro 11.1.0 (2 phases, final modulation, reset phase 0).launch",
+      "bytes": 4906,
+      "sha256": "fcf2d975d748963aeb7ba1ebb732eacd6b804234978bb6fa01d1026c70bb1c79"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/New Gyro 2.0.launch",
+      "bytes": 4581,
+      "sha256": "fceb45fff5e9add77baf9574b2ba6687f0b9a16a21928f799ef85b0c6affa128"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/New Gyro 3.0.launch",
+      "bytes": 4581,
+      "sha256": "af544686ade067e4e80fe4556022e2c8246ae87fd8dc1439b9bf25adf3909bd8"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/New Gyro 4.0.launch",
+      "bytes": 4581,
+      "sha256": "b1fae46f139290d7dc04b03ff20789ccd87ebfa93157780e7c6eca358f1d8d4a"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/NewGyro_1.0.launch",
+      "bytes": 4574,
+      "sha256": "ceefb17342ae395e08cc3115c3d5567018ccbfe5d7553767a8098f3f03d6d175"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/PWMTest NewGyro.launch",
+      "bytes": 4602,
+      "sha256": "014b1cd04f3a87bddceb36ee6bf2f1fd7081cb6d3e741c2255fdaf069530ff06"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/PWMTest.launch",
+      "bytes": 4808,
+      "sha256": "980ee8cc6e78ecdf045fe9baa3ba6767e740706a619f29feb0f12ed70a6d65a7"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/Teste ADS1672.launch",
+      "bytes": 4588,
+      "sha256": "e91c8ab024e8085709226b2e2a3321cb4f284e6a7e1a466f30973d8fad61be42"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/dvb_board.launch",
+      "bytes": 5014,
+      "sha256": "f915ac5d68f8352b39fc18174fe2c796b4427035be5fe5545df677d691493ee2"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/freertos_skeleton_tiva.launch",
+      "bytes": 4637,
+      "sha256": "5b264d9eec4b579a390bba024c66b3431ae00857b3b827dfa85d7c100a8c39b5"
+    },
+    {
+      "path": "ifog-firmware-main/.launches/ifog-control-2022-0.0.1.launch",
+      "bytes": 9296,
+      "sha256": "6c7581f773446861c60e9b7be046090c05472e7f5bddd76a7480706e06838372"
+    },
+    {
+      "path": "ifog-firmware-main/.project",
+      "bytes": 1900,
+      "sha256": "af63de8da741fd59f89e1fa64d6474b9f7e1eac9ed3a5755c046c508c8b2ec93"
+    },
+    {
+      "path": "ifog-firmware-main/.settings/org.eclipse.cdt.codan.core.prefs",
+      "bytes": 59,
+      "sha256": "b1c83a6a46239ad09976388089063b07db085461f61859033e98c3c3d0ee9566"
+    },
+    {
+      "path": "ifog-firmware-main/.settings/org.eclipse.cdt.debug.core.prefs",
+      "bytes": 121,
+      "sha256": "ad32bb684e847737a67839dedc92178a4a478dcf311b7ad05007f9fb2365c57f"
+    },
+    {
+      "path": "ifog-firmware-main/.settings/org.eclipse.core.resources.prefs",
+      "bytes": 922,
+      "sha256": "6399cd397bb2db07f629a99b557c7de23c9d0e5bd12c41567c8aea67181bb0ec"
+    },
+    {
+      "path": "ifog-firmware-main/AD5543.c",
+      "bytes": 1595,
+      "sha256": "c70626a955858acbbac972daa7795d696d85b8ad46542fc242da2d9dbd35f4ee"
+    },
+    {
+      "path": "ifog-firmware-main/AD5543.h",
+      "bytes": 1509,
+      "sha256": "c0a0fd7cf9c812b1bf9965e3f49f57cb2fe21fe00f7bd8f9b3ef6c4e2c428650"
+    },
+    {
+      "path": "ifog-firmware-main/ADS1672.c",
+      "bytes": 2072,
+      "sha256": "ad374f969694c089beacb6f285e1b70800e41394f3730cf8bbe4a20ce6a1c37d"
+    },
+    {
+      "path": "ifog-firmware-main/ADS1672.h",
+      "bytes": 1151,
+      "sha256": "955a0b9f937b3fae84c6a471b70a39a2599686f3927493b1031ed09d776bd9e9"
+    },
+    {
+      "path": "ifog-firmware-main/DAC1220.c",
+      "bytes": 3605,
+      "sha256": "4913633a646533913797de1f3261c81849fdf502774f8eb4e7b69bdfe947c41c"
+    },
+    {
+      "path": "ifog-firmware-main/DAC1220.h",
+      "bytes": 1907,
+      "sha256": "69591a2665f3bd2a487f302f63f866a1a85ec25b16dddf1f46b021c602748f89"
+    },
+    {
+      "path": "ifog-firmware-main/Doxyfile",
+      "bytes": 123049,
+      "sha256": "bf78cc21cc83446c1141c1a763fc1665a12607cbd0d6c10bf2bf922455dd8ffc"
+    },
+    {
+      "path": "ifog-firmware-main/LM95071.c",
+      "bytes": 2954,
+      "sha256": "a302b62f4af5d10aaaa81c8bdbc6212c16067b2ef3d5e94b56cf1cd55832aecb"
+    },
+    {
+      "path": "ifog-firmware-main/LM95071.h",
+      "bytes": 947,
+      "sha256": "eea2305c771e73d5a10458169ccd2d778f0f7e6976741b0ee9ae5baf849accbb"
+    },
+    {
+      "path": "ifog-firmware-main/PWM.c",
+      "bytes": 5499,
+      "sha256": "c3de326cf4eb796e7cade818bcd5ecc2c48775481d2a579b8f98e2d48282d111"
+    },
+    {
+      "path": "ifog-firmware-main/PWM.h",
+      "bytes": 1224,
+      "sha256": "101345691bda830f94f3f89fed10af1734e718dc4ed998238afa5e43db752c85"
+    },
+    {
+      "path": "ifog-firmware-main/SPI.c",
+      "bytes": 6344,
+      "sha256": "00c6f37fd238078f121dc6415f6df7d9fb0a472137d341014414c0dacade0661"
+    },
+    {
+      "path": "ifog-firmware-main/SPI.h",
+      "bytes": 780,
+      "sha256": "db87e42e19b937f35180b89b8563611f46f49ae72d8423c6f48000392210628f"
+    },
+    {
+      "path": "ifog-firmware-main/UART.c",
+      "bytes": 1653,
+      "sha256": "ff6f40c15c086a4782de61fbaab3056689024a0552baea707d0c622f971b6209"
+    },
+    {
+      "path": "ifog-firmware-main/UART.h",
+      "bytes": 418,
+      "sha256": "ec44e3551cf32a3bc3535cb440b8a84752606a73c2acde4eac4dc9df9d8116ba"
+    },
+    {
+      "path": "ifog-firmware-main/UARTCommunication.c",
+      "bytes": 9645,
+      "sha256": "3c57c8b31f30debe3e70c70ab46fdeeab126d34a893288f0c248c1f5bd872dc9"
+    },
+    {
+      "path": "ifog-firmware-main/UARTCommunication.h",
+      "bytes": 1601,
+      "sha256": "8cf4b1d16be19084c8c65dbe22e219da9730f6fd33bebaa5adc36888d786f089"
+    },
+    {
+      "path": "ifog-firmware-main/definitions.h",
+      "bytes": 5315,
+      "sha256": "c47681dc85f5b78afb58e3c941afa9950b67be2c4a1bae3ea4539e8902ba306b"
+    },
+    {
+      "path": "ifog-firmware-main/doc/block_diagram.odg",
+      "bytes": 80764,
+      "sha256": "bc51ddbf233458cc57d09c8bdd9ce2f6faa6e5d3a85e55131a27737d4d5d14ad"
+    },
+    {
+      "path": "ifog-firmware-main/drivers/buttons.h",
+      "bytes": 3889,
+      "sha256": "0e4df22d076e06dca9461845db3a5ca1e4b62b13d5677e4a53bac21c7bc254d4"
+    },
+    {
+      "path": "ifog-firmware-main/dvb_test.cmd",
+      "bytes": 2731,
+      "sha256": "b75483447a9f0b080cf73db3a54fdc866a3e3183596c5e0ed1dd5a7cfecf541c"
+    },
+    {
+      "path": "ifog-firmware-main/filt.c",
+      "bytes": 657,
+      "sha256": "af009bfac1c2261594f08ecc0fbe88253340bdb337740b7e4d14bb8aaa68e3d3"
+    },
+    {
+      "path": "ifog-firmware-main/filt.h",
+      "bytes": 884,
+      "sha256": "0c36ac865e7b7f89cf94b3c700322176e67d7ea2fc148c15d2422d06be4180a8"
+    },
+    {
+      "path": "ifog-firmware-main/fir.c",
+      "bytes": 2295,
+      "sha256": "c63d337eb7aa8fc261bb7ce395d3c8b8f630bf297e4cb1a86d17297c4f3669c7"
+    },
+    {
+      "path": "ifog-firmware-main/fir.h",
+      "bytes": 1563,
+      "sha256": "41e3821e8cba1a6c706b2f6b1e7c44e2c534090402b35cef252622544d8d7816"
+    },
+    {
+      "path": "ifog-firmware-main/help.c",
+      "bytes": 1735,
+      "sha256": "3befe5f9409cb7971ba77300fb198da564fceaaef4b9cbe8a6def067fecc0762"
+    },
+    {
+      "path": "ifog-firmware-main/help.h",
+      "bytes": 563,
+      "sha256": "acc3c38883214bdf343cf67f1bfd9edb57d2a79f393cacacb37f6c9bdb1a17a9"
+    },
+    {
+      "path": "ifog-firmware-main/ifir.c",
+      "bytes": 3047,
+      "sha256": "7d2df420e7f6550d8efeeb6fae6e15ae2b242439225f31b4e34fc19460d76e01"
+    },
+    {
+      "path": "ifog-firmware-main/ifir.h",
+      "bytes": 4643,
+      "sha256": "21f0c3e2737d9f70880f6108c86274497ec5323b3214ac84c9b067109d89fce7"
+    },
+    {
+      "path": "ifog-firmware-main/images/DARefValue1.png",
+      "bytes": 8924,
+      "sha256": "2e25fdf7166b4c16a278a1b30ea13d7114f6d67bf1be624b30e5dcd42c0c749d"
+    },
+    {
+      "path": "ifog-firmware-main/images/debug_icon.png",
+      "bytes": 4134,
+      "sha256": "71cca471ae604c1b8f3f6760de69bfe3d22f926f699cce1a14d1d13c41302953"
+    },
+    {
+      "path": "ifog-firmware-main/images/interferometer.png",
+      "bytes": 12898,
+      "sha256": "e87a750b89eb46d51fb9f099f27bbd76ae15260eedfdd3c1929879f9cc60611f"
+    },
+    {
+      "path": "ifog-firmware-main/images/watch_variable.png",
+      "bytes": 9959,
+      "sha256": "138c14ba179baff03bfa59a36553545d3acb0f86df873286d7c2462003c9c63f"
+    },
+    {
+      "path": "ifog-firmware-main/images/watch_variable1.png",
+      "bytes": 18097,
+      "sha256": "51189d4d76619990614f3258fa0d34dd1a9e51344f81cfa71d01e398f219429c"
+    },
+    {
+      "path": "ifog-firmware-main/macros.ini_initial",
+      "bytes": 25,
+      "sha256": "00c68f926bf93ab3209d76460477125d329976d60aee203273ea4a9d88daf609"
+    },
+    {
+      "path": "ifog-firmware-main/main.c",
+      "bytes": 21841,
+      "sha256": "8c462fd0146fcac7f301b2afac44ef8731ca631d089e910bd95444baca72e405"
+    },
+    {
+      "path": "ifog-firmware-main/main.h",
+      "bytes": 1849,
+      "sha256": "d1f66683b81397ef4544a4664ab5ccf5fea303b3b5931bf8311df1d5d538ce3b"
+    },
+    {
+      "path": "ifog-firmware-main/readme.md",
+      "bytes": 1790,
+      "sha256": "6662556b322f6721928ac5839ea8a8924ff4195ba659875fef4c6cee25c1c419"
+    },
+    {
+      "path": "ifog-firmware-main/releases/ifog-firmware-v0_1_2-20MHz.bin",
+      "bytes": 262144,
+      "sha256": "325b99b6b1d740c76bd3d22a50c48dc28f4ed933dacfcc2252f6342e97d355c7"
+    },
+    {
+      "path": "ifog-firmware-main/releases/ifog-firmware-v0_1_2-25MHz.bin",
+      "bytes": 262144,
+      "sha256": "e525c6fa97054c54ed60e073d59be8d6a2966af48c001cc0fd510893b9b2b63c"
+    },
+    {
+      "path": "ifog-firmware-main/releases/ifog_firmware_2022.0.0.0.bin",
+      "bytes": 262144,
+      "sha256": "56fa5ad97e11727c01eefc7909b10763adc74a1ae774898034e7bace68abe848"
+    },
+    {
+      "path": "ifog-firmware-main/releases/ifog_firmware_2022_0.0.1.bin",
+      "bytes": 262144,
+      "sha256": "7a94a8e4828200d5186e8ec07678c7cd882146b4ac8d244655735195133c90ad"
+    },
+    {
+      "path": "ifog-firmware-main/releases/miocDriver-test-clock20MHz.bin",
+      "bytes": 262144,
+      "sha256": "47f684de80c8112b86130d8d6fb8f2b6c058a402575d8ffdbe5d25db0f7c79c8"
+    },
+    {
+      "path": "ifog-firmware-main/releases/miocDriver-test-clock25MHz.bin",
+      "bytes": 262144,
+      "sha256": "2a99a0ebd561ed5f4b608016a5f413bd9627640881e5381615cea7d3366f6cb1"
+    },
+    {
+      "path": "ifog-firmware-main/releases/spi-test-clock20MHz.bin",
+      "bytes": 262144,
+      "sha256": "94eb54a31bb9b54f9b5f66048eb2cc69a9202b9381e6abd6a9dfb6370f9143da"
+    },
+    {
+      "path": "ifog-firmware-main/releases/spi-test-clock25MHz.bin",
+      "bytes": 262144,
+      "sha256": "2eb00896da9e1229bbe756fe7641212ed3621c1dc437eee6376d1990429e86ea"
+    },
+    {
+      "path": "ifog-firmware-main/sensors/ifog10.h",
+      "bytes": 4179,
+      "sha256": "bdbb3d91e35b66f7a29c0bbdf967883d0d63008d19de8255b30cbf307585ae38"
+    },
+    {
+      "path": "ifog-firmware-main/sensors/ifog11.h",
+      "bytes": 4222,
+      "sha256": "7d4c39b2cd94fe8b1db42eb1d18bf7605aa6880efe52001d969888d9f78ef97c"
+    },
+    {
+      "path": "ifog-firmware-main/sensors/ifog12.h",
+      "bytes": 4369,
+      "sha256": "5621fa6aab8714d0c9e43504563c3f1f46d6bc8d193c366db55a1dd4210abad6"
+    },
+    {
+      "path": "ifog-firmware-main/sensors/ifog9.h",
+      "bytes": 4390,
+      "sha256": "4ea344e256d9dcd662c0be4e6bf1da2d4bbd00f2042dc6b7c088f01722725a9d"
+    },
+    {
+      "path": "ifog-firmware-main/startup_ccs.c",
+      "bytes": 14779,
+      "sha256": "0bffee60fe7799a94fc7fe0e1cfe806e5d260d48e8740ab1cb3451deaca918f4"
+    },
+    {
+      "path": "ifog-firmware-main/targetConfigs/Tiva TM4C123GH6PM.ccxml",
+      "bytes": 1070,
+      "sha256": "ecb50348b89c0456472b7edeeecdf025a8c291bf4cf61ca7c8bee959ef35cdf4"
+    },
+    {
+      "path": "ifog-firmware-main/target_config.ccxml",
+      "bytes": 1067,
+      "sha256": "517cf69fb42f06ab5f15fdc04ae36d373a6a0664002b1312289724d279abb7f4"
+    },
+    {
+      "path": "ifog-firmware-main/test/Makefile",
+      "bytes": 278,
+      "sha256": "02e4ad0a9e83772d42e78b2054a1bacea9fcdeedf7c04649d0a647b0f0f7bdca"
+    },
+    {
+      "path": "ifog-firmware-main/test/test.c",
+      "bytes": 2026,
+      "sha256": "57a0a2adc49a870726648d7c0bb31a084e2ee1eb79b4d660b49bc75297f9d367"
+    },
+    {
+      "path": "ifog-firmware-main/timers.c",
+      "bytes": 1040,
+      "sha256": "04e3068ca90b4960af0b7cc014f18d4b3fd8873877c1329726f2fab1f88c7841"
+    },
+    {
+      "path": "ifog-firmware-main/timers.h",
+      "bytes": 554,
+      "sha256": "2e361aaa4e7659376ea4e1176302b107e1a90e01824b1ecc17a25ae0cb791349"
+    },
+    {
+      "path": "ifog-firmware-main/timingDebug.c",
+      "bytes": 914,
+      "sha256": "954b0d376adeba885b92cb4b3340b0a59d0b0bc2991ca8c455aa59e0e5a6329a"
+    },
+    {
+      "path": "ifog-firmware-main/timingDebug.h",
+      "bytes": 236,
+      "sha256": "04a1485818df6012c2f92ae0142bbfa0405508217c9002964f0fc1b5f2fbba43"
+    },
+    {
+      "path": "ifog-firmware-main/troubleshooting/troubleshoot.md",
+      "bytes": 1245,
+      "sha256": "6b1e75492ff1a7c783220cad72302c9c51f71baadae00863935784316cdb26a4"
+    },
+    {
+      "path": "imu-gateway-firmware-main/.gitignore",
+      "bytes": 848,
+      "sha256": "82398d449acad425f042d87d8c4e603f25af4e5ea93b11b29c5f9b259ff483ea"
+    },
+    {
+      "path": "imu-gateway-firmware-main/README.md",
+      "bytes": 503,
+      "sha256": "cf4e28de1a48b4779b7101526ea0509feb2d7f59668588dce2247c0c58dea868"
+    },
+    {
+      "path": "imu-gateway-firmware-main/datasheets/MCP9808-0.5C-Maximum-Accuracy-Digital-Temperature-Sensor-Data-Sheet-DS20005095B.pdf",
+      "bytes": 1831079,
+      "sha256": "e7b6502f744c3e605a424d7b784a23baa471a41f8bc6d51f6321027b0c43972f"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/.cproject",
+      "bytes": 26850,
+      "sha256": "1dad03245fa2e12fcf19a9befba34a28f7131809d2ad6edf3e4fd511c2c1d658"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/.mxproject",
+      "bytes": 9360,
+      "sha256": "78d1a99e1bf6a987b549f54075db9504c345599802eefdc4526cadd4d8234a56"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/.project",
+      "bytes": 1198,
+      "sha256": "3e29df8b5e248bb6d742c7b521c42c120ef56a818534abe0ebcc3886f9222cad"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Inc/SCHA63T.h",
+      "bytes": 924,
+      "sha256": "2754a3bfeb504004da441677f2269939ea39cf7b2c8fe86bced06c4c1ef6ba3b"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Inc/main.h",
+      "bytes": 1985,
+      "sha256": "a12921a8c20037d5f7be056ff258ae082cc7cb889fc9d7ff316c7266c2297638"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Inc/mcp9808.h",
+      "bytes": 992,
+      "sha256": "e6703867cb75fa39a3da833aedade9c9c5d146fbe4d13c2c4aea1ea56f73a3d8"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Inc/stm32f4xx_hal_conf.h",
+      "bytes": 19512,
+      "sha256": "415d6efa3e5f4caadbaeca1366b929b4bec82ab1950f312aa05e928cbc2f28a7"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Inc/stm32f4xx_it.h",
+      "bytes": 1917,
+      "sha256": "fc15c27041044d552e9a7f860584baed4ca3cc7402f74eea95e4857d05f8f1b4"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Src/SCHA63T.c",
+      "bytes": 14228,
+      "sha256": "b9b80163bc11f3343fca4f32f6365c1139687d026e803c35333eb2aab22c1a37"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Src/main.c",
+      "bytes": 30284,
+      "sha256": "38e97237431018e33c75563524f8f815bbbcf2a1199f42c9c9e25de6b87cb21d"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Src/stm32f4xx_hal_msp.c",
+      "bytes": 10988,
+      "sha256": "a7ca00ace2e4047073fe1ccd7ab5986a3ab53a75af5e5bd4d694f4b7d94c5ff9"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Src/stm32f4xx_it.c",
+      "bytes": 5789,
+      "sha256": "83b2f93ef278869d694f21c6b98fcaa3a7897f307bb1d412b6fc83c39f2295ea"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Src/syscalls.c",
+      "bytes": 2847,
+      "sha256": "ab00c3df1417d6249b5c9c13c4e7b926f1fec9cd10961861d3f3c8d34983b913"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Src/sysmem.c",
+      "bytes": 2726,
+      "sha256": "67f3125e749700183d510a14cb979e5acee05ebe29d1972eceaa55aa4ac25366"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Src/system_stm32f4xx.c",
+      "bytes": 26842,
+      "sha256": "77362913e1fc29a495408fda17dbb2d62be50b8e7c7c1e60698d0777c187be48"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Src/tempCodeRunnerFile.c",
+      "bytes": 239,
+      "sha256": "8ce23e493adc8ebbdf9c582ccaa271966b72e2579059a8e0fab14c9f2745437d"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Core/Startup/startup_stm32f411ceux.s",
+      "bytes": 20260,
+      "sha256": "8289f87711423a048339cf8b54fd1ed8a9cdd23c19176132ae6cd371119b0060"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h",
+      "bytes": 646672,
+      "sha256": "db64e4d1dccfcae0e8ea1618ad372ca88c8367f1f93f21b2083701dedec2f3cb"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h",
+      "bytes": 11928,
+      "sha256": "13a76b267fceb37400f14d42a4c4ed3189e34b9cfb059c1c70b0419fda4dfb35"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h",
+      "bytes": 2214,
+      "sha256": "02c067d5a135f540c03215dc834b1e60a97bbd4e55bfd3994b0c82a15ea3012a"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Device/ST/STM32F4xx/LICENSE.txt",
+      "bytes": 371,
+      "sha256": "135fb2d86e9ecdf6824cc3bba21c72b8e380c07b055fbebb6b995463eb609baf"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/cachel1_armv7.h",
+      "bytes": 12087,
+      "sha256": "2e336a64f60a9c0eaf5a08e2c4845d94da86c3fd84d219d0d0c9f530e63bc9c3"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/cmsis_armcc.h",
+      "bytes": 27999,
+      "sha256": "5bc0d7ed8e36e9bcb868c4042fff350c702eca305df4162fb00384789e35ee1c"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/cmsis_armclang.h",
+      "bytes": 48417,
+      "sha256": "d5da2b48204f0d0cf1ff38ffccb527e5706cd0a091ff0a331eb41d6596c33fe5"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/cmsis_armclang_ltm.h",
+      "bytes": 56021,
+      "sha256": "3e8ffb284f4f155de3ea93841cca853b41d5e812b53e52c64c3d4a67b7f1ec7c"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/cmsis_compiler.h",
+      "bytes": 9481,
+      "sha256": "b51963d271c1571ca3463654c76aa7ea50c4eac5d0a2710df10414ac64d9e0f8"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/cmsis_gcc.h",
+      "bytes": 63374,
+      "sha256": "43bfd1fe69fbbc2ca70aaf7d43cc3e20f16e0c7f66e1bdef9b51af6dc14b2617"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/cmsis_iccarm.h",
+      "bytes": 29069,
+      "sha256": "2d255c8429e507e52cb603f2970bed4cc4a6cdcc3eb7fc7997385abad7364837"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/cmsis_version.h",
+      "bytes": 1680,
+      "sha256": "184c19fd3ee73632edf35a0b4d49cd48be75fbf49e6ccb19d9db05fa83bea4b3"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_armv81mml.h",
+      "bytes": 276640,
+      "sha256": "a40954bccbf202bd65ee721ea688122561e005c9f9f9d18e082280c5b897d0e4"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_armv8mbl.h",
+      "bytes": 115004,
+      "sha256": "458b1e6788079ded52adc7d06383701c865ca97b67c5e7a0a44884194f91a842"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_armv8mml.h",
+      "bytes": 183191,
+      "sha256": "5a68204fa31cda7d04d41c9ceaf3f4b1217908f59366f757ee778181c7cc8cb9"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm0.h",
+      "bytes": 41643,
+      "sha256": "ac13cb645f108666a0e57c93467872660d6bc860a839f840dc870b7a5863b4bf"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm0plus.h",
+      "bytes": 49877,
+      "sha256": "a09fa9c6b8b21d1920bce15b98aa56182b027e9278cca0b154812bac2aea3cfa"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm1.h",
+      "bytes": 42626,
+      "sha256": "944bf0c4f940eef30a632cd99d5dcfe8270e8a8431eb98c0f081bcf4f61f728e"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm23.h",
+      "bytes": 121556,
+      "sha256": "77822e9738885394ec52fca6f617452b823a0b55e2664ee225e65576cf0e8f2d"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm3.h",
+      "bytes": 109529,
+      "sha256": "c9937781259a8897adf514445441c68570087d6a72a558d8a4afe75cdb62dbd2"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm33.h",
+      "bytes": 189524,
+      "sha256": "225c47c36230edaa314f1e7a45b38279f6ab4d58faeb132226db35f7007d58aa"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm35p.h",
+      "bytes": 189539,
+      "sha256": "206b427589981b78169c1d9b73e898e4e8de4efbd76fd0c2df7df81d645b9fa2"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm4.h",
+      "bytes": 120975,
+      "sha256": "f5b63d52dd1557b15ca414cb59c264f595a7b5669db2a5878dffe22f4caedc8c"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm55.h",
+      "bytes": 317450,
+      "sha256": "5707f716cf03f7e80151108ae94601fcfdf362dd2d830876040213318f6dee3a"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm7.h",
+      "bytes": 138948,
+      "sha256": "e974d0a91752487d0154457cd422c37667328e9ddb7ba4fa2fed479a63577f63"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_cm85.h",
+      "bytes": 308328,
+      "sha256": "75bc123889f0f5ca33c4d16b6cbdd580a3572663c899fadb2c8e28f6a5e6fead"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_sc000.h",
+      "bytes": 46562,
+      "sha256": "c81377a69a4ea8ecaead42194f2ce8ab59bd4ee7bd638e423f5b1f5ec283d154"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_sc300.h",
+      "bytes": 108524,
+      "sha256": "73dd461c12c7d3a693840df3084fd8f85122095c6f21fa3d779b0f3eceaebad5"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/core_starmc1.h",
+      "bytes": 193055,
+      "sha256": "92d8661f2947d00da91653d04794cde0593fdaafb3438842a0477775716aafc5"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/mpu_armv7.h",
+      "bytes": 11731,
+      "sha256": "29206b52ee02290ed6f5a5415ebd4187de802cf176d9b3cb844390d8e5571372"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/mpu_armv8.h",
+      "bytes": 11370,
+      "sha256": "2c7d22a344cedcc1e35380d1f76f0e6c55da5e3101e6a41fd85497d1841fe8c9"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/pac_armv81.h",
+      "bytes": 6062,
+      "sha256": "d76f5cc0c59a59e035115f700b8e8d95b7b98ecb99a2924e885f82a94903d984"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/pmu_armv8.h",
+      "bytes": 22786,
+      "sha256": "cea8c105c5f41ba831fe4d9e8e39758068cd4c414383348dc2835d6be447cca0"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/Include/tz_context.h",
+      "bytes": 2687,
+      "sha256": "45565c8cb04c653aabaf3cceddfc848b6a0de28c20d4f7e3d475a992c7eee788"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/CMSIS/LICENSE.txt",
+      "bytes": 11357,
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h",
+      "bytes": 236949,
+      "sha256": "ea1d8cb835b5898c17b227f0e1d72aa6a9d0d81cdc0baaa8da988be57fd63eb7"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h",
+      "bytes": 12683,
+      "sha256": "6942f40453fee331e026179cfac4c0f24ffe6313fedcb68af9c3382f702dbaf5"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h",
+      "bytes": 17098,
+      "sha256": "d96dba22903abda49d66cad29ac0c49357e6a27cf9cb03dfd8c6db71b61a7fca"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h",
+      "bytes": 7563,
+      "sha256": "c8eb3f7b393f8c5a0c32e16ccfa101c83ddb59e96bd42239b8a5c5d4da83e97f"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h",
+      "bytes": 37869,
+      "sha256": "71c38dfd65c5415b388375147e5317c7ac018b39893d6fd0ac1c897f4313329c"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h",
+      "bytes": 2651,
+      "sha256": "3ee15423d73ac394de39e7b65821775966389b13749ff0849894548ab6968676"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h",
+      "bytes": 14833,
+      "sha256": "61e8f76bdb45dedf38fef592504e10418ca410952c7a209cd271b45ac835833a"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h",
+      "bytes": 14303,
+      "sha256": "10be06c6e06fcf4eb11e236641948aed861898fea235c606ae221fa72bc46638"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h",
+      "bytes": 64011,
+      "sha256": "7c206f5dbed3c147a6f090ab808933132a1b06b8339623ad7174fd0a222e981c"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h",
+      "bytes": 2206,
+      "sha256": "f18a6eabc99f56483566f9231ca33c780afa98bc93929e60bb419b5e544eee2a"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h",
+      "bytes": 13687,
+      "sha256": "0b40fc83363b64d3c7396a202be7a914ceaa7735ab0fa81d566ed320102b23fb"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h",
+      "bytes": 81141,
+      "sha256": "4091beefc5bf8b250f376d400f43ca028ef7378e1c7ba5c9eb5de64ec74231c0"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h",
+      "bytes": 34977,
+      "sha256": "4f14fcdc4967efd8ed64d95ef0269ff6acdc0db0864df1bde3e95c427d8f9fbf"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h",
+      "bytes": 2974,
+      "sha256": "0f7dcff0dbfd058691564f75803353ad0c4b5ef756b0f9915f4d2f9f78e1716c"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h",
+      "bytes": 14456,
+      "sha256": "d6f6abc4af3d5a1ca59d886f5a9154e44f257a43af77c7f18173f160825ed6b5"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h",
+      "bytes": 15884,
+      "sha256": "1794b88c5e080858c0205a2e94340c0250ac9171b3a3f01cad6d050005a1b09d"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h",
+      "bytes": 73456,
+      "sha256": "43104017711b2522c72f5c167aa155bc584b6216f9de57b8a2864ee14701bd58"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h",
+      "bytes": 436806,
+      "sha256": "49f0c8068524e1de248738530cff3bbe630dc4784b6e8b5568fbc7e1a154f772"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h",
+      "bytes": 32173,
+      "sha256": "099246e9928bc3e6df6e40efa938b207c777e73b56343d461a508da9027e06e4"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h",
+      "bytes": 122970,
+      "sha256": "4298bbab7d1b0aed5b5fbb836721513616b201ec058ec4cc251af5fc80433109"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h",
+      "bytes": 16580,
+      "sha256": "518fd2bec898bbfcca5141c1ee4675a51f08308e66d17e581038b9d7af41d2f7"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h",
+      "bytes": 45527,
+      "sha256": "42528bc9caa6e2fe96b7e6d7b3fcdf35d8d85ae38d33195a233e18a072f157a1"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h",
+      "bytes": 99874,
+      "sha256": "95a518139f74d14a4477519b5172675347990e9fa637bd3948c69bd475bd7c88"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_cortex.h",
+      "bytes": 24301,
+      "sha256": "d8b268ca207e51864d1a71ce14fff316c57d09e62a04d0c28310b4a1008e6f17"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h",
+      "bytes": 107014,
+      "sha256": "7c59bfc0c1be96371df1fc7de4372caf7c43c6c9fd715f82eea87cafd5259ba3"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h",
+      "bytes": 34065,
+      "sha256": "6da580d41ebdcfd7349e29666a2e561c8e2c2e01f6e7ef29dfec6ebf6ae237df"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h",
+      "bytes": 37445,
+      "sha256": "e46857f5f9a5f5a2d13ca2d6925dc9e66dfa7fc56a2cc72e54b891bdb88e2f16"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h",
+      "bytes": 67469,
+      "sha256": "d675d5e20effac4790a2664eed686ed1caa9af86e5f542bda7f6c05927d00d1d"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h",
+      "bytes": 31539,
+      "sha256": "229af558bfeef8bb88d2224277b083c3b927c5c2612991fdeba00dad56255abc"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h",
+      "bytes": 341239,
+      "sha256": "31c94bc2bf40630fd893232c373334d26a6e1c0fb2a008ca5136d2b01155f969"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h",
+      "bytes": 66044,
+      "sha256": "d01f7f73eb62be6662861b58cfc92e09c05aae72088d237c82a3ea8e5fd92ae2"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h",
+      "bytes": 70672,
+      "sha256": "d634a419a55e99b4a641fecc055e1f602d8a418bd7d822cf2f812a0965ac9a3e"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h",
+      "bytes": 174976,
+      "sha256": "0d7eb3fd74100ee33cf592c6edb2e340d85ac320364702a6cc1d0e9d22da66d2"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h",
+      "bytes": 97617,
+      "sha256": "982c4448c49ddc7c6c71bd788e5354f05e96aca5e98edd0626f8ffcaefc65e79"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h",
+      "bytes": 10642,
+      "sha256": "535cb625cfcd461d6054549bf04d25ef939ec5754f77731a5f9fd92728280ded"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/LICENSE.txt",
+      "bytes": 377,
+      "sha256": "d5a162f3eaf2b7b6762f00700017cae5695ebbdce7932fead8316448baafd9c1"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+      "bytes": 19188,
+      "sha256": "e10d4b81df863cc52a9351269a8856cc669122b13c933a54e3a49bb8ec0f62eb"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
+      "bytes": 19368,
+      "sha256": "9aaa0f19137d700616bec01a5a806786c24e3f3386120365c5d2addaa4055505"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c",
+      "bytes": 39525,
+      "sha256": "a345a1b1fe0221c827d5ad21d5a0f5387296bc2c075e06e5b8539c23da5678e4"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c",
+      "bytes": 10274,
+      "sha256": "90cafb5a5b17a46b478770ef4abdc9a641cb395419abbb80f288138a63d44582"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+      "bytes": 15072,
+      "sha256": "f56651f86e5d89e8bba3bcb331353e00f291db15c902927a205d81bbe8951e6d"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c",
+      "bytes": 23658,
+      "sha256": "f30415c546330c72e702e1eefafc8429576fabfbf1cb0b1711510189771309d2"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
+      "bytes": 49859,
+      "sha256": "4f4e11c76c64208b98556a551e680dd7eed9a78206add14cabb8b4462f463941"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
+      "bytes": 5965,
+      "sha256": "d3b426e8cb9d617f9064d2b0cea2a1d02b7bb6a74cba3f094779d6e922e477e3"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+      "bytes": 18844,
+      "sha256": "408908b15477b6ce2b0b9703caabcb053293d98f2f109d6e6940e076a6a3902b"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c",
+      "bytes": 241435,
+      "sha256": "1e0ba175bf0ec87ddabca6d1796d9fd45cf9698d79cccf5691974745f96e3ef3"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c",
+      "bytes": 5350,
+      "sha256": "1d3dbcd648b379ef0e109646bc37d0140c16381c3d0f74c610a112fd84546846"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
+      "bytes": 21984,
+      "sha256": "d779468a95df34421bf6c8417136a79aa910753381a644afa9ed10b185ae18b5"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
+      "bytes": 22773,
+      "sha256": "4409dddc0d2019f918d0ddebecf659f06d4de3f9aa28566621a16ea47203331f"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
+      "bytes": 42481,
+      "sha256": "c6c90b44618af21f25346bf8bd2c73ca229b6a5c4790ceb498111716dfd9c13e"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c",
+      "bytes": 156307,
+      "sha256": "a867e0b370950d34d73b98784db5b5a26871383ed0a4a7a8036706f906de7453"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c",
+      "bytes": 124712,
+      "sha256": "50716b20a9c05da64e89cb8bd6dc23a276316da995a65d2cac058b1ee621ff8d"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
+      "bytes": 244172,
+      "sha256": "6f71df9831eb2fac548c925466a0d4784bed0e19b362c6dc40392f1b96156af1"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
+      "bytes": 81598,
+      "sha256": "4471b582d56545fbd48725401249b4a2a728ccc0d933b3f1a02e2b09dda8d8fa"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c",
+      "bytes": 135653,
+      "sha256": "581f14026cba4ad2e4322376bfa6d626e55c83b2981ed2117d0ccdffa904ca23"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/STM32F411CEUX_FLASH.ld",
+      "bytes": 4737,
+      "sha256": "1f7f0e9e11e3568da840d3c7bd61f808e0054245835ec7a6d50a66c291a260c1"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/STM32F411CEUX_RAM.ld",
+      "bytes": 4730,
+      "sha256": "2a52ae60ff1770edb9c1540c7449731236207a98a642e2e1b50ffc81b3707dab"
+    },
+    {
+      "path": "imu-gateway-firmware-main/imu-gateway-firmware-stm/imu-gateway-firmware-stm.ioc",
+      "bytes": 6778,
+      "sha256": "249edadbb607218b7754c55d159eb1f1850f7037d09212c2746efb3c91fb249a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/.gitattributes",
+      "bytes": 66,
+      "sha256": "1a1dbe176bc233b499d35a57db7513f2941c99ab9759f177830c9149be99005b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/.gitignore",
+      "bytes": 237,
+      "sha256": "88026b66eda5d587635f8d6659c4f417a82c92c155a5889d7faac0490f340508"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Copy of gateway_imu_2.PcbDoc",
+      "bytes": 9480704,
+      "sha256": "512cce051a75841798fa8191ae41d5fb6eb4cc905ebaa7054e99c3af59b79336"
+    },
+    {
+      "path": "imu-gateway-pcb-main/LEDS.SchDoc",
+      "bytes": 189440,
+      "sha256": "d402e0b70302d731cd2fe49964da4c16e2fcd0b538926a226f21c945355f82be"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/.imu_integration-ver_102.PcbLib.VwArBX",
+      "bytes": 2621440,
+      "sha256": "468baaa848f63e4578b3dadb41aa1ca362bdff8f53979e7013087651f54b94b0"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272021/022272021.stp",
+      "bytes": 79743,
+      "sha256": "714c0374fe6cdbbfd50cc8f59bd88b16033a2600917f435b54ee3836f382a891"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272021/Altium/22272021/22272021.LibPkg",
+      "bytes": 26729,
+      "sha256": "9336d5fbae2f323efa69daa0ba32e3d84d08413c6cd5f7a4ed67cee506a45d0c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272021/Altium/22272021/22272021.PcbLib",
+      "bytes": 109056,
+      "sha256": "33df31e032a335089af22ff903907dc26c383ac3249a2c7f1c3bcfb07be44439"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272021/Altium/22272021/22272021.SchLib",
+      "bytes": 6656,
+      "sha256": "e1e2af3af368336918be67c8dde44f9154498d5372ca1ebdcc1f51193ee93521"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272021/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272021/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272031/022272031.stp",
+      "bytes": 111184,
+      "sha256": "dfbc3a4cc5c57abd0595beb4155ee46ffaefb3051bb3bec77b51faa629467f24"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272031/Altium/22272031/22272031.LibPkg",
+      "bytes": 29491,
+      "sha256": "7c52fba88f18b6e638fdd0fcba37b17679be5e5313aaef8c28c82a4d23150e11"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272031/Altium/22272031/22272031.PcbLib",
+      "bytes": 109568,
+      "sha256": "bf67e9bf3b240a0b8ad7f6f885771e8701967370ad989cd00ced5d6fe2f6d3da"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272031/Altium/22272031/22272031.SchLib",
+      "bytes": 7168,
+      "sha256": "a6041336b64fcc0e1116fb395c8fd8276b2a889ab9bf86f291a111e6fe8eaf4d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272031/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272031/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272041/022272041.stp",
+      "bytes": 163840,
+      "sha256": "d843b03d90a0547bfb8f93e00dd53d2799474cfee17fd0d98765b3fcb7643cd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272041/Altium/22272041/22272041.LibPkg",
+      "bytes": 26729,
+      "sha256": "4eb64352e9bff6289e42b0bde2e4e98d50aa343bb80cae58358306d115089846"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272041/Altium/22272041/22272041.PcbLib",
+      "bytes": 124928,
+      "sha256": "8fad9dfcad45fda8cfea62365bb1ee59b2389c353034415df098ee78fa42a0b4"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272041/Altium/22272041/22272041.SchLib",
+      "bytes": 7680,
+      "sha256": "8b65584988f40803883e9b265f9ef489832dbc5b0e50e163c666672469cdf7ef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272041/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272041/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272051/022272051.stp",
+      "bytes": 205604,
+      "sha256": "b61a524a042f55f7a7636005502892bb8dc60a8b4e6a2540c0a885b68ee8b565"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272051/Altium/22272051.LibPkg",
+      "bytes": 29391,
+      "sha256": "c6b3b93d2aff9b49415edb99934a269731052b498d62ed8f76e3e0326dc1112a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272051/Altium/22272051.PcbLib",
+      "bytes": 110080,
+      "sha256": "bbb3f0027277d7396554dde22077d07471b49253f6147c2732f439913d302422"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272051/Altium/22272051.SchLib",
+      "bytes": 8704,
+      "sha256": "34bc8458f371b0e841a83c93d62c1e794caf6b080b298c81fe4f3273ca5f05d7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272051/Altium/ImportGuide.html",
+      "bytes": 8220,
+      "sha256": "cd070472d2129b1093fdfd2b42978b5f9d550f5340a818ce30a33835e24bc5ef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272051/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272051/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272061/022272061.stp",
+      "bytes": 247737,
+      "sha256": "1ef82a21d64737b4c4fbe828b1808d5f9b9e7470b0cfb410d1ec3b4cd2555202"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272061/Altium/22272061/22272061.LibPkg",
+      "bytes": 29491,
+      "sha256": "6cf832f64b045a1be1918cd37279a83bdcab12859f760b1e5e2c950958dd88dd"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272061/Altium/22272061/22272061.PcbLib",
+      "bytes": 141824,
+      "sha256": "296363f7512e822380c1e3b1c62c8aa6787255da4487e46bc9b0ecd94d61a2dd"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272061/Altium/22272061/22272061.SchLib",
+      "bytes": 9216,
+      "sha256": "03603c9672eabfdc918740ad43d33d4ec3d5bdf325c6c5e63163058eb84bab48"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272061/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272061/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272071/022272071.stp",
+      "bytes": 301680,
+      "sha256": "d66c2a41e8390bb66b5623da5c2d98d624f101b37bf4734a35f2019c8857ad0c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272071/Altium/22272071/22272071.LibPkg",
+      "bytes": 26729,
+      "sha256": "bbef0d52b98ede63a2856b01658983e21f7fd96e9bf068a89927b3e7de454f7c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272071/Altium/22272071/22272071.PcbLib",
+      "bytes": 111616,
+      "sha256": "3c2217165e21483736eb976dfded3495ecc895a0d6873dc06261ca05a79f1de5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272071/Altium/22272071/22272071.SchLib",
+      "bytes": 9728,
+      "sha256": "77763468494b39c238c3c081857b198213d5f29acf3600b7cc056da53b7777f1"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272071/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272071/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272081/022272081.stp",
+      "bytes": 343856,
+      "sha256": "82270576b49f32f65cca1dbbde151dd1f376fca57439287936c816da0ca2e046"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272081/Altium/22272081.LibPkg",
+      "bytes": 29391,
+      "sha256": "1dae53e576d7d8ce9df00aa8e10299b4f152ad1ca95d7dfde80ff1dd94a7da26"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272081/Altium/22272081.PcbLib",
+      "bytes": 111616,
+      "sha256": "8c9bd072139f2039b2992c9089796eb456a11fdf8329bb9cad79a7695fb4c3c2"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272081/Altium/22272081.SchLib",
+      "bytes": 10240,
+      "sha256": "020ac56e7b65f07d32fb01a4866253b70590fb1981563eb55f1770a511590520"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272081/Altium/ImportGuide.html",
+      "bytes": 8220,
+      "sha256": "cd070472d2129b1093fdfd2b42978b5f9d550f5340a818ce30a33835e24bc5ef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272081/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272081/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/022272091.stp",
+      "bytes": 385718,
+      "sha256": "1136ba2dffa9712a0d6d3efac3bb3d58b727f342500e81efc753e92a9c1db549"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/Altium/22272091/22272091.LibPkg",
+      "bytes": 26729,
+      "sha256": "5036cff34c99c94763b7c3fd2f4d479f96e688deb07728c31209ba9299365014"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/Altium/22272091/22272091.PcbLib",
+      "bytes": 183808,
+      "sha256": "2bc77c927ad6fd18ca76a9dac0056fb0d5c8c3b223250399677df27de98b381d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/Altium/22272091/22272091.SchLib",
+      "bytes": 10752,
+      "sha256": "82d9ea109eb70cc58983cc04ed7f08560b420cd1262c9cc5f3c1b44da3998e88"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/MOLEX_2041_2061_2091.DXF",
+      "bytes": 146559,
+      "sha256": "f6ad6fab120b8be56de85df4be1df4ccf46dec5d4face91bacd61ebb2411cffa"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/MOLEX_2041_2061_2091.PcbLib",
+      "bytes": 141824,
+      "sha256": "8437069fc813b413738bec6f9adaa28ecb67fd2abe61cacf727997b005b8ebb5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/MOLEX_2061.PcbLib",
+      "bytes": 141824,
+      "sha256": "edc0b099db8018b9458813d902e19bc6b1926340f21c1f02f9f6df6c113aff59"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_22272091/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/038001336.stp",
+      "bytes": 411045,
+      "sha256": "901bc5767ac5e0d58de4a42879d57c434d2d1c4ea9e4f5253f3f1c858c81ff42"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/38001336.LibPkg",
+      "bytes": 29391,
+      "sha256": "048c3065e5e21986d45ce9995807d6de06fe09b8959da084aa99194367f2759f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/38001336.PcbLib",
+      "bytes": 171008,
+      "sha256": "89b3282f54b82f0ef445917714684c458e1d8797dc871c89dc2cf76ee769f096"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/38001336.SchLib",
+      "bytes": 9216,
+      "sha256": "1b172a6acde8ff6980fc90fcc33fd7ecbd5298bd95de9cac0d5e1cc612a908e5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/Downloads/Altium/38001336.LibPkg",
+      "bytes": 29391,
+      "sha256": "048c3065e5e21986d45ce9995807d6de06fe09b8959da084aa99194367f2759f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/Downloads/Altium/38001336.PcbLib",
+      "bytes": 111104,
+      "sha256": "0237d960aee7289ae7260b86f6940ca7ca303d7fd9192bd91224edea0411ae3f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/Downloads/Altium/38001336.SchLib",
+      "bytes": 9216,
+      "sha256": "1b172a6acde8ff6980fc90fcc33fd7ecbd5298bd95de9cac0d5e1cc612a908e5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/Downloads/Altium/ImportGuide.html",
+      "bytes": 8220,
+      "sha256": "cd070472d2129b1093fdfd2b42978b5f9d550f5340a818ce30a33835e24bc5ef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/Downloads/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/ul_38001336/Downloads/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272021.zip",
+      "bytes": 43560,
+      "sha256": "2c0ddf86e14ea45d1be6dfeca0a36191b4a158cafa898ffb501d14c31f0a9c4b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272031.zip",
+      "bytes": 49674,
+      "sha256": "338f7797df58ff0bf1c2ab23a3ebe78fa8a0c98beba74014401e8f025b4598ad"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272041.zip",
+      "bytes": 58991,
+      "sha256": "07da9fe336e721bb4195d2caba7c1cd10a951790e91586a9a8b11a5b47d43862"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272051.zip",
+      "bytes": 69452,
+      "sha256": "9b159d62b9b0476ab4e3241b5e01f5163bb40bc5c5e911c934cdb37a81771a39"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272061.zip",
+      "bytes": 74336,
+      "sha256": "cdc6f6e56ff370d2c2f9daf351c6adad82fe2eb38ef3f5ed44fc98bf91e38f47"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272071.zip",
+      "bytes": 84195,
+      "sha256": "1b74cd61050cf0a2e47235f6f9fc7a129dd1a6a675b5984a5dd4dee8676ca76a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272081.zip",
+      "bytes": 94670,
+      "sha256": "07236a388e672a03ccfa5fb0cdb1a37ceace62280c7e4500a118dc5137f0df95"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272091.zip",
+      "bytes": 98915,
+      "sha256": "6c5de8a68586b7d7266c857c0ebf56c79790dced900f42b092052bdaaf40b56a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272101.zip",
+      "bytes": 109449,
+      "sha256": "cab4dd918ffa1a879b3ee370d0f108505721027acaa7c10f6367627b9c56caa1"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272111.zip",
+      "bytes": 117140,
+      "sha256": "95c7021f4a168132ccba47b382d5cdf973790f6c8d6081117ce843eefd96000a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272121.zip",
+      "bytes": 125170,
+      "sha256": "9f2f9370a5a8ba6a4376b6c4d2fc515448c6d1d81a7b4938e1bc5196cc98ecf0"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272131.zip",
+      "bytes": 132737,
+      "sha256": "0620d2b5fac8acf9661b4f69c6c8dc5d71f51ffef4a393245906c6d03ebdc5c5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272141.zip",
+      "bytes": 140224,
+      "sha256": "ac8ee1e1ed267fa4c994ba0904c51b7f94fa21f8d5d027d2ab398a2a107382f8"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_22272151.zip",
+      "bytes": 147813,
+      "sha256": "fe66c96712a91ba9dfa872e3cccba05979ef39a9cac256ab1e6c47e52f73570c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Molex/zipados/ul_38001336.zip",
+      "bytes": 106430,
+      "sha256": "e02d2f0fb49f7873de96c77c3f404cc8e3b09b570db46fe1605ef2bf53df5ea0"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/CAPC230155_140N_KEM.step",
+      "bytes": 23801,
+      "sha256": "3e6eb3de1aa4e2a163c52a782e33e66f6740733e8207586fa144abdd6907e657"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/CAP_FILES.TXT",
+      "bytes": 10070,
+      "sha256": "f45bb82353e9f885fd401ce51f0dc98d0bb6d0e03aadf129f7ed053402491d4a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/Altium/CAP_LLL215_MUR.step",
+      "bytes": 35803,
+      "sha256": "f9b46beb667856adf0046087a64959ee6fac6f51d34a7468c9d1b794f3703420"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/Altium/ImportGuide.html",
+      "bytes": 8220,
+      "sha256": "cd070472d2129b1093fdfd2b42978b5f9d550f5340a818ce30a33835e24bc5ef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/Altium/LLL215R71A224MA11K.LibPkg",
+      "bytes": 29411,
+      "sha256": "1d082c975fd8a865bb6116f885b171d162bf65d796ddac271eacb6378ef6c1c4"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/Altium/LLL215R71A224MA11K.PcbLib",
+      "bytes": 151552,
+      "sha256": "bfb8c04ff735b077b4aa480420395865e5745f5f4aea8b190b667156cf5b1c42"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/Altium/LLL215R71A224MA11K.SchLib",
+      "bytes": 5632,
+      "sha256": "2c905de0688198d5f27f9ee9f628c1412046873e4d6ff165e56eb42403bc5a22"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/CAP_LLL215_MUR.step",
+      "bytes": 35803,
+      "sha256": "284d138bb903f0740fc4908e82d844f796fc8a58a895215dbde93b55373ce649"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/CAP_LLL_FILES.TXT",
+      "bytes": 671,
+      "sha256": "e59248bd97b0ff9b15a20f86f5519a9dc4c2a7a8b48007a3ea75bcfd3fd71b1a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/C/ul_LLL215R71A224MA11K.zip",
+      "bytes": 60223,
+      "sha256": "fe10cec2857e6f7aee6755879063a83a03913d4d0b4b8beffc177ed5fb0c1208"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/5-1622825-6.IntLib",
+      "bytes": 20992,
+      "sha256": "533618ea5875649e835c16d79287d75313f373e3e94bb32f215885b5448edeee"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/CRT0805-BY-5001EAS.IntLib",
+      "bytes": 34304,
+      "sha256": "dd4ff099df6df94ab3d2be3f290460947971fe2382076db1b2e5578d58ba9a0d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/RESISTOR-0805-ul_ERA6ARB102P/Altium/ERA6ARB102P/ERA6ARB102P.LibPkg",
+      "bytes": 26735,
+      "sha256": "fceb05e876035377ad89cccccfc47790ea2ea2a870817e3c5035e22064b5a517"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/RESISTOR-0805-ul_ERA6ARB102P/Altium/ERA6ARB102P/ERA6ARB102P.PcbLib",
+      "bytes": 144384,
+      "sha256": "caa9912d2cb7c72a9a0e426873391a0f61252c94ec23a30da6f847e831858030"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/RESISTOR-0805-ul_ERA6ARB102P/Altium/ERA6ARB102P/ERA6ARB102P.SchLib",
+      "bytes": 6656,
+      "sha256": "8f00bd20d563a7e398a354dece338d6a88756790252f50eb5ef17bfcaceef06d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/RESISTOR-0805-ul_ERA6ARB102P/Altium/ERA6ARB102P/RES_ERA6A_0805_PAN.step",
+      "bytes": 23783,
+      "sha256": "ba9c1dd97d7b4e0ffec5f909b8bac7b6aad053675f0552adf9216a413482a78c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/RESISTOR-0805-ul_ERA6ARB102P/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/RESISTOR-0805-ul_ERA6ARB102P/RES_ERA6A_0805_PAN.step",
+      "bytes": 23783,
+      "sha256": "bdb344e3e7f31b22dadd82e03d47621d00e115fbe1248925b54e0bc0b6822dd5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/RESISTOR-0805-ul_ERA6ARB102P/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/DOWNLOADS/RESISTOR-0805-ul_ERA6ARB102P.zip",
+      "bytes": 49367,
+      "sha256": "2a59a5abfade3136e0280384b577783f127b5ae719f80e97b3f2c433eaec1de0"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/ERA6ARB102P.LibPkg",
+      "bytes": 34292,
+      "sha256": "f1788e1f7fc2b399afb3d6d61556dccc0eec47ac5794a6fa7b8dfcd29acd3455"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/ERA6ARB102P.PcbLib",
+      "bytes": 144384,
+      "sha256": "caa9912d2cb7c72a9a0e426873391a0f61252c94ec23a30da6f847e831858030"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/ERA6ARB102P.SchLib",
+      "bytes": 6656,
+      "sha256": "8f00bd20d563a7e398a354dece338d6a88756790252f50eb5ef17bfcaceef06d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R/RES_ERA6A_0805_PAN.step",
+      "bytes": 23783,
+      "sha256": "ba9c1dd97d7b4e0ffec5f909b8bac7b6aad053675f0552adf9216a413482a78c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R_Padrao_0805.LibPkg",
+      "bytes": 33727,
+      "sha256": "5ab4d815c4c6d2411af89e0ef4fb73d9d065406fcd6a0634390b36b97db28e74"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R_Padrao_0805.PcbLib",
+      "bytes": 141312,
+      "sha256": "b51775f72a9a6cbd629b978b0de2d9283ca30b3458b73aabb3a305407cfcd889"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Res Cap/R_Padrao_0805.SchLib",
+      "bytes": 6656,
+      "sha256": "dcedb79e7928a6757913fb19327fb9106cb946814eeecfc67e4181d3f326a16c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/Sac5af38fb8a541f1998e47922361cae3z.avif",
+      "bytes": 45743,
+      "sha256": "18b76b5f9b916002d0aecb59aae6f536535334b032095dce51c2680e48731955"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/Altium/ImportGuide.html",
+      "bytes": 8220,
+      "sha256": "cd070472d2129b1093fdfd2b42978b5f9d550f5340a818ce30a33835e24bc5ef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/Altium/THN20-2411.LibPkg",
+      "bytes": 29395,
+      "sha256": "7a5c11515f421540051d332978557efc62e3a39044360a6543837ee0d28717c8"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/Altium/THN20-2411.PcbLib",
+      "bytes": 111616,
+      "sha256": "f75d0ac6fd261960a8a66834ec6899c02a35a0f202def3fb21db5705e7ba9c2a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/Altium/THN20-2411.SchLib",
+      "bytes": 6144,
+      "sha256": "320db58000295908b947fac0a241cb9126cad6fdd83a9eabf532a48af271ad9e"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/THN20-2411.LibPkg",
+      "bytes": 29395,
+      "sha256": "7a5c11515f421540051d332978557efc62e3a39044360a6543837ee0d28717c8"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/THN20-2411.PcbLib",
+      "bytes": 111616,
+      "sha256": "f75d0ac6fd261960a8a66834ec6899c02a35a0f202def3fb21db5705e7ba9c2a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/THN20-2411.SchLib",
+      "bytes": 6144,
+      "sha256": "320db58000295908b947fac0a241cb9126cad6fdd83a9eabf532a48af271ad9e"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411/thn20_3d_drawing.stp",
+      "bytes": 211778,
+      "sha256": "0c02829b7ecfddc303ad592a46166d31c4ddff4169e8a1bf07e8faf59d2f8097"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/Downloads/ul_THN-20-2411.zip",
+      "bytes": 63706,
+      "sha256": "839b30233c8c44bb231db8dff597a31f4f61cf1054f92cac55b67c0eb6c1e5c7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/THN20-2411.LibPkg",
+      "bytes": 29395,
+      "sha256": "7a5c11515f421540051d332978557efc62e3a39044360a6543837ee0d28717c8"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/THN20-2411.PcbLib",
+      "bytes": 126976,
+      "sha256": "57a89ebdefe4d616f0ab9943b279b1de01befb4ede4594dff4625455913da647"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/THN20-2411.SchLib",
+      "bytes": 6144,
+      "sha256": "320db58000295908b947fac0a241cb9126cad6fdd83a9eabf532a48af271ad9e"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/imu_integration-ver_14.PcbDoc",
+      "bytes": 6763520,
+      "sha256": "5f5a502b11abd0f69df15b0b50ab1c8ed41f5f1af93fa989216f54a15cd7f3b3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/20W/thn20_3d_drawing.stp",
+      "bytes": 211778,
+      "sha256": "0c02829b7ecfddc303ad592a46166d31c4ddff4169e8a1bf07e8faf59d2f8097"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/Downloads/ul_THN-30-2411/Altium/ImportGuide.html",
+      "bytes": 8220,
+      "sha256": "cd070472d2129b1093fdfd2b42978b5f9d550f5340a818ce30a33835e24bc5ef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/Downloads/ul_THN-30-2411/Altium/THN30-2411.LibPkg",
+      "bytes": 29395,
+      "sha256": "a66df66e81b110869f1518210afc4cc902df09c8dcb0522a5c525908c392875f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/Downloads/ul_THN-30-2411/Altium/THN30-2411.PcbLib",
+      "bytes": 111616,
+      "sha256": "2dfab6ab45887cb3b27fe619c04ba791ce8d659a6e1909b4cf92d9e01d16b6f9"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/Downloads/ul_THN-30-2411/Altium/THN30-2411.SchLib",
+      "bytes": 6144,
+      "sha256": "fa2df83d723ef7aa01d9a0ade3fccffb09123d9eb2d88adeb73aef8f25a6f766"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/Downloads/ul_THN-30-2411/ImportGuides.html",
+      "bytes": 8103,
+      "sha256": "624c70053143178ffc3efcc9fce101f669d3c1511ab88784441b600dded37fd7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/Downloads/ul_THN-30-2411/readme.txt",
+      "bytes": 1144,
+      "sha256": "582ccad6255cc6ff0e8aaff3dacce1f3c6c0420394a619ba4e03ed75f2ddf4e3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/Downloads/ul_THN-30-2411.zip",
+      "bytes": 67545,
+      "sha256": "9eaf2eee1989eb1e32cdbb315c7a15b315bb0709ac174b6290d04c54916aee95"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/THN30-2411.LibPkg",
+      "bytes": 29395,
+      "sha256": "a66df66e81b110869f1518210afc4cc902df09c8dcb0522a5c525908c392875f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/THN30-2411.PcbLib",
+      "bytes": 147456,
+      "sha256": "20004b5699473cd3febcaf53e145c5bfd7dddfda90237470f006f45bc1ea9af5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/THN30-2411.SchLib",
+      "bytes": 6144,
+      "sha256": "2e091cd5f26422527dd4d032a4976e650c3e93cb75ad240221bf81724dbb02d1"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/TRACO/30W/thn30_3d_drawing.stp",
+      "bytes": 235669,
+      "sha256": "ff4faa67fab2965e8f6c42bb2e4c75792a9635f1bb342ea6eed2487185b138e5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/capacitor_ceramico_smd_0603_x5r_25v_459_2_3a3b2cd6e5c17f592d148be7b998678e.webp",
+      "bytes": 33356,
+      "sha256": "a37cc3ce58fedb6c76397f58874578b6fe4b26278a7ea7ca34e7cfb462b824e0"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/imu_integration-ver_102.PcbLib",
+      "bytes": 4318208,
+      "sha256": "72fbcd1ba71f8098be6e09942716a5d6693342730c853f8a2f3271065448209b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/imu_integration.PcbLib",
+      "bytes": 5427712,
+      "sha256": "3c556f01379ad682dbbfde7273a52c4e434198d45b4a7127f678bc7ea094a192"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/link bibliotecas.txt",
+      "bytes": 159,
+      "sha256": "c197ec0cb899f7f75c31fcfbb848599da21797f6a78ad4c9dd6490a8c313bb3f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/2025-11/resistor_smd_1206_5_de_tolerancia_1_4w_807_2_72a5f695f3ed8e492fe9613dd19b543a_20250818175605.webp",
+      "bytes": 39982,
+      "sha256": "007b0f810ddbd2f58dff9008774a556a4f0e112a7c31ad8794efc377832669ff"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272021/22272021.LibPkg",
+      "bytes": 26729,
+      "sha256": "9336d5fbae2f323efa69daa0ba32e3d84d08413c6cd5f7a4ed67cee506a45d0c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272021/22272021.PcbLib",
+      "bytes": 109056,
+      "sha256": "33df31e032a335089af22ff903907dc26c383ac3249a2c7f1c3bcfb07be44439"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272021/22272021.SchLib",
+      "bytes": 6656,
+      "sha256": "e1e2af3af368336918be67c8dde44f9154498d5372ca1ebdcc1f51193ee93521"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272031/22272031.LibPkg",
+      "bytes": 29391,
+      "sha256": "f2acae5842163d760b4a85a79cd44535070f258cb0ff36364af7d48d0a1376c7"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272031/22272031.PcbLib",
+      "bytes": 109568,
+      "sha256": "28f23c935f3e0f362f7a78fc251b7ca83c3f276d6a5999bad511e56ecd4760b6"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272031/22272031.SchLib",
+      "bytes": 7168,
+      "sha256": "1229f78e25650afae232b508564768308ae93272f0c63e9bb041dc23d9bdddd9"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/22272041 (2).LibPkg",
+      "bytes": 29391,
+      "sha256": "febc881bf6d051d6497975c16144326453a6642bb10051c53fd14771dcca8b5b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/22272041 (2).PcbLib",
+      "bytes": 110080,
+      "sha256": "db269a9eb5bac2f8f5d2e930badf6e939c1937b6348d67d154ba4405574a6aef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/22272041 (2).SchLib",
+      "bytes": 8192,
+      "sha256": "8c4a2c642f1ad2e1953e2591df8c6b64901c8d51c3536576fcfc1e90ee301a32"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/22272041.LibPkg",
+      "bytes": 26729,
+      "sha256": "4eb64352e9bff6289e42b0bde2e4e98d50aa343bb80cae58358306d115089846"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/22272041.PcbLib",
+      "bytes": 110080,
+      "sha256": "26f41781c4dcbf57b327a85ead3462e63c216de84b5c2dbfb75c440b149f534a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/22272041.SchLib",
+      "bytes": 8192,
+      "sha256": "f0ba4a6ec02e26ae98fce5840c2d74232b07f521a504a182f37bd10cdfb83ae4"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/CONN_MOLEX_22272041/CONN_AE-6410-04A_MOL.PcbLib",
+      "bytes": 112640,
+      "sha256": "56c418d1a30f33f809a8f06acc7943a415777576d8060a74022b0f99f31a9251"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/CONN_MOLEX_22272041/CONN_MOLEX_22272041.SchLib",
+      "bytes": 8704,
+      "sha256": "6b6d13130f7800914c0b0b5396612e6bfba5a5884fad99b6f862aa1606bca8c0"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272041/CONN_MOLEX_22272041.IntLib",
+      "bytes": 23040,
+      "sha256": "557159639cee01c8bc8567154a46abc93a474ca6f5e26923dbd48c5fe476d929"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272051/22272051.LibPkg",
+      "bytes": 29491,
+      "sha256": "bca6b56d5902041b98146fa7879cff39ce39df8ef5d04039edf0ce19e3d09b4d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272051/22272051.PcbLib",
+      "bytes": 110080,
+      "sha256": "0dc3c1853f0c580d55ad5c4e2ef0ff048a77687e40690fa45802be34ccd1d084"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272051/22272051.SchLib",
+      "bytes": 8704,
+      "sha256": "d1c5c4be3eff32c592d8907784ec8d5e034dc6bbd1dfe08e45f7317638f661b6"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272061/22-27-2061.IntLib",
+      "bytes": 22016,
+      "sha256": "66410e3ee823e3919ad8a122009485657aa6f1e15fa6e5e5e11d8549b0916d76"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272061/22272061.LibPkg",
+      "bytes": 29491,
+      "sha256": "6cf832f64b045a1be1918cd37279a83bdcab12859f760b1e5e2c950958dd88dd"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272061/22272061.PcbLib",
+      "bytes": 111104,
+      "sha256": "217986ea4d6160feccc35ad53eb43bfec1e653da14962e5dc4861c1dd3dcfa7a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272061/22272061.SchLib",
+      "bytes": 9216,
+      "sha256": "03603c9672eabfdc918740ad43d33d4ec3d5bdf325c6c5e63163058eb84bab48"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272091/22272091.IntLib",
+      "bytes": 22528,
+      "sha256": "01ea7150df8a215156dd1ab6d98aacef22c9e3f6f93a3b8d17f771e53c8552c3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272091/22272091.LibPkg",
+      "bytes": 29391,
+      "sha256": "0b6442cb2901aeaf4747054a598ff2c80f715024f29dcc46ea229b01a970ca96"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272091/22272091.PcbLib",
+      "bytes": 112128,
+      "sha256": "3d1eb92bda4b3d5d0a29c8efa4e317e8ae524cf9f7d809f686110c3ec2e1ebf4"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272091/22272091.SchLib",
+      "bytes": 10752,
+      "sha256": "3e7822c72d66c33ac15d2fc1ff2867b40d956a7488afc1f4f4066f6a33aedd21"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/22272091/ImportGuide.html",
+      "bytes": 8220,
+      "sha256": "cd070472d2129b1093fdfd2b42978b5f9d550f5340a818ce30a33835e24bc5ef"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/molex.txt",
+      "bytes": 2863,
+      "sha256": "386d7fab2742cc394b1d415805f4d0d6e6524339d7480f5dffbb3a99d120061f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2021/ul_22272021.zip",
+      "bytes": 35641,
+      "sha256": "cdc47050eb22aa5477947428e0ee117513a1141de05d6dde8a3283a024b43a02"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2031/ul_22272031.zip",
+      "bytes": 39220,
+      "sha256": "89b1d18dd5cfa93d9914e4541bc451796b0e099e988db5a40ea2f9a9ce41e3cd"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2041/173534221-19-0022272041/0022272041.stp",
+      "bytes": 155637,
+      "sha256": "f0a92125c130361a1d6d21b89f34d056599f079601a583346b0a0eb274845f8c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2041/173534221-19-0022272041/0022272041.txt",
+      "bytes": 442,
+      "sha256": "401f7288809b027bbd305b13e1275695b7faee545ba9aaf68b26071514cdcc0d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2041/173534221-19-0022272041.zip",
+      "bytes": 22471,
+      "sha256": "10e6ae7ba11fcd2d7901baed6d07bf2c155eb5835408c5abbbbc46eba8044f48"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2041/173534436-19-0022272041/0022272041.stp",
+      "bytes": 155637,
+      "sha256": "f0a92125c130361a1d6d21b89f34d056599f079601a583346b0a0eb274845f8c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2041/173534436-19-0022272041/0022272041.txt",
+      "bytes": 442,
+      "sha256": "401f7288809b027bbd305b13e1275695b7faee545ba9aaf68b26071514cdcc0d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2041/173534436-19-0022272041.zip",
+      "bytes": 22471,
+      "sha256": "10e6ae7ba11fcd2d7901baed6d07bf2c155eb5835408c5abbbbc46eba8044f48"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2041/ul_22272041 (2).zip",
+      "bytes": 39707,
+      "sha256": "6533c5a571021f5662520ed9c6709a3344ff608929c5385d23faff0f1faf7b20"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2041/ul_22272041.zip",
+      "bytes": 36869,
+      "sha256": "e4c03fc31c754b61bbbaa2dc1feb436ac666d1cd3c3267181f7a00509f089d0b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2051/ul_22272051.zip",
+      "bytes": 37722,
+      "sha256": "9d81d1a3ef50ce260270507f599d5db104daba6475a27eb551a13de7829328f1"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2061/ul_22272061.zip",
+      "bytes": 38056,
+      "sha256": "8fb80f5a3cf5c7c8abe4870981777f13d4fd41a2df6cab6a6971453cb8ca5cde"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2091/173534372-19-0022272091/0022272091.stp",
+      "bytes": 368271,
+      "sha256": "527b301c1b583eb19bab9443312440e0f693be569c079e670d5e73eadd20adff"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2091/173534372-19-0022272091/0022272091.txt",
+      "bytes": 442,
+      "sha256": "06abec640be7a68abf3fc69b13ca0dbbee4a101d3c2a27ef79758ff3df848182"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2091/173534372-19-0022272091.zip",
+      "bytes": 49402,
+      "sha256": "35615fa1b920a96868e679af3b7595879b80d9617292010141263dff7815e879"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Connectors/MOLEX/zipados/2091/ul_22272091.zip",
+      "bytes": 42597,
+      "sha256": "052bcce0597bd4148910817d3943861046702f0f076409d81be1b6e769e9dd50"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/IEAv_Lib/IEAv.LibPkg",
+      "bytes": 31649,
+      "sha256": "75791b2972afc9b83324cc7a5378a5e07c0fb1699faf38bf0086be2721956eb5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/IEAv_Lib/IEAv.PcbLib",
+      "bytes": 10304000,
+      "sha256": "fbec22243dc8f52a7f7a734d7aa9522d7569ffeff2332a145140966a9d9456e1"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/IEAv_Lib/IEAv.SCHLIB",
+      "bytes": 95232,
+      "sha256": "48e5be9875bd15b81eb9924f07d5c87d2aaead626616483261f510e53f762366"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/IEAv_Lib/ieavlib.txt",
+      "bytes": 567,
+      "sha256": "16dd5eb156cfd714124077e8f6fae379d0fea17c2376627931b41c96b7f6d955"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/Integrated_Library1.LibPkg",
+      "bytes": 35081,
+      "sha256": "5b6f5811694c02d366488fac349024815fb480f1e676ef64e3688ad6eddb5387"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/PcbLib1.PcbLib",
+      "bytes": 204288,
+      "sha256": "0e9c42d0b877feb63a6020673e9ad2f594a10485775efa23ecabebae555011be"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/board_computer.lib",
+      "bytes": 276992,
+      "sha256": "5ee4c6897d135262da8081800206c3eef4ef015c8f25c063db71d50eba871765"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Libraries/gateway_imu_2.PcbDoc",
+      "bytes": 9861632,
+      "sha256": "0cb01e74f10aa10170df1dfc5d8a18ccb3009e02ae47f51736e6bcf1430de4ed"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/Assembly-instructions-for-SCHA600.pdf",
+      "bytes": 1423413,
+      "sha256": "99d439c81994eaead6069d93f14793b66c8b8ef34a5f376141251ee10b91f0d4"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/DataSheet_Murata.pdf",
+      "bytes": 1716551,
+      "sha256": "825e32f5ce0abb1cdca4a8d13668304b2bef62a27bd73b9b87ca50c1b599195a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/IMU Murata MEMS SCHA63T-K03_Datasheet.pdf",
+      "bytes": 3827969,
+      "sha256": "70567bbfd72b01c2b73525e40166f4ad847d2ae3ea25b766cfd420d73fd1ae1a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/LIB_SCHA63T-K03-05/SCHA63T-K03-05/Altium/Readme.html",
+      "bytes": 326,
+      "sha256": "8ba88fdab9ae18b8070bed51af3bf3f3b964277ed0a045046b7b08a306e023ed"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/LIB_SCHA63T-K03-05/SCHA63T-K03-05/Altium/SCHA63T-K03-05.SchLib",
+      "bytes": 7168,
+      "sha256": "d43d9d7cb14ea48ebf2f3e520dbf881395a59f2d82aa85ac2a63bb44be7af2f3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/LIB_SCHA63T-K03-05/SCHA63T-K03-05/Altium/SCHA63T-K03-05.epw",
+      "bytes": 308,
+      "sha256": "cfe95c7e422c8a6421671a6f7e3f2de45a2d313efb425b96edb436534c2b525c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/LIB_SCHA63T-K03-05/SCHA63T-K03-05/Altium/SCHA63TK0305.PcbLib",
+      "bytes": 116736,
+      "sha256": "04e4ba9d474d6569892db479868cc6cc8edadf03daff438602d7f9c383ead087"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/LIB_SCHA63T-K03-05/license.txt",
+      "bytes": 291,
+      "sha256": "73a80f36cf69a7cfa596bbb56148de0d2ca8534ba2bae2031d95dab79235ef11"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/LIB_SCHA63T-K03-05/version.bin",
+      "bytes": 7,
+      "sha256": "05c82883038bb3f71e6a2533e21af77efa9a204cc012e6e6d8c6a47466f17a3f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Murata/LIB_SCHA63T-K03-05.zip",
+      "bytes": 1998897,
+      "sha256": "69d946be25046285564776bf75035ed37ecfea6b6f939408afbf718a5f3d33fb"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Design Rule Check - imu_integration-ver_22.drc",
+      "bytes": 68658,
+      "sha256": "1d8f2adcfb0f2493c62d9d7121d5042acea327eee6402f718408fa8d532b241c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Design Rule Check - imu_integration-ver_22.html",
+      "bytes": 354388,
+      "sha256": "09e4749b9db618a57c30497211bd9592fc1b4684d35e6a5dbc124b3444179542"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2-macro.APR_LIB",
+      "bytes": 2327,
+      "sha256": "ce8d3c3f182d1038a43bfa787225553cbd0d7ec9d30248bdcf2128502750c1af"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2.EXTREP",
+      "bytes": 898,
+      "sha256": "43f5cbc8e365c9e03625ff0bd687fa311c33a924b5734ed3cd7b683a4176b32f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2.GBL",
+      "bytes": 248613,
+      "sha256": "99aeb8e4917c47bf4b3f5b6540930b890ad184c0b85820851dd4caa472f09a8d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2.GD1",
+      "bytes": 17092,
+      "sha256": "28c307aa542af3c199fa6ef844403fbba90503cfc005319a1249abf6e491e230"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2.GG1",
+      "bytes": 10297,
+      "sha256": "107dc8dc89cc829abf4d57cc34da44e9b753b9771a1066d5ac88dec126845a2b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2.GM1",
+      "bytes": 1741,
+      "sha256": "d68576ad4dbcc47139d6e1d54b820d6147c2abbb88da2385f99a4f20d7f12bf1"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2.GTL",
+      "bytes": 175918,
+      "sha256": "4fcbef8d3793457c94db7ba3bafb909795d0b4a1df5f382d893d614a32cac981"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2.RUL",
+      "bytes": 362,
+      "sha256": "d82d566a7c093886c02a857fcdaaacdd8cbb0e790d3d56978b05783844db5bd2"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2.apr",
+      "bytes": 3700,
+      "sha256": "983ccf2bbb44fcc600d8c43c58ee37e59380e302e4e346a77c15c90a8bd7efcd"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2_Copper_Signal_Bot.gbr",
+      "bytes": 294018,
+      "sha256": "b2e191bbc40f7f163fc890b1c0c09bae4783830ee1a708d526a337d31efcb542"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2_Copper_Signal_Top.gbr",
+      "bytes": 202477,
+      "sha256": "b87105d1d44ee6ca72c2934353baefc376cd941572534404a42823a718018c02"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2_Keep-out.gbr",
+      "bytes": 920,
+      "sha256": "b0363cda08d9244f8bd2eab3a49576d1eb16620317fe838b1e3a881dfbdc6f61"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2_Legend_Bot.gbr",
+      "bytes": 206571,
+      "sha256": "24173ca588d785cc5b987448aebd80b7831e834d92a08c797603ef2d870bd2d5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2_Legend_Top.gbr",
+      "bytes": 252202,
+      "sha256": "6148904a4e7ad3ce636032efc98b76363ac0f512068324bb6a8528adfb50646d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2_NPTH_Drill.gbr",
+      "bytes": 595,
+      "sha256": "cfe6363bb83274dc6d4d2a0213989117a6d25f4702de433a62649e5a92b58028"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2_PTH_Drill.gbr",
+      "bytes": 4465,
+      "sha256": "50244d46678d67c3ceabd93199d6c15dde828a503a7b74328074bd6ca3146bf8"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Gerber Output/gateway_imu_2_Profile.gbr",
+      "bytes": 741,
+      "sha256": "cbd4ce16db40c97f20e3a81910e7a15a313cddb8b582083d7ec5b8600cb700f3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/Status Report.Txt",
+      "bytes": 502,
+      "sha256": "76eba43db1337fb763bb487c0b78b13f9024631cbb06b9b4de9e3fbaf7d6dc40"
+    },
+    {
+      "path": "imu-gateway-pcb-main/Outputs/imu_gateway.PDF",
+      "bytes": 3948530,
+      "sha256": "45cefd141fd789db6f7cfb64e1423e5ef91de7b9fb555afa02ce29b35a2feaf5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/README.md",
+      "bytes": 574,
+      "sha256": "068a40c53804d93c9f242a13ad211a46536ae220a76c3eb51f27a7971ecd57bc"
+    },
+    {
+      "path": "imu-gateway-pcb-main/TCK-050.LibPkg",
+      "bytes": 29489,
+      "sha256": "96bd836de66b06e2ff10f2e2ee55019775c0f02bcd538ee76bf1b08e0fd36868"
+    },
+    {
+      "path": "imu-gateway-pcb-main/TCK-050.PcbLib",
+      "bytes": 101376,
+      "sha256": "7f2f47a1c10fd84cf2154d64307895b8ae05a167866c81f21e669c2a56c5dc5d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/TCK-050.SchLib",
+      "bytes": 9216,
+      "sha256": "ea035fe21b5f98514a5cc591b0ce63ac393c1886089d87a3ed6abb59ecdc74bc"
+    },
+    {
+      "path": "imu-gateway-pcb-main/backups/backup.SchDoc",
+      "bytes": 435200,
+      "sha256": "67643e3def456ce461e3a8214ddcf301848cf709ca3ba67e1307883e8e42ea57"
+    },
+    {
+      "path": "imu-gateway-pcb-main/backups/imu_gateway_backup.PcbDoc",
+      "bytes": 11210240,
+      "sha256": "588ce964fcd4ea42a53295048377d32201b297c7c69cac3efd190361434e33ba"
+    },
+    {
+      "path": "imu-gateway-pcb-main/backups/imu_integration-ver_20.PcbDoc",
+      "bytes": 6458880,
+      "sha256": "5402531a10fced325613a0de5fac8ec0a6e876532c43003d0703f41bfd6fd220"
+    },
+    {
+      "path": "imu-gateway-pcb-main/bom_gateway_V0.3.0 1.pdf",
+      "bytes": 71426,
+      "sha256": "71e43999d99f56856e3eac64a3eb0d079986b28d3d71ace742b2fd3175eef738"
+    },
+    {
+      "path": "imu-gateway-pcb-main/bom_gateway_V0.3.0 1.xlsx",
+      "bytes": 14628,
+      "sha256": "1e37c87dc3ad370e5a613a485ff9032f876a737018dd9d1d2dcf90e307d49d5f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/communication.SchDoc",
+      "bytes": 532992,
+      "sha256": "0e4a829a9ca344120af97e52cd2a3d8e9f9123c4a823e645fe475c2ed2c69bdf"
+    },
+    {
+      "path": "imu-gateway-pcb-main/datasheets/ACS712.pdf",
+      "bytes": 698507,
+      "sha256": "a17dc318cd51d233c8d471c8ab2a23978bcf8b7e363f6b89cad2e4e9faa45783"
+    },
+    {
+      "path": "imu-gateway-pcb-main/datasheets/LM7805.PDF",
+      "bytes": 186309,
+      "sha256": "7204190daf9ff058d312ceeee7326223f274dbe7b534b59f7d356483425be158"
+    },
+    {
+      "path": "imu-gateway-pcb-main/datasheets/MC7800-D.PDF",
+      "bytes": 500099,
+      "sha256": "1abf8c25c3f7b488a73ba45a3ae6f0981a8957140f10708ec55678e6602367b3"
+    },
+    {
+      "path": "imu-gateway-pcb-main/datasheets/adm2483.pdf",
+      "bytes": 403686,
+      "sha256": "3017d573a2c2801bfe851239f94bee7dc8e787e39ab8027c376a192a5ac87b6a"
+    },
+    {
+      "path": "imu-gateway-pcb-main/datasheets/thn15n-application_notes/thn15n_characteristic_curves.pdf",
+      "bytes": 6195966,
+      "sha256": "55c97c16aab45367f260f53ca4ef6f850dfcbaee1cc3057bc35677a8eccbb580"
+    },
+    {
+      "path": "imu-gateway-pcb-main/datasheets/thn15n-application_notes/thn15n_emc_consideration.pdf",
+      "bytes": 274459,
+      "sha256": "8e3e1b00355430acbf4bf909bb2658482b8410b3609ab3ce8042001039357622"
+    },
+    {
+      "path": "imu-gateway-pcb-main/datasheets/thn15n-application_notes/thn15n_voltage_adjustment.pdf",
+      "bytes": 353873,
+      "sha256": "3fb58b6c352df196ee5b85054c8bdb3c60452c47bf7dc02aacf3edd7c0735c29"
+    },
+    {
+      "path": "imu-gateway-pcb-main/datasheets/thn15n_datasheet.pdf",
+      "bytes": 1041428,
+      "sha256": "46fb7ec334c9d0f9f559e4e3d8fb10c9098b1672fd700dd2f2f6013ce56dadd2"
+    },
+    {
+      "path": "imu-gateway-pcb-main/docs/imu_gateway.pdf",
+      "bytes": 191150,
+      "sha256": "9cd8b76574755123f4d3d8b23ed0ff15849db1dcf2abc4582a26b2edb380842c"
+    },
+    {
+      "path": "imu-gateway-pcb-main/docs/imu_gateway02.pdf",
+      "bytes": 191353,
+      "sha256": "9cb5bc1480352eaa0b852301f44f46f3f9e5c59e518aedc128061c26009f7217"
+    },
+    {
+      "path": "imu-gateway-pcb-main/docs/pcb3d_v100.png",
+      "bytes": 85796,
+      "sha256": "737ce60c4b9633a673d14bcabe8830df490e4ff36e46755a97d745d988966c8b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/docs/pcb3d_v101.png",
+      "bytes": 115398,
+      "sha256": "c31e0ffdaf3755baa21e222c5cb2101897ecfb05f130cee71267237d822684d5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gateway_imu_2.DWG",
+      "bytes": 384517,
+      "sha256": "3af6f76a1fe351c12dab96160eedf826bc43f306f1075d863354ea44beaf90d1"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gateway_imu_2.PcbDoc",
+      "bytes": 11979776,
+      "sha256": "01981e77929427eb1e5e6a434d4beca60dfa9d80791a295d8390268bc787fea2"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gateway_imu_2.pdf",
+      "bytes": 580298,
+      "sha256": "027b4eb00cece3584c6ce7a3b7564ac8278abdae8d95096ad394ffaf4bfa3507"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gateway_imu_2.step",
+      "bytes": 59513259,
+      "sha256": "04fb9f3efd7eb1bac7f8574a86c6f7d6ed9ac8a62934c042e6ffe13615c2007f"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gerbers/gateway_imu_2.GBL",
+      "bytes": 248613,
+      "sha256": "99aeb8e4917c47bf4b3f5b6540930b890ad184c0b85820851dd4caa472f09a8d"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gerbers/gateway_imu_2.GD1",
+      "bytes": 17092,
+      "sha256": "28c307aa542af3c199fa6ef844403fbba90503cfc005319a1249abf6e491e230"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gerbers/gateway_imu_2.GG1",
+      "bytes": 10297,
+      "sha256": "107dc8dc89cc829abf4d57cc34da44e9b753b9771a1066d5ac88dec126845a2b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gerbers/gateway_imu_2.GM1",
+      "bytes": 1741,
+      "sha256": "d68576ad4dbcc47139d6e1d54b820d6147c2abbb88da2385f99a4f20d7f12bf1"
+    },
+    {
+      "path": "imu-gateway-pcb-main/gerbers/gateway_imu_2.GTL",
+      "bytes": 175918,
+      "sha256": "4fcbef8d3793457c94db7ba3bafb909795d0b4a1df5f382d893d614a32cac981"
+    },
+    {
+      "path": "imu-gateway-pcb-main/imu_gateway.Annotation",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "imu-gateway-pcb-main/imu_gateway.IntLib",
+      "bytes": 4060160,
+      "sha256": "9c1c258b1bb43666bab74579affdfaa610968960f2cbea403173dfc4a35726a4"
+    },
+    {
+      "path": "imu-gateway-pcb-main/imu_gateway.OutJob",
+      "bytes": 50012,
+      "sha256": "96faad1acf9353bcad38508ba2a384a8ea70f431ff243bc68b0b87aa3070135b"
+    },
+    {
+      "path": "imu-gateway-pcb-main/imu_gateway.PrjPcb",
+      "bytes": 106679,
+      "sha256": "23053571edffa770bac164c61dc303623e8994387473246ede33ffbe37f44c00"
+    },
+    {
+      "path": "imu-gateway-pcb-main/imu_gateway.SCHLIB",
+      "bytes": 15360,
+      "sha256": "a2f855f0133b929dc1dc6fd62a656abc1e3935ea76383ab4ac505065ee180d5e"
+    },
+    {
+      "path": "imu-gateway-pcb-main/imu_gateway.SchDoc",
+      "bytes": 496128,
+      "sha256": "451ec6e345abd9aadfd378ce45cba0e84b26a9f043066aa8e107d077dbd106f5"
+    },
+    {
+      "path": "imu-gateway-pcb-main/imu_mems.SchDoc",
+      "bytes": 1118720,
+      "sha256": "599fbf8df3d7521cf4422522e04cf5aa5efe8f9e9625961ffcfcaa8a1573db40"
+    },
+    {
+      "path": "imu-gateway-pcb-main/imu_sensors.SchDoc",
+      "bytes": 51200,
+      "sha256": "7e43f4c15547ed5534f19d29ec26ba01b3b9480d468f6272499c5b51f10ac430"
+    },
+    {
+      "path": "imu-gateway-pcb-main/power_supply.SchDoc",
+      "bytes": 832512,
+      "sha256": "c4fcc6de9e6653534a2cab199265f65a1e8496ccb19cfca912e3dbec982d56c0"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/.gitattributes",
+      "bytes": 216,
+      "sha256": "b0fc0583bc9aae1bc6e0ff5d92fff7d3b21662f808b1923aa2fb54825abc10ec"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/.gitignore",
+      "bytes": 342,
+      "sha256": "aa7dfb06edefde980ea2ef5f55fee06d28dfe47b53ed047136913c62c39c2e1a"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/README.md",
+      "bytes": 397,
+      "sha256": "25ae075ad133c4f10c4822bc2a8c2c729a0dd21eb39f6f3b484c0e18bb256af4"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/ifog_3x3.BomDoc",
+      "bytes": 96151,
+      "sha256": "d35f010743718efdca22c5c7a5bb7309110eba6053cbc54fab7f4f99b3ebd569"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/ifog_3x3.OutJob",
+      "bytes": 64946,
+      "sha256": "f72157bdeb112291dc82954ae8efb6c4e7b3d8e1437da1faea00076d4302c535"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/ifog_3x3.PcbDoc",
+      "bytes": 9490432,
+      "sha256": "3208bb4e76f86868820072c8673c294e10a943460b723811948c661bd611fe2d"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/ifog_3x3.PrjPcb",
+      "bytes": 60523,
+      "sha256": "f87db7300b3974342b1111c0e0224ed3913aa8e48f5e2e0a8a2db44ee1bd514f"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/ifog_3x3.SchDoc",
+      "bytes": 165888,
+      "sha256": "5445bb27c18249abf5880eed144b5420838f5b7c7fecb3ca37bfb12eb0a57562"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/ifog_3x3_des_1.IntLib",
+      "bytes": 16384,
+      "sha256": "8dc40397b7c56d3ecfb58f497a212637084bef78f7a4afafd660e70aa3563a47"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/output/ifog_3x3.pdf",
+      "bytes": 1581084,
+      "sha256": "b57b445f2f9699dcb13859290f7dadbc503276b6f53bb4c7d0a812eae6987b39"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/output/ifog_3x3.step",
+      "bytes": 18453478,
+      "sha256": "a09c2317c49f8566d9e5b41c10c0d197a745ada150bfbf4c9637305f59a81d04"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/output/v0.0.1.png",
+      "bytes": 210250,
+      "sha256": "8fc61c9b555481534c1e923b12d13dd2b9316c67f57c75ba76689cfed992fab6"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/output/v1.0.0_bot.png",
+      "bytes": 145332,
+      "sha256": "a9a166869a4b37f56f85b22af44a861fb76d3bbae27aba932f28f15b4c5c1901"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/output/v1.0.0_top.png",
+      "bytes": 252732,
+      "sha256": "3298ca53a03c19ccd8b96c68596de142cf6c14de9dcf3b6baf840b84889bb83a"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/output/v1.0.1_top.png",
+      "bytes": 204995,
+      "sha256": "e6ef0cc19c824eff55bf27ea9b9cf1e9e6e333857fab90ec9e4b6c34926084b8"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/sch_analog_to_digital_ads1256.SchDoc",
+      "bytes": 178688,
+      "sha256": "ed894677f34b054893f16be26faf1b07c3511ed8a4b8574fe56dceaffe5394cd"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/sch_auxiliaries.SchDoc",
+      "bytes": 54784,
+      "sha256": "ac9047b8467ece9be6e5d03cd58f9c0107f6651bee9262acae38319e58c24476"
+    },
+    {
+      "path": "pcb-ifog-acc-ad24bit-master/sch_transimpedance.SchDoc",
+      "bytes": 534016,
+      "sha256": "9e42fbd4f780b9accf8f1260fb065b303d3c7005657de532fee7aa9bba658c14"
+    }
+  ]
+}

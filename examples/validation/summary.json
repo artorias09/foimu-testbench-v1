@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "unit_integration_tests": 33,
+  "normal_packets": 1000000,
+  "normal_metrics": {
+    "packets_received": 1000000,
+    "packets_lost": 0,
+    "checksum_errors": 0,
+    "framing_errors": 0,
+    "buffer_peak_bytes": 53
+  },
+  "elapsed_wall_s": 22.75754021800003,
+  "scenarios": {
+    "checksum": {
+      "packets_received": 901,
+      "packets_lost": 100,
+      "checksum_errors": 101,
+      "framing_errors": 100,
+      "resync_events": 100,
+      "jitter_max_s": 0.01000000000000135
+    },
+    "loss": {
+      "packets_received": 901,
+      "packets_lost": 100,
+      "checksum_errors": 0,
+      "framing_errors": 0,
+      "resync_events": 0,
+      "jitter_max_s": 0.01000000000000135
+    },
+    "truncate": {
+      "packets_received": 901,
+      "packets_lost": 100,
+      "checksum_errors": 101,
+      "framing_errors": 100,
+      "resync_events": 100,
+      "jitter_max_s": 0.01000000000000135
+    },
+    "header": {
+      "packets_received": 901,
+      "packets_lost": 100,
+      "checksum_errors": 1,
+      "framing_errors": 100,
+      "resync_events": 100,
+      "jitter_max_s": 0.01000000000000135
+    },
+    "byte": {
+      "packets_received": 901,
+      "packets_lost": 100,
+      "checksum_errors": 101,
+      "framing_errors": 100,
+      "resync_events": 100,
+      "jitter_max_s": 0.01000000000000135
+    },
+    "jitter": {
+      "packets_received": 1001,
+      "packets_lost": 0,
+      "checksum_errors": 0,
+      "framing_errors": 0,
+      "resync_events": 0,
+      "jitter_max_s": 0.0019743485263057445
+    }
+  },
+  "source_sha256": "267ab905a2e0132fc5062d57c52bf8c2f3c707e347322ed5efeea31f8beff25a",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "not_validated": [
+    "Windows USB/COM",
+    "real 8-hour soak",
+    "STM32 timing",
+    "sensor-level HIL",
+    "installed IEAv revision"
+  ]
+}

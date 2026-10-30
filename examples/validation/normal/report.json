@@ -1,0 +1,324 @@
+{
+  "simulator_version": "0.1.0",
+  "protocol": "gateway53-fletcher16-le-v1",
+  "source_sha256": "267ab905a2e0132fc5062d57c52bf8c2f3c707e347322ed5efeea31f8beff25a",
+  "started_utc": "2026-10-29T02:47:53.866937+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "mode": "virtual_deterministic",
+  "config": {
+    "schema_version": 1,
+    "protocol": "gateway53-fletcher16-le-v1",
+    "seed": 20261028,
+    "rate_hz": 100.0,
+    "packets": 1000000,
+    "chunk_sizes": [
+      53
+    ],
+    "stream_timeout_s": 0.25,
+    "faults": {
+      "drop_every": 0,
+      "checksum_every": 0,
+      "byte_every": 0,
+      "header_every": 0,
+      "truncate_every": 0,
+      "jitter_s": 0.0
+    }
+  },
+  "end_s": 10000.0,
+  "raw_bytes": 53000000,
+  "wire_sha256": "6df4a9fa678f77e0e54c253b68e2dd186c467e9816e8216e0fc3dd3f13d7f6e2",
+  "raw_recorded": false,
+  "metrics": {
+    "packets_expected": 1000000,
+    "packets_received": 1000000,
+    "packets_lost": 0,
+    "packets_lost_semantics": "candidate counter gaps; not exact physical loss; assumes forward delta <128",
+    "counter_discontinuities": 0,
+    "duplicates": 0,
+    "out_of_order_or_reset": 0,
+    "clock_regressions": 0,
+    "stream_timeouts": 0,
+    "reconnections": 0,
+    "timeouts_by_sensor": {
+      "ifog_x": null,
+      "ifog_y": null,
+      "ifog_z": null,
+      "acc": null,
+      "mems": null,
+      "temperature": null
+    },
+    "timeouts_by_sensor_reason": "Legacy wire has no unambiguous validity/timeout flags",
+    "sentinel_suspicions": {
+      "ifog_x": 4000,
+      "ifog_y": 0,
+      "ifog_z": 500,
+      "acc": 0
+    },
+    "period_s": {
+      "n_finite": 999999,
+      "mean": 0.009999999999847716,
+      "std_population": 3.773029826690776e-13,
+      "minimum": 0.00999999999839929,
+      "maximum": 0.010000000000218279,
+      "nan": 0,
+      "inf": 0,
+      "max_identical_run": 24
+    },
+    "jitter_max_s": 1.6007108832871708e-12,
+    "largest_gap_without_valid_data_s": 0.010000000000218279,
+    "latency_mean_s": null,
+    "latency_max_s": null,
+    "latency_reason": "No source timestamp on legacy wire; physical sample latency unknown",
+    "sensors": {
+      "ifog_x": {
+        "n_finite": 1000000,
+        "mean": -6.58469860668337e-16,
+        "std_population": 70.71067824569148,
+        "minimum": -100.0,
+        "maximum": 100.0,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "ifog_y": {
+        "n_finite": 1000000,
+        "mean": 25.0,
+        "std_population": 0.0,
+        "minimum": 25.0,
+        "maximum": 25.0,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      },
+      "ifog_z": {
+        "n_finite": 1000000,
+        "mean": 99.95000000000975,
+        "std_population": 57.73501970115827,
+        "minimum": 0.0,
+        "maximum": 199.89999389648438,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "acc_x": {
+        "n_finite": 1000000,
+        "mean": 0.0,
+        "std_population": 0.0,
+        "minimum": 0,
+        "maximum": 0,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      },
+      "acc_y": {
+        "n_finite": 1000000,
+        "mean": 0.0,
+        "std_population": 0.0,
+        "minimum": 0,
+        "maximum": 0,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      },
+      "acc_z": {
+        "n_finite": 1000000,
+        "mean": 2048.0,
+        "std_population": 0.0,
+        "minimum": 2048,
+        "maximum": 2048,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      },
+      "acc_tap": {
+        "n_finite": 1000000,
+        "mean": 1024.0,
+        "std_population": 0.0,
+        "minimum": 1024,
+        "maximum": 1024,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      },
+      "temperature": {
+        "n_finite": 1000000,
+        "mean": 31.749995000000713,
+        "std_population": 3.105782644248481,
+        "minimum": 25.0,
+        "maximum": 38.4999885559082,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "mems_gyro_x": {
+        "n_finite": 1000000,
+        "mean": -4.411292168199355e-20,
+        "std_population": 0.019641854987751707,
+        "minimum": -0.02777777798473835,
+        "maximum": 0.02777777798473835,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "mems_gyro_y": {
+        "n_finite": 1000000,
+        "mean": 0.0069444444961845875,
+        "std_population": 0.0,
+        "minimum": 0.0069444444961845875,
+        "maximum": 0.0069444444961845875,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      },
+      "mems_gyro_z": {
+        "n_finite": 1000000,
+        "mean": 0.027763888891702414,
+        "std_population": 0.016037505469609584,
+        "minimum": 0.0,
+        "maximum": 0.05552777647972107,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "mems_acc_x": {
+        "n_finite": 1000000,
+        "mean": 0.0,
+        "std_population": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      },
+      "mems_acc_y": {
+        "n_finite": 1000000,
+        "mean": 0.0,
+        "std_population": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      },
+      "mems_acc_z": {
+        "n_finite": 1000000,
+        "mean": 9.8100004196167,
+        "std_population": 0.0,
+        "minimum": 9.8100004196167,
+        "maximum": 9.8100004196167,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1000000
+      }
+    },
+    "temperature_slots": {
+      "0": {
+        "n_finite": 125000,
+        "mean": 29.999960000000442,
+        "std_population": 2.8867513457181597,
+        "minimum": 25.0,
+        "maximum": 34.99991989135742,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "1": {
+        "n_finite": 125000,
+        "mean": 30.499970000000665,
+        "std_population": 2.886751345908735,
+        "minimum": 25.500009536743164,
+        "maximum": 35.49993133544922,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "2": {
+        "n_finite": 125000,
+        "mean": 30.999980000000235,
+        "std_population": 2.8867513458746807,
+        "minimum": 26.000019073486328,
+        "maximum": 35.99993896484375,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "3": {
+        "n_finite": 125000,
+        "mean": 31.499989999999887,
+        "std_population": 2.8867513457530287,
+        "minimum": 26.500030517578125,
+        "maximum": 36.49995040893555,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "4": {
+        "n_finite": 125000,
+        "mean": 32.00000000000014,
+        "std_population": 2.886751346056398,
+        "minimum": 27.00004005432129,
+        "maximum": 36.999961853027344,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "5": {
+        "n_finite": 125000,
+        "mean": 32.50000999999981,
+        "std_population": 2.8867513457438516,
+        "minimum": 27.500049591064453,
+        "maximum": 37.499969482421875,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "6": {
+        "n_finite": 125000,
+        "mean": 33.000019999999935,
+        "std_population": 2.8867513458351937,
+        "minimum": 28.000059127807617,
+        "maximum": 37.99998092651367,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      },
+      "7": {
+        "n_finite": 125000,
+        "mean": 33.50003000000031,
+        "std_population": 2.886751345944885,
+        "minimum": 28.500070571899414,
+        "maximum": 38.4999885559082,
+        "nan": 0,
+        "inf": 0,
+        "max_identical_run": 1
+      }
+    },
+    "temperature_policy": "(counter-1)%8, valid for complete steady-state cycles of supplied source",
+    "checksum_errors": 0,
+    "framing_errors": 0,
+    "resync_events": 0,
+    "discarded_bytes": 0,
+    "truncated_tails": 0,
+    "buffer_peak_bytes": 53
+  },
+  "simulator_truth": {
+    "planned": 1000000,
+    "dropped": 0,
+    "checksum": 0,
+    "byte": 0,
+    "header": 0,
+    "truncated": 0
+  },
+  "execution": {
+    "wall_elapsed_s": 21.244155207000006,
+    "completed": true,
+    "real_time_soak": false
+  },
+  "limitations": [
+    "No physical sample timestamps",
+    "Counter8 is ambiguous across wraps, reset and reordering",
+    "Synthetic signals are not an optical physics model",
+    "No firmware execution on MCU"
+  ]
+}
