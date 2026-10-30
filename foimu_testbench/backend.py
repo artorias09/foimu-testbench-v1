@@ -325,11 +325,11 @@ class RunController:
             self._failure('controller',exc)
         finally:
             with self.lock: self.active=False
-        # Producer first, processing second, writer last. Finite join budgets.
-        deadline=time.monotonic_ns()+self.options.shutdown_timeout_ns
+        # Independent join budgets: RX, processing, then writer after input closes.
+        # Time spent draining an earlier worker never consumes the next budget.
         for name in ('rx','processing'):
             t=self.threads.get(name)
-            if t: t.join(max(0,(deadline-time.monotonic_ns())/1e9))
+            if t: t.join(self.options.shutdown_timeout_ns/1e9)
         try:
             self._log_commands()
             reason = ('Falha operacional: '+', '.join(self.failure_by_worker)) if self.failure_by_worker else (
@@ -340,7 +340,7 @@ class RunController:
             self._failure('controller',exc)
         self.writes.close()
         writer_thread=self.threads.get('writer')
-        if writer_thread: writer_thread.join(max(0,(deadline-time.monotonic_ns())/1e9))
+        if writer_thread: writer_thread.join(self.options.shutdown_timeout_ns/1e9)
         alive=[name for name,t in self.threads.items() if t.is_alive()]
         if alive: self._failure('controller',RuntimeError('Workers não encerrados: '+', '.join(alive)))
         if not self.threads and not self.writer.closed:

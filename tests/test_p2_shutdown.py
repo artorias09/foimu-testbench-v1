@@ -41,9 +41,9 @@ class ShutdownBudgetTests(unittest.TestCase):
                 result = c.execute()
             return budgets, result
 
-    def test_shared_deadline_characterization(self):
+    def test_independent_budgets_allow_healthy_writer_to_drain(self):
         budgets, run = self.exercise()
         self.assertAlmostEqual(budgets['rx'], 1)
-        self.assertAlmostEqual(budgets['processing'], .1)
-        self.assertEqual(budgets['writer'], 0)
-        self.assertEqual((run.execution_status, run.integrity_status), ('aborted', 'partial'))
+        self.assertAlmostEqual(budgets['processing'], 1)
+        self.assertEqual(budgets['writer'], 1)
+        self.assertEqual((run.execution_status, run.integrity_status), ('cancelled', 'complete'))
