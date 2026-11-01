@@ -2,7 +2,13 @@
 
 **** O projeto reproduz a saída binária do gateway anexado: 53 bytes, header A0 A0, counter8, floats/inteiros little-endian e Fletcher-16. Os sinais são sintéticos. Os repositórios IEAv originais não foram alterados.
 
-Você precisa apenas do PC e Python 3.11 ou superior. Esta etapa não requer ESP32, Raspberry, LabVIEW, pip ou Docker. O código foi executado em Python 3.12.14/Linux neste ambiente; a execução no seu Windows ainda precisa ser confirmada.
+Para os comandos sem GUI, você precisa apenas do PC e Python 3.11 ou superior. Esta etapa não requer ESP32, Raspberry, LabVIEW, pip ou Docker. O código foi executado em Python 3.12.14/Linux neste ambiente; a execução no seu Windows ainda precisa ser confirmada.
+
+## Bancada gráfica P3
+
+A GUI permite configurar um ensaio virtual L1, acompanhar sinais, métricas e eventos, solicitar parada e reabrir a Run e seu relatório. O serviço local continua a aquisição ao fechar a janela.
+
+**P3 implementada. P3 não liberada.** Gate Linux executado. Gate Windows 10/11 com Python 3.12 pendente. Instruções para instalar as dependências opcionais e abrir os dois processos em [P3_GUI.md](docs/P3_GUI.md). Resultados medidos e roteiro do gate Windows em [P3_VALIDACAO.md](docs/P3_VALIDACAO.md).
 
 ## Incremento v0.2 P2: backend sem GUI
 
@@ -109,7 +115,7 @@ py -3 -m foimu_testbench acquire --config configs/soak_8h.json --seconds 28810 -
 
 São 2.880.000 oportunidades no simulador, 152,64 MB só de bytes crus, além de CSV e JSONL. Reserve vários GB, mantenha a máquina ligada e sem suspensão. O host não recebe um contador largo ou número total pelo protocolo legado, então `packets_expected` do cliente fica `null`; compare o total com a configuração do emissor. A pausa final de10 s entra nas métricas de ausência de dados. Um comando preparado não significa que esse ensaio já foi executado. Ainda falta telemetria periódica de RSS/CPU/disco para aprovar a Fase de longa duração.
 
-## O que está pronto e o que ainda falta
+## O que está pronto e o que ainda falta na baseline v0.1.0
 
 | Recurso | Estado nesta entrega |
 |---|---|
