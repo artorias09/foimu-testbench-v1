@@ -148,6 +148,7 @@ class Window(W.QMainWindow):
         self.table.setHorizontalHeaderLabels(['Tempo e clock','Domínio','Componente','Faceta','Severidade','Conhecimento','Evento','Bytes [início, fim)'])
         self.table.setSelectionBehavior(W.QAbstractItemView.SelectionBehavior.SelectRows)
         self.table.setEditTriggers(W.QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.table.horizontalHeader().setSectionResizeMode(W.QHeaderView.ResizeMode.Stretch)
         self.table.itemSelectionChanged.connect(self.detail)
         layout.addWidget(self.table,1)
         self.details = box()
@@ -288,8 +289,13 @@ class Window(W.QMainWindow):
             self.events = events
             self.timeline()
         metrics = parts.get('metrics_snapshot',{})
-        self.metrics.setPlainText(metrics.get('origin','Aguardando registros')+'\n'+'\n'.join(
-            f"{label}: {metrics.get('values',{}).get(key,'?')}" for key,label in LABELS.items()))
+        lines = [metrics.get('origin', 'Aguardando registros')]
+        values = metrics.get('values', {})
+        for title, keys in [('Observado no parser', ('frames_accepted', 'checksum_errors', 'framing_errors', 'resync_events')),
+                            ('Diagnóstico do fluxo', ('packets_lost', 'jitter_max_s', 'byte_silence_episodes', 'valid_frame_silence_episodes'))]:
+            lines.append(title)
+            lines.extend(f'{LABELS[key]}: {values.get(key, "?")}' for key in keys)
+        self.metrics.setPlainText('\n'.join(lines))
         health = parts.get('pipeline_health',{})
         self.backlog = health.get('presentation_backlog_bytes')
         lines = []
