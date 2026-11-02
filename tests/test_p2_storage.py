@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 from foimu_testbench.backend import RunController
 from foimu_testbench.scenarios import import_v1
 from foimu_testbench.storage import RunReader, RunWriter, digest_file, atomic_json
@@ -12,6 +13,35 @@ from foimu_testbench.evidence import ObservedChunk, WriteBatch, WriteItem, dumps
 
 
 class StorageTests(unittest.TestCase):
+
+    def test_atomic_json_retries_transient_permission_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'run.json'
+            real_replace=os.replace
+            calls=[]
+            def flaky(src,dst):
+                calls.append((src,dst))
+                if len(calls)<3:
+                    raise PermissionError(5,'Acesso negado transitório')
+                return real_replace(src,dst)
+            with patch('foimu_testbench.storage.os.replace',side_effect=flaky), \
+                 patch('foimu_testbench.storage.time.sleep',return_value=None):
+                atomic_json(path,{'schema_version':2},replace_timeout_s=10)
+            self.assertEqual(json.loads(path.read_bytes()),{'schema_version':2})
+            self.assertEqual(len(calls),3)
+            self.assertFalse(path.with_name('run.json.tmp').exists())
+
+    def test_atomic_json_keeps_failure_after_retry_window(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'run.json'
+            path.write_bytes(b'{"old":true}\n')
+            with patch('foimu_testbench.storage.os.replace',side_effect=PermissionError(5,'Acesso negado')), \
+                 patch('foimu_testbench.storage.time.monotonic',side_effect=[0.0,0.0,2.0]), \
+                 patch('foimu_testbench.storage.time.sleep',return_value=None):
+                with self.assertRaises(PermissionError):
+                    atomic_json(path,{'schema_version':2},replace_timeout_s=1)
+            self.assertEqual(path.read_bytes(),b'{"old":true}\n')
+            self.assertTrue(path.with_name('run.json.tmp').exists())
     def test_checkpoint_preserves_tail_and_never_recovers_completed(self):
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp)/'run';s=import_v1({});r=new_run(s,tmp,run_id='r')

@@ -3,6 +3,7 @@ from dataclasses import replace
 from pathlib import Path
 import hashlib
 import os
+import time
 from .core import Run, ArtifactReference
 from .core.schema import require
 from .scenarios import Scenario
@@ -31,7 +32,7 @@ def safe_path(root, name):
     return path
 
 
-def atomic_json(path, value):
+def atomic_json(path, value, *, replace_timeout_s=2.0, replace_retry_s=0.05):
     path = Path(path)
     path.parent.mkdir(parents=True,exist_ok=True)
     temporary = path.with_name(path.name+'.tmp')
@@ -39,7 +40,15 @@ def atomic_json(path, value):
         f.write(dumps(value)+b'\n')
         f.flush()
         os.fsync(f.fileno())
-    os.replace(temporary,path)
+    deadline = time.monotonic() + replace_timeout_s
+    while True:
+        try:
+            os.replace(temporary,path)
+            return
+        except PermissionError:
+            if time.monotonic() >= deadline:
+                raise
+            time.sleep(replace_retry_s)
 
 
 class RunWriter:
