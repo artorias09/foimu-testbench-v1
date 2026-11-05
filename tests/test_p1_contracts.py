@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import subprocess
 import sys
@@ -224,10 +225,14 @@ class ImportIdentityCompatibilityTests(unittest.TestCase):
             self.assertEqual(p.stats['resync_events'],1)
 
     def test_legacy_sources_are_exact_frozen_blobs(self):
+        # Reviewed P3.5 exception: the counter consumer now uses reacquisition.
+        diagnostics = (ROOT/'foimu_testbench/diagnostics/__init__.py').read_bytes()
+        self.assertEqual(hashlib.sha256(diagnostics.replace(b'\r\n', b'\n')).hexdigest(),
+                         '3bc7c1301b8cfc84e238eb186d38c1d1307c1e7bd2cfb443f18f987eb1344d86')
         # Optional Git check complements portable golden tests in archive distributions.
         try:
             subprocess.run(['git','cat-file','-e',BASELINE],cwd=ROOT,check=True,capture_output=True)
         except (FileNotFoundError,subprocess.CalledProcessError): self.skipTest('Snapshot Git ausente')
-        for path in ('foimu_testbench/protocol/gateway53.py','foimu_testbench/runners.py','foimu_testbench/config.py','foimu_testbench/simulator/__init__.py','foimu_testbench/diagnostics/__init__.py','tools/acceptance.py'):
+        for path in ('foimu_testbench/protocol/gateway53.py','foimu_testbench/runners.py','foimu_testbench/config.py','foimu_testbench/simulator/__init__.py','tools/acceptance.py'):
             old=subprocess.check_output(['git','show',f'{BASELINE}:{path}'],cwd=ROOT)
             self.assertEqual((ROOT/path).read_bytes().replace(b'\r\n', b'\n'),old.replace(b'\r\n', b'\n'),path)
