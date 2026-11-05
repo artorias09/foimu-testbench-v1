@@ -91,6 +91,28 @@ class BoundaryTests(unittest.TestCase):
             with self.subTest(name=name), self.assertRaises(ValueError):
                 self.file_result(directory, project_run(self.live))
 
+    def test_counter_episode_file_source(self):
+        from foimu_testbench.emission import IterableSource, ReadResult
+        from foimu_testbench.protocol import encode
+        from foimu_testbench.simulator import synthetic_packet
+
+        src = self.root / 'counter'
+        packet = synthetic_packet(0, 100)
+        reads = [ReadResult(encode(packet._replace(counter=c)), i*10_000_000)
+                 for i, c in enumerate([*range(10), *range(200, 240)])]
+        RunController(self.scenario, src, source_factory=lambda *_: IterableSource(reads)).execute()
+        canonical = self.file_result(src / 'observed', project_run(src))
+        self.assertEqual(canonical, self.live_result(src))
+        events = list(map(loads, canonical['diagnostic_events.jsonl'].splitlines()))
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]['payload']['interpretation'], 'ambiguous_jump')
+        raw = loads((src / 'diagnostics/events.jsonl').read_bytes())
+        self.assertEqual(raw['payload']['cause_status'], 'inconclusive')
+        self.assertIsNone(raw['payload']['candidate_missing'])
+        metrics = loads((src / 'diagnostics/metrics.json').read_bytes())['metrics']
+        self.assertEqual((metrics['counter_ambiguous_jumps'], metrics['counter_reacquisitions'],
+                          metrics['packets_lost']), (1, 1, 0))
+
     def test_zero_byte_complete_stream(self):
         src = self.root / 'empty'
         RunController(import_v1({'packets': 0}), src).execute()

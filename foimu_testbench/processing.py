@@ -118,7 +118,7 @@ class Processing:
             self.refs.append((self.offset, self.offset+rec.size, rec.read_seq))
             for packet, start, end in self.parser.feed(chunk.data):
                 before = self.diagnostics.discontinuities
-                self.diagnostics.observe(packet, rec.time.value / 1e9)
+                counter = self.diagnostics.observe(packet, rec.time.value / 1e9)
                 self.watchdogs.arrival('valid_frame_silence', rec.time.value)
                 refs = [n for a,b,n in self.refs if a < end and b > start]
                 fields, status = {}, {}
