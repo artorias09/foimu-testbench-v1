@@ -2,7 +2,7 @@
 
 **** O projeto reproduz a saída binária do gateway anexado: 53 bytes, header A0 A0, counter8, floats/inteiros little-endian e Fletcher-16. Os sinais são sintéticos. Os repositórios IEAv originais não foram alterados.
 
-Para os comandos sem GUI, você precisa apenas do PC e Python 3.11 ou superior. Esta etapa não requer ESP32, Raspberry, LabVIEW, pip ou Docker. O código foi executado em Python 3.12.14/Linux neste ambiente; a execução no seu Windows ainda precisa ser confirmada.
+Para os comandos sem GUI, você precisa apenas do PC e CPython 3.12.x. Esta etapa não requer ESP32, Raspberry, LabVIEW, pip ou Docker. O código foi executado em Python 3.12.14/Linux neste ambiente; a execução no seu Windows ainda precisa ser confirmada.
 
 ## Bancada gráfica P3
 
@@ -36,7 +36,7 @@ py -3 --version
 py -3 -m foimu_testbench demo --config configs/normal.json --out logs/primeiro_ensaio
 ```
 
-Se o comando `py` não existir, use `python` no lugar, desde que a versão seja ≥3.11.
+Se o comando `py` não existir, use `python` no lugar, desde que a versão seja 3.12.x.
 
 Esperado: 1000 pacotes recebidos, zero perdas inferidas, zero erros de checksum/framing. É um ensaio acelerado com relógio virtual: não espere dez segundos. Os resultados vão para uma **pasta nova**; para repetir, use outro nome. O programa recusa sobrescrever uma pasta existente.
 

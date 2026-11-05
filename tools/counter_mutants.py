@@ -37,7 +37,7 @@ def main():
             shutil.copytree(ROOT / pkg.name, pkg, ignore=shutil.ignore_patterns('__pycache__'))
             shutil.copy(ROOT / 'tests/test_counter.py', tmp)
             clean = run_case(tmp, test)
-            if clean.returncode:
+            if clean.returncode or 'skipped=' in clean.stderr or 'Ran 1 test in' not in clean.stderr:
                 raise RuntimeError(clean.stderr)
             path = pkg / name
             source = path.read_text(encoding='utf8')
@@ -45,7 +45,7 @@ def main():
                 raise ValueError(f'Alvo de mutação ambíguo M{index}')
             path.write_text(source.replace(old, new), encoding='utf8')
             result = run_case(tmp, test)
-            if result.returncode != 1 or 'FAILED (failures=' not in result.stderr or 'AssertionError' not in result.stderr:
+            if result.returncode != 1 or 'FAILED (failures=1)' not in result.stderr or f'FAIL: {test.split(".")[-1]} (' not in result.stderr or 'AssertionError' not in result.stderr:
                 raise RuntimeError(f'M{index}: sobrevivente ou execução inválida\n{result.stderr}')
             print(f'M{index:02} KILLED {test}')
 
