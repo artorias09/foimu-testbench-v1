@@ -120,3 +120,29 @@ class EvidenceTests(unittest.TestCase):
                 reversed_nodes = tuple(replace(n, required=n.required[::-1]) for n in reversed(nodes))
                 doubled = {k: replace(v, evidence=v.evidence * 2) for k, v in values.items()}
                 self.assertEqual(aggregate(m, values), aggregate(Manifest('0', reversed_nodes), doubled))
+
+    def test_structural_conditions_are_detector_relative(self):
+        from dataclasses import replace
+        blind = next(s for s in REGISTRY if s.claim.condition == 'loss_multiple_of_256')
+        # A fictitious formal detector is confined to the aggregation test.
+        other = replace(FRAME, claim=replace(FRAME.claim, condition=blind.claim.condition))
+        one = Node('first', checks=(Check('blind', blind),))
+        two = Node('second', checks=(Check('other', other),))
+        m = Manifest('root', (Node('root', ('first', 'second')), one, two))
+        result = rows(m, {})
+        self.assertEqual(result['first']['undetected_conditions'], 1)
+        self.assertEqual(result['root']['undetected_conditions'], 0)
+        self.assertIn(blind.claim.condition, result['root']['limitations'])
+
+    def test_minimum_coverage_and_duplicate_reference(self):
+        m = Manifest('a', (Node('a', checks=(Check('a', FRAME, 2),)),))
+        ok = sample('a')
+        self.assertEqual(rows(m, {'a': replace(ok, evidence=ok.evidence*2)})['a']['result'], 'unknown')
+        for seed in range(100):
+            base = manifest(('a','b'))
+            prev = tuple(f'condition-{i}' for i in range(seed % 8))
+            def with_limits(limits):
+                return replace(base, nodes=(replace(base.nodes[0], limitations=limits), *base.nodes[1:]))
+            before = rows(with_limits(prev), {})['root']['limitations']
+            after = rows(with_limits(prev + ('additional',)), {})['root']['limitations']
+            self.assertEqual(set(after), set(before) | {'additional'})

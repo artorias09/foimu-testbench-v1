@@ -179,7 +179,7 @@ class CheckpointOrderingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp) / 'run'
             scenario = import_v1({})
-            writer = RunWriter(p, new_run(scenario, tmp), scenario)
+            writer = RunWriter(p, new_run(scenario, tmp, run_id='checkpoint-order'), scenario)
             writer.append(WriteBatch((WriteItem('observed/wire.bin', b'abc'),)))
             old = writer.confirmed.copy()
             checkpoint_fd = writer.files['storage/checkpoints.jsonl'].fileno()
