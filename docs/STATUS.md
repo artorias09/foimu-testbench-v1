@@ -62,3 +62,25 @@ v0.1. O vetor golden, a lógica de framing e o Fletcher seguem protegidos pela s
 
 VERIFIED_LOCAL para a política counter8-reacquire-v1 e sua integração. Em ensaio real,
 atribuição física, calibração do tempo do transporte e revisão de firmware são EXTERNAL_PENDING.
+
+## Atualização de 2026-11-05: estados e evidências
+
+Base 098f15c79109f697469d01ce9d17edcafd130ef8. Branch feature/v02-p35-state-evidence.
+Revisão executável 16daaea. Linux, CPython 3.12.14, biblioteca padrão.
+A API é lógica e independente da GUI. O gate cobre o agregador, o contrato de referências
+e os detectores digitais registrados. A entrada dos checks é explicitamente atestada pelo
+produtor. Integração visual, interpretação física e verificação no IEAv seguem pendentes.
+
+| Gate | Resultado observado |
+|---|---|
+| python -m unittest discover -s tests -v | 161 descobertos, 157 passaram, 0 falhas, 4 skips Qt por dependências ausentes |
+| Discovery separado de test_p1*, test_p2*, test_p3* | 31/31, 47/47 (inclui o novo teste de fsync), 18/22 com quatro skips |
+| Discovery separado de test_observed_boundary*, test_counter*, test_evidence_tree* | 11/11, 8/8 e 9/9 |
+| Propriedades | 2.000 árvores, 40 seeds, profundidade variável; 100 variações adicionais de limites. Combinações de estados verificadas separadamente. |
+| tools.evidence_mutants | 12 mutantes de semântica e cinco da TCB detectados |
+| tools.counter_mutants e diferencial T01 | Dez mutantes de counter e um de contaminação ao vivo detectados |
+| pregate.py com PYTHONPATH=. | 200 seeds, 1.854.905 bytes, 12.801 frames, zero violações; sequência do counter: 50 frames, um salto ambíguo, referência 239, zero lacunas candidatas |
+
+Na preparação do ensaio E16, o controle limpo identificou a ausência de run_id no novo
+fixture de checkpoint. O ensaio foi corrigido antes de contabilizar o mutante. O gate
+usa somente execuções nas quais o controle limpo passou e o mutante falhou por asserção.
