@@ -96,6 +96,32 @@ class BoundaryTests(unittest.TestCase):
         RunController(import_v1({'packets': 0}), src).execute()
         self.assertEqual(self.live_result(src), self.file_result(src / 'observed', project_run(src)))
 
+    def test_time_and_epoch_differential(self):
+        from foimu_testbench.emission import IterableSource, ReadResult
+        from foimu_testbench.protocol import encode
+        from foimu_testbench.simulator import synthetic_packet
+
+        src = self.root / 'timed'
+        frame = encode(synthetic_packet(0, 100))
+        reads = [ReadResult(frame, 1), ReadResult(frame[:10], 5),
+                 ReadResult(b'', 300_000_000, 'epoch', '1'),
+                 ReadResult(frame, 700_000_000, epoch='1')]
+        RunController(self.scenario, src, source_factory=lambda *_: IterableSource(reads)).execute()
+        result = self.file_result(src / 'observed', project_run(src))
+        self.assertEqual(result, self.live_result(src))
+        metrics = loads(result['metrics.json'])['metrics']
+        self.assertEqual(metrics['reconnections'], 1)
+        self.assertGreater(metrics['valid_frame_silence_episodes'], 0)
+        self.assertGreater(metrics['jitter_max_s'], .6)
+
+    def test_partial_reference_refused(self):
+        file = self.live / 'run.json'
+        run = loads(file.read_bytes())
+        next(a for a in run['artifacts'] if a['path'] == 'observed/chunks.jsonl')['integrity'] = 'partial'
+        file.write_bytes(dumps(run))
+        with self.assertRaisesRegex(ValueError, 'parcial'):
+            project_run(self.live)
+
     def test_live_truth_mutant_killed_by_file_source(self):
         src = self.root / 'mutant'
         original = Processing.metrics
