@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
-from typing import Iterable
+from typing import BinaryIO
 
 from .core import ArtifactReference
 from .core.schema import Model, require
@@ -111,7 +111,11 @@ def _records(wire, index, spec):
 @dataclass(frozen=True, slots=True)
 class ObservedView:
     projection: ObservedProjection
-    chunks: Iterable[ObservedChunk]
+    _wire: BinaryIO
+    _index: BinaryIO
+
+    def chunks(self):
+        return _records(self._wire, self._index, self.projection)
 
 
 @contextmanager
@@ -127,4 +131,4 @@ def open_observed(directory, projection):
         else:
             wire = stack.enter_context(wire_path.open('rb'))
         index = stack.enter_context(_fixed(directory, 'chunks.jsonl').open('rb'))
-        yield ObservedView(projection, _records(wire, index, projection))
+        yield ObservedView(projection, wire, index)
