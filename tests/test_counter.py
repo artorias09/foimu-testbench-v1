@@ -17,7 +17,7 @@ class CounterTests(unittest.TestCase):
         rows = [(0, 1, 1, 0, 0, 0, 1), (255, 0, 1, 0, 0, 0, 0),
                 (10, 10, 0, 0, 1, 0, 10), (10, 11, 1, 0, 0, 0, 11),
                 (10, 12, 2, 1, 0, 0, 12), (10, 137, 127, 126, 0, 0, 137),
-                (10, 138, 128, 0, 0, 1, 10), (10, 139, 129, 0, 0, 1, 10)]
+                (10, 138, 128, 0, 0, 1, None), (10, 139, 129, 0, 0, 1, None)]
         for before, current, delta, lost, duplicate, ambiguity, after in rows:
             with self.subTest(current=current):
                 self.assertEqual(self.observe([before]).counter, before)
@@ -29,4 +29,4 @@ class CounterTests(unittest.TestCase):
     def test_stale_sequence(self):
         d = self.observe([*range(10), *range(200, 240)])
         self.assertEqual((d.received, d.discontinuities, d.order_or_reset, d.counter, d.lost),
-                         (50, 40, 40, 9, 0))
+                         (50, 1, 1, 239, 0))

@@ -1,5 +1,6 @@
 import math
 from ..protocol import Packet
+from .counter import CounterState, transition
 
 
 class Moments:
@@ -42,7 +43,8 @@ class Diagnostics:
         self.expected = expected
         self.start_s = start_s
         self.last_s = None
-        self.counter = None
+        self.counter_state = CounterState()
+        self.reacquisitions = 0
         self.received = self.lost = self.discontinuities = self.duplicates = self.order_or_reset = 0
         self.stream_timeouts = self.reconnections = self.clock_regressions = 0
         self.maximum_gap = self.jitter_max = 0.0
@@ -66,19 +68,13 @@ class Diagnostics:
         else:
             self.maximum_gap = max(self.maximum_gap, received_s - self.start_s)
         self.last_s = received_s
-        if self.counter is None:
-            self.counter = packet.counter
-        else:
-            delta = (packet.counter - self.counter) % 256
-            if delta != 1:
-                self.discontinuities += 1
-            if delta == 0:
-                self.duplicates += 1
-            elif delta < 128:
-                self.lost += delta - 1
-                self.counter = packet.counter
-            else:
-                self.order_or_reset += 1
+        observation = transition(self.counter_state, packet.counter)
+        self.counter_state = observation.state
+        self.lost += observation.candidate_missing or 0
+        self.duplicates += observation.kind == 'duplicate'
+        self.order_or_reset += observation.kind == 'ambiguous_jump'
+        self.reacquisitions += observation.kind == 'reacquired'
+        self.discontinuities += observation.kind in ('duplicate', 'ambiguous_jump', 'forward_gap_candidate')
         for name, value in zip(Packet._fields[1:], packet[1:]):
             self.sensors[name].add(value)
         self.temperatures[(packet.counter - 1) % 8].add(packet.temperature)
@@ -90,8 +86,14 @@ class Diagnostics:
                 or packet.acc_tap in (304, 408, 1001) or packet.acc_x in (3792, 3688, 3095)):
             self.sentinel_suspicions["acc"] += 1
 
+        return observation
+
+    @property
+    def counter(self):
+        return None if self.counter_state.reacquiring else self.counter_state.reference
+
     def new_epoch(self):
-        self.counter = None
+        self.counter_state = CounterState()
 
     def report(self, end_s):
         tail = max(0.0, end_s - (self.last_s if self.last_s is not None else self.start_s))
@@ -99,7 +101,11 @@ class Diagnostics:
             "packets_expected": self.expected,
             "packets_received": self.received,
             "packets_lost": self.lost,
-            "packets_lost_semantics": "candidate counter gaps; not exact physical loss; assumes forward delta <128",
+            "packets_lost_semantics": "candidate counter gaps within one epoch while locked; assumes ordered forward delta <128",
+            "counter_rule_version": "counter8-reacquire-v1",
+            "counter_ambiguous_jumps": self.order_or_reset,
+            "counter_reacquisitions": self.reacquisitions,
+            "counter_reacquiring": self.counter_state.reacquiring,
             "counter_discontinuities": self.discontinuities, "duplicates": self.duplicates,
             "out_of_order_or_reset": self.order_or_reset, "clock_regressions": self.clock_regressions,
             "stream_timeouts": self.stream_timeouts, "reconnections": self.reconnections,

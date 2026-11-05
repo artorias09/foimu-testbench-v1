@@ -147,7 +147,7 @@ class ImportBoundaryTests(unittest.TestCase):
         pkg = 'foimu_testbench'
         root = Path(__file__).resolve().parents[1] / pkg
         modules = ('', 'observed_input', 'observed_analysis', 'evidence', 'processing',
-                   'diagnostics', 'protocol', 'protocol.gateway53', 'core', 'core.contracts', 'core.schema')
+                   'diagnostics', 'diagnostics.counter', 'protocol', 'protocol.gateway53', 'core', 'core.contracts', 'core.schema')
         allowed = {pkg + ('.' + name if name else '') for name in modules}
         for name in modules:
             path = root.joinpath(*name.split('.'))

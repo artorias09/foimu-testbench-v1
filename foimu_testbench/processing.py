@@ -79,7 +79,7 @@ class Processing:
             kind=kind, component_path='FO-IMU/Host', facet='Timing' if span is None else 'Protocolo',
             severity='info' if kind=='resync' else 'warning', time=rec.time,
             stream_id=rec.stream_id, epoch_id=rec.epoch_id if epoch_id is None else epoch_id, byte_span=span,
-            observation_refs=[f'chunk:{n}' for n in refs], rule_version='observed-v2.1', payload=payload)
+            observation_refs=[f'chunk:{n}' for n in refs], rule_version='counter8-reacquire-v1' if kind == 'counter_discontinuity' else 'observed-v2.1', payload=payload)
         self.seq += 1
         folder = 'diagnostics' if domain=='diagnostic' else 'observed'
         self.items.append(WriteItem(folder+'/events.jsonl', e.to_json().encode()+b'\n'))
@@ -132,7 +132,9 @@ class Processing:
                 self.items.append(WriteItem('observed/frames.jsonl', frame.to_json().encode()+b'\n'))
                 if before != self.diagnostics.discontinuities:
                     self._event('counter_discontinuity', 'diagnostic',
-                        {'counter': packet.counter, 'interpretation': 'Lacuna, repetição ou ordem/reset; causa desconhecida'},
+                        {'counter': packet.counter, 'interpretation': counter.kind,
+                         'delta': counter.delta, 'candidate_missing': counter.candidate_missing,
+                         'cause_status': 'inconclusive'},
                         frame.byte_span, refs)
             self.offset += rec.size
             while self.refs and self.refs[0][1] <= self.parser.cursor:

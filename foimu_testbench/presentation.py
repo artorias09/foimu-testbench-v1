@@ -3,6 +3,7 @@ from collections import deque
 import math
 from .evidence import loads
 from .protocol import Packet
+from .diagnostics.counter import CounterState, transition
 
 FIELDS = Packet._fields[1:]
 UNITS = {**{f'ifog_{a}': '°/h' for a in 'xyz'},
@@ -56,7 +57,8 @@ class View:
         self.frames = deque(maxlen=FRAME_LIMIT)
         self.events = deque(maxlen=EVENT_LIMIT)
         self.metrics = dict.fromkeys(METRICS, 0)
-        self.anchor = self.epoch = self.last_ns = None
+        self.counter_state = CounterState()
+        self.epoch = self.last_ns = None
         self.recovering_epoch = None
         self.backlog = 0
 
@@ -87,11 +89,10 @@ class View:
         for f in self._lines('observed/frames.jsonl'):
             ns, epoch, c = f['time']['value'], f['epoch_id'], f['counter']
             if epoch != self.epoch:
-                self.anchor = None
-            delta = (c-self.anchor) % 256 if self.anchor is not None else 1
-            if 0 < delta < 128:
-                self.metrics['packets_lost'] += delta-1
-                self.anchor = c
+                self.counter_state = CounterState()
+            observation = transition(self.counter_state, c)
+            self.counter_state = observation.state
+            self.metrics['packets_lost'] += observation.candidate_missing or 0
             if self.last_ns is not None:
                 jitter = abs((ns-self.last_ns)/1e9 - 1/self.rate)
                 self.metrics['jitter_max_s'] = max(self.metrics['jitter_max_s'], jitter)
