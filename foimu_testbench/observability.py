@@ -69,7 +69,7 @@ REGISTRY = tuple(DetectorSpec(c, 'chunks' if c.detector == 'host_receive_timing'
                  'wire', True),
     *(_spec(condition, 'host_receive_timing', 'now >= last + threshold_ns',
             ('recorded_experiment_clock', 'positive_threshold', 'recorded_poll'),
-            'BoundaryTests.test_time_and_epoch_differential', 'chunks', False)
+            'EvidenceTests.test_watchdogs_garbage_and_total_silence', 'chunks', False)
       for condition in ('byte_silence', 'valid_frame_silence')),
     *(_spec(condition, 'parser_framing', limit, ('legacy_profile', 'known_start_state'),
             test, 'wire') for condition, limit, test in (

@@ -172,3 +172,32 @@ RunController(import_v1({'packets':100,'chunk_sizes':[53]}),sys.argv[1],writer_h
                 reader=RunReader(p,strict=False)
                 self.assertEqual(reader.confirmed['observed/wire.bin']['size_bytes'],3)
                 self.assertTrue(reader.issues)
+
+
+class CheckpointOrderingTests(unittest.TestCase):
+    def test_confirm_only_after_checkpoint_fsync(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / 'run'
+            scenario = import_v1({})
+            writer = RunWriter(p, new_run(scenario, tmp), scenario)
+            writer.append(WriteBatch((WriteItem('observed/wire.bin', b'abc'),)))
+            old = writer.confirmed.copy()
+            checkpoint_fd = writer.files['storage/checkpoints.jsonl'].fileno()
+            real_fsync = os.fsync
+            count = 0
+
+            def fail_final(fd):
+                nonlocal count
+                if fd == checkpoint_fd:
+                    count += 1
+                    if count == 2:
+                        raise OSError('fsync final injetado')
+                real_fsync(fd)
+
+            try:
+                with patch('foimu_testbench.storage.os.fsync', side_effect=fail_final):
+                    with self.assertRaises(OSError):
+                        writer.checkpoint()
+                self.assertEqual(writer.confirmed, old)
+            finally:
+                writer.close(checkpoint=False)

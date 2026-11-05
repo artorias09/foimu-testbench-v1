@@ -168,7 +168,7 @@ class ImportBoundaryTests(unittest.TestCase):
     def test_static_observed_import_closure(self):
         pkg = 'foimu_testbench'
         root = Path(__file__).resolve().parents[1] / pkg
-        modules = ('', 'observed_input', 'observed_analysis', 'evidence', 'processing',
+        modules = ('', 'observed_input', 'observed_analysis', 'evidence_tree', 'observability', 'evidence', 'processing',
                    'diagnostics', 'diagnostics.counter', 'protocol', 'protocol.gateway53', 'core', 'core.contracts', 'core.schema')
         allowed = {pkg + ('.' + name if name else '') for name in modules}
         for name in modules:

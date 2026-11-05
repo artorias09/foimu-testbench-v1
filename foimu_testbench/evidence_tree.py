@@ -117,11 +117,14 @@ def aggregate(manifest, results):
         node = nodes[key]
         states, reasons, detectors = [], set(), set()
         limits, partial, evidence, details = set(node.limitations), set(), {}, []
+        detectable = set()
         for child in sorted(node.required + node.optional):
             row = visit(child)
             if child in node.required:
                 states.append(row['result'])
+                reasons.update(row['reasons'])
             limits.update(row['limitations'])
+            detectable.update(row['detectable_conditions'])
             partial.update(row['partial_checks'])
             detectors.update(row['detectors'])
             for ref in row['evidence']:
@@ -138,6 +141,8 @@ def aggregate(manifest, results):
                 limits.add(claim.condition)
             else:
                 states.append(status)
+                if claim.status == 'observable':
+                    detectable.add(claim.condition)
             reasons.add(reason)
             details.append(dict(check_id=check.check_id, version=check.version, result=status,
                                 reason=reason, violation=violation, detector=claim.detector,
@@ -149,7 +154,8 @@ def aggregate(manifest, results):
                     partial.add(check.check_id)
         status = max(states, key=ORDER.index) if states else 'not_evaluated'
         row = dict(node_id=key, result=status, evidence=[evidence[k] for k in sorted(evidence)],
-                   limitations=sorted(limits), undetected_conditions=len(limits),
+                   limitations=sorted(limits), undetected_conditions=len(limits - detectable),
+                   detectable_conditions=sorted(detectable),
                    partial_checks=sorted(partial), detectors=sorted(detectors), reasons=sorted(reasons),
                    checks=details, required=sorted(node.required), optional=sorted(node.optional))
         rows[key] = row
@@ -161,16 +167,17 @@ def aggregate(manifest, results):
                       root=manifest.root, nodes=[rows[k] for k in sorted(rows)]))
 
 
-def _checks(detectors):
+def _checks(detectors, *, indicators=False):
     return tuple(Check(s.claim.condition, s, 2 if s.claim.detector == 'counter8' else 1)
-                 for s in REGISTRY if s.claim.detector in detectors)
+                 for s in REGISTRY if s.claim.detector in detectors and (s.claim.status == 'warning_only') == indicators)
 
 
 SENSORS = ('IFOG X', 'IFOG Y', 'IFOG Z', 'ACC', 'MEMS', 'Temperatura')
 MANIFEST_V1 = Manifest('FO-IMU', (
     Node('FO-IMU', required=('Protocolo', 'Transporte'), optional=SENSORS + ('Host',)),
     Node('Protocolo', checks=_checks(('parser_framing', 'fletcher16_legacy', 'counter8'))),
-    Node('Transporte', checks=_checks(('host_receive_timing',))),
+    Node('Transporte', optional=('Indicadores',), checks=_checks(('host_receive_timing',))),
+    Node('Indicadores', checks=_checks(('host_receive_timing',), indicators=True)),
     Node('Host', limitations=('host_storage_health',)),
     *(Node(sensor, limitations=(sensor + '_physical_validity',)) for sensor in SENSORS),
 ))
