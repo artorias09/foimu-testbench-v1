@@ -16,6 +16,7 @@ class EvidenceRef(Model):
     schema_version: Literal[1] = 1
     check_id: str
     check_version: str
+    source: Literal['observed'] = 'observed'
     artifact: Literal['wire', 'frames', 'chunks']
     sample_count: int
     integrity: Literal['complete', 'partial', 'invalid']
@@ -72,7 +73,7 @@ class Manifest:
 
 def _reference(ref):
     span = ref.coverage
-    return dict(check_id=ref.check_id, check_version=ref.check_version, artifact=ref.artifact,
+    return dict(check_id=ref.check_id, check_version=ref.check_version, source=ref.source, artifact=ref.artifact,
                 integrity=ref.integrity, epoch=ref.epoch, sample_count=ref.sample_count,
                 coverage=None if span is None else [span.start, span.end],
                 confirmed_prefix_end=ref.confirmed_prefix_end, schema_version=1)
@@ -120,7 +121,7 @@ def aggregate(manifest, results):
         detectable = set()
         for child in sorted(node.required + node.optional):
             row = visit(child)
-            if child in node.required:
+            if child in node.required and row['applicable']:
                 states.append(row['result'])
                 reasons.update(row['reasons'])
             limits.update(row['limitations'])
@@ -153,7 +154,10 @@ def aggregate(manifest, results):
                 if ref['integrity'] == 'partial':
                     partial.add(check.check_id)
         status = max(states, key=ORDER.index) if states else 'not_evaluated'
-        row = dict(node_id=key, result=status, evidence=[evidence[k] for k in sorted(evidence)],
+        # A declared blind detector contributes a limit. An empty required slot
+        # without such a declaration still blocks approval.
+        applicable = bool(states) or not (limits and (node.checks or node.required or node.limitations))
+        row = dict(node_id=key, result=status, applicable=applicable, evidence=[evidence[k] for k in sorted(evidence)],
                    limitations=sorted(limits), undetected_conditions=len(limits - detectable),
                    detectable_conditions=sorted(detectable),
                    partial_checks=sorted(partial), detectors=sorted(detectors), reasons=sorted(reasons),

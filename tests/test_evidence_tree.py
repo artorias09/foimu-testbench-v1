@@ -133,6 +133,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(result['first']['undetected_conditions'], 1)
         self.assertEqual(result['root']['undetected_conditions'], 0)
         self.assertIn(blind.claim.condition, result['root']['limitations'])
+        self.assertEqual(rows(m, {'other': sample('other')})['root']['result'], 'ok')
 
     def test_minimum_coverage_and_duplicate_reference(self):
         m = Manifest('a', (Node('a', checks=(Check('a', FRAME, 2),)),))
