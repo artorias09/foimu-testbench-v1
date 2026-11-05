@@ -53,6 +53,7 @@ class EvidenceTests(unittest.TestCase):
         m, good = manifest(('a',)), sample('a')
         ref = good.evidence[0]
         for changed, state in [
+            (replace(ref, coverage=ByteSpan(start=0, end=52)), 'unknown'),
             (replace(ref, coverage=None), 'unknown'), (replace(ref, sample_count=0), 'unknown'),
             (replace(ref, integrity='invalid'), 'unknown'), (replace(ref, integrity='partial'), 'unknown'),
             (replace(ref, integrity='partial', confirmed_prefix_end=52), 'unknown'),

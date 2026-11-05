@@ -94,8 +94,11 @@ def _evaluate(check, value):
         if not all(r.coverage is not None for r in value.evidence):
             return 'unknown', 'MISSING_COVERAGE', refs, None
         for r in value.evidence:
-            if r.integrity == 'invalid' or r.sample_count == 0 or r.coverage.end <= r.coverage.start:
+            width = r.coverage.end - r.coverage.start
+            if not 0 < r.sample_count <= width or r.integrity == 'invalid':
                 return 'unknown', 'INSUFFICIENT_EVIDENCE', refs, None
+            if spec.claim.condition in ('valid_frame', 'checksum_mismatch') and width < 53:
+                return 'unknown', 'INCOMPLETE_CANDIDATE', refs, None
             if r.integrity == 'partial' and not (
                     spec.prefix_local and r.confirmed_prefix_end is not None
                     and r.coverage.end <= r.confirmed_prefix_end):
@@ -156,7 +159,7 @@ def aggregate(manifest, results):
         status = max(states, key=ORDER.index) if states else 'not_evaluated'
         # A declared blind detector contributes a limit. An empty required slot
         # without such a declaration still blocks approval.
-        applicable = bool(states) or not (limits and (node.checks or node.required or node.limitations))
+        applicable = bool(states) or not (node.checks or node.required)
         row = dict(node_id=key, result=status, applicable=applicable, evidence=[evidence[k] for k in sorted(evidence)],
                    limitations=sorted(limits), undetected_conditions=len(limits - detectable),
                    detectable_conditions=sorted(detectable),
