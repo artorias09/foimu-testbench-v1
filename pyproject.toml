@@ -2,7 +2,7 @@
 name = "foimu-testbench"
 version = "0.1.0"
 description = "Reproducible digital interface testbench for the supplied FO-IMU gateway snapshot"
-requires-python = ">=3.11"
+requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [tool.foimu-testbench]
