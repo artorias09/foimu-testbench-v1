@@ -81,3 +81,11 @@ observed_input, observed_analysis, processing, evidence, protocol, protocol.gate
 diagnostics, core, core.schema, core.contracts e inicializador do pacote.
 Ela complementa o diferencial de execução. O protocolo e a política de counter desta
 baseline continuam sendo a referência dos testes.
+
+A regra counter8-reacquire-v1 pertence a diagnostics.counter, incluído no fechamento
+de imports observado. A allowlist ObservedCanonicalV1 foi preservada. Em eventos de
+descontinuidade, interpretation identifica a classe modular observada e rule_version
+identifica sua regra. Os contadores adicionais de reaquisição estão no relatório
+diagnóstico integral. Comparações de arquivos históricos devem levar em conta a versão
+da regra: o replay com o código novo pode legitimamente produzir valores diferentes
+dos calculados com a âncora antiga. Bytes e tempos de recepção são reutilizados.
