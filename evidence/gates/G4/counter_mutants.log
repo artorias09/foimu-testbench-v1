@@ -1,0 +1,10 @@
+M01 KILLED test_pairs
+M02 KILLED test_pairs
+M03 KILLED test_pairs
+M04 KILLED test_pairs
+M05 KILLED test_pairs
+M06 KILLED test_arbitrary_jump_and_reorder
+M07 KILLED test_arbitrary_jump_and_reorder
+M08 KILLED test_epoch_reset
+M09 KILLED test_view_diagnostic_equivalence
+M10 KILLED test_alias_256

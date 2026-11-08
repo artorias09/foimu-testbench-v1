@@ -1,0 +1,36 @@
+{
+  "gate_id": "G4",
+  "schema_version": 1,
+  "commit": "414c8b172dd6717ad6b84667db95200e99a89eb3",
+  "tree": "67f8b7c8d0cc194b8c4d5642641319fb58e2f372",
+  "branch": "feature/v02-p35-state-evidence",
+  "date_utc": "2026-11-08T04:04:42.409231+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "commands": [
+    "python -m tools.ci_gate mutants --out ../closing/mutants"
+  ],
+  "results": {
+    "killed": 28,
+    "survived": 0,
+    "invalid": 0
+  },
+  "artifacts": [
+    "T01.json",
+    "T01.log",
+    "counter_mutants.log",
+    "evidence_mutants.log",
+    "matrix.json"
+  ],
+  "sha256": {
+    "T01.json": "da4f65cb6f19f02459f20bbad34d0296e5921ee6596bf5e462d5abbbd4cb3cff",
+    "T01.log": "256c85b9d59954580ba3fa66c0a3c9daa648ae39314db569bda200d4c00f3387",
+    "counter_mutants.log": "ff6570b51c984d637791f954e2c3b83ac00cb1bbb69fed6fc0c688c6ab10dde1",
+    "evidence_mutants.log": "3870349a665c96e35ee614ac8a9d84bafb297b32ab36efc052b815f0205c9209",
+    "matrix.json": "d12e4b497ff08ba00d60524dc6fb2b2e99895b6f3fa0dd4181bb67399600fce3"
+  },
+  "limitations": [
+    "28 mutantes curados da matriz atual."
+  ],
+  "status": "passed"
+}

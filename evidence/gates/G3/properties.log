@@ -1,0 +1,37 @@
+test_observed_goldens (test_corpus.CorpusTests.test_observed_goldens) ... ok
+test_alias_256 (test_counter.CounterTests.test_alias_256) ... ok
+test_arbitrary_jump_and_reorder (test_counter.CounterTests.test_arbitrary_jump_and_reorder) ... ok
+test_epoch_reset (test_counter.CounterTests.test_epoch_reset) ... ok
+test_pairs (test_counter.CounterTests.test_pairs) ... ok
+test_seeded_transitions (test_counter.CounterTests.test_seeded_transitions) ... ok
+test_stale_sequence (test_counter.CounterTests.test_stale_sequence) ... ok
+test_timing_separate (test_counter.CounterTests.test_timing_separate) ... ok
+test_view_diagnostic_equivalence (test_counter.CounterTests.test_view_diagnostic_equivalence) ... ok
+test_concrete_ref_required (test_evidence_tree.EvidenceTests.test_concrete_ref_required) ... ok
+test_coverage_and_integrity (test_evidence_tree.EvidenceTests.test_coverage_and_integrity) ... ok
+test_generated_trees (test_evidence_tree.EvidenceTests.test_generated_trees) ... ok
+test_heuristic_and_violation (test_evidence_tree.EvidenceTests.test_heuristic_and_violation) ... ok
+test_limits_and_optional (test_evidence_tree.EvidenceTests.test_limits_and_optional) ... ok
+test_minimum_coverage_and_duplicate_reference (test_evidence_tree.EvidenceTests.test_minimum_coverage_and_duplicate_reference) ... ok
+test_order_and_missing (test_evidence_tree.EvidenceTests.test_order_and_missing) ... ok
+test_structural_conditions_are_detector_relative (test_evidence_tree.EvidenceTests.test_structural_conditions_are_detector_relative) ... ok
+test_truth_independence (test_evidence_tree.EvidenceTests.test_truth_independence) ... ok
+test_all_split_positions (test_protocol.ProtocolTests.test_all_split_positions) ... ok
+test_burst_and_large_noise_bounded (test_protocol.ProtocolTests.test_burst_and_large_noise_bounded) ... ok
+test_byte_at_a_time (test_protocol.ProtocolTests.test_byte_at_a_time) ... ok
+test_checksum_known_collision_is_not_hidden (test_protocol.ProtocolTests.test_checksum_known_collision_is_not_hidden) ... ok
+test_corrupt_then_valid (test_protocol.ProtocolTests.test_corrupt_then_valid) ... ok
+test_every_single_bit_change_rejected (test_protocol.ProtocolTests.test_every_single_bit_change_rejected) ... ok
+test_float_nonfinite_supported_by_wire (test_protocol.ProtocolTests.test_float_nonfinite_supported_by_wire) ... ok
+test_header_inside_payload (test_protocol.ProtocolTests.test_header_inside_payload) ... ok
+test_independent_c_reference (test_protocol.ProtocolTests.test_independent_c_reference) ... ok
+test_offsets_independent_literal_bytes (test_protocol.ProtocolTests.test_offsets_independent_literal_bytes) ... ok
+test_partial_final_frame (test_protocol.ProtocolTests.test_partial_final_frame) ... ok
+test_truncated_then_valid (test_protocol.ProtocolTests.test_truncated_then_valid) ... ok
+test_uint16_not_signed_or_float (test_protocol.ProtocolTests.test_uint16_not_signed_or_float) ... ok
+test_wrong_header_is_framing_not_checksum (test_protocol.ProtocolTests.test_wrong_header_is_framing_not_checksum) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 3.914s
+
+OK

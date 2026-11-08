@@ -1,0 +1,14 @@
+test_concrete_ref_required (test_evidence_tree.EvidenceTests.test_concrete_ref_required) ... ok
+test_coverage_and_integrity (test_evidence_tree.EvidenceTests.test_coverage_and_integrity) ... ok
+test_generated_trees (test_evidence_tree.EvidenceTests.test_generated_trees) ... ok
+test_heuristic_and_violation (test_evidence_tree.EvidenceTests.test_heuristic_and_violation) ... ok
+test_limits_and_optional (test_evidence_tree.EvidenceTests.test_limits_and_optional) ... ok
+test_minimum_coverage_and_duplicate_reference (test_evidence_tree.EvidenceTests.test_minimum_coverage_and_duplicate_reference) ... ok
+test_order_and_missing (test_evidence_tree.EvidenceTests.test_order_and_missing) ... ok
+test_structural_conditions_are_detector_relative (test_evidence_tree.EvidenceTests.test_structural_conditions_are_detector_relative) ... ok
+test_truth_independence (test_evidence_tree.EvidenceTests.test_truth_independence) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 3.785s
+
+OK

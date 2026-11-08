@@ -1,0 +1,170 @@
+[
+  {
+    "id": "M01",
+    "component": "diagnostics/counter.py",
+    "expected_killer": "test_pairs",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M02",
+    "component": "diagnostics/counter.py",
+    "expected_killer": "test_pairs",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M03",
+    "component": "diagnostics/counter.py",
+    "expected_killer": "test_pairs",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M04",
+    "component": "diagnostics/counter.py",
+    "expected_killer": "test_pairs",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M05",
+    "component": "diagnostics/counter.py",
+    "expected_killer": "test_pairs",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M06",
+    "component": "diagnostics/counter.py",
+    "expected_killer": "test_arbitrary_jump_and_reorder",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M07",
+    "component": "diagnostics/counter.py",
+    "expected_killer": "test_arbitrary_jump_and_reorder",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M08",
+    "component": "diagnostics/__init__.py",
+    "expected_killer": "test_epoch_reset",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M09",
+    "component": "presentation.py",
+    "expected_killer": "test_view_diagnostic_equivalence",
+    "actual_result": "killed"
+  },
+  {
+    "id": "M10",
+    "component": "observability.py",
+    "expected_killer": "test_alias_256",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E01",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_order_and_missing",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E02",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_order_and_missing",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E03",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_order_and_missing",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E04",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_order_and_missing",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E05",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_order_and_missing",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E06",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_limits_and_optional",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E07",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_concrete_ref_required",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E08",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_coverage_and_integrity",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E09",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_order_and_missing",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E10",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_order_and_missing",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E11",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_truth_independence",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E12",
+    "component": "evidence_tree.py",
+    "expected_killer": "test_evidence_tree.EvidenceTests.test_coverage_and_integrity",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E13",
+    "component": "protocol/gateway53.py",
+    "expected_killer": "test_protocol.ProtocolTests.test_truncated_then_valid",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E14",
+    "component": "replay.py",
+    "expected_killer": "test_p2_backend.BackendTests.test_replay_preserves_epoch_boundaries_and_partial_discard",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E15",
+    "component": "backend.py",
+    "expected_killer": "test_p2_backend.BackendTests.test_bounded_queue_exact_limit_rejection_no_eviction",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E16",
+    "component": "storage.py",
+    "expected_killer": "test_p2_storage.CheckpointOrderingTests.test_confirm_only_after_checkpoint_fsync",
+    "actual_result": "killed"
+  },
+  {
+    "id": "E17",
+    "component": "backend.py",
+    "expected_killer": "test_p2_shutdown.ShutdownBudgetTests.test_independent_budgets_allow_healthy_writer_to_drain",
+    "actual_result": "killed"
+  },
+  {
+    "id": "T01",
+    "component": "processing",
+    "expected_killer": "test_observed_boundary.BoundaryTests.test_live_truth_mutant_killed_by_file_source",
+    "actual_result": "killed"
+  }
+]

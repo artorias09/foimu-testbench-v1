@@ -1,0 +1,38 @@
+{
+  "gate_id": "G0",
+  "schema_version": 1,
+  "commit": "2c709f893a7f99e362d9cf5e61b6511740efe60b",
+  "tree": "1d74c47a1991acb144baff234441e0d3ace5df0b",
+  "branch": "feature/v02-p35-state-evidence",
+  "date_utc": "2026-11-08T04:04:42.393965+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "commands": [
+    "git rev-parse HEAD",
+    "git rev-parse HEAD^{tree}",
+    "git status --short",
+    "git branch --show-current",
+    "git remote -v",
+    "git branch -vv",
+    "git ls-remote origin"
+  ],
+  "results": {
+    "working_tree": "clean at initial inspection",
+    "publication": "PUBLICATION_PENDING",
+    "IEAV_PUBLICATION_AUTHORIZATION": "EXTERNAL_PENDING",
+    "github_branch_found": false,
+    "initial_ls_remote": "4e1f8c3caa10f4b5f32deca2b7e616cabb28c0a6 refs/heads/feature/v02-p3-gui",
+    "origin_type": "local Git bundle",
+    "github_target": "artorias09/foimu-testbench-v1"
+  },
+  "artifacts": [
+    "origin.json"
+  ],
+  "sha256": {
+    "origin.json": "8e80fe96c59f53bdaec5bbb5b24956e8ebe929f661a4f06a284cbf2b4f5d80a6"
+  },
+  "limitations": [
+    "Identidade reconciliada localmente. Autorização dos trechos IEAv e identidade remota da branch pendentes."
+  ],
+  "status": "passed"
+}

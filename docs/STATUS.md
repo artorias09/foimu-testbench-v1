@@ -84,3 +84,30 @@ produtor. Integração visual, interpretação física e verificação no IEAv s
 Na preparação do ensaio E16, o controle limpo identificou a ausência de run_id no novo
 fixture de checkpoint. O ensaio foi corrigido antes de contabilizar o mutante. O gate
 usa somente execuções nas quais o controle limpo passou e o mutante falhou por asserção.
+
+## Fechamento P3.5A
+
+PUBLICATION_PENDING. G1 aguarda GitHub Actions nas duas plataformas. A fonte de evidência
+local desta entrega é a revisão executável indicada em evidence/gates/G2 a G4. Os commits
+seguintes acrescentam instruções, pré-registro e os próprios resultados. O bundle completo
+contém o histórico necessário ao teste de blobs v0.1 e pode ser clonado diretamente.
+
+| Claim | Status | Evidência e escopo |
+|---|---|---|
+| Identidade local reconciliada | VERIFIED_LOCAL | G0, Git HEAD/tree e registro de origem |
+| Core e Qt em CI Linux e Windows | EXTERNAL_PENDING | G1 not_run, exige runner remoto |
+| Truth não influencia reanálise observed no corpus testado | VERIFIED_LOCAL | G2, diferenciais e auditoria integral estrita |
+| Parser conserva bytes no corpus gerativo | VERIFIED_LOCAL | G3, 200 seeds |
+| Counter readquire após salto ambíguo | VERIFIED_LOCAL | G2/G3, caso 9,200,201 |
+| Agregação exige evidência positiva | VERIFIED_LOCAL | G3/G4, propriedades e mutantes |
+| Cinco capturas sintéticas reproduzem os arquivos esperados | VERIFIED_LOCAL | G3, hashes das entradas e saídas em tests/corpus |
+| Gate histórico Windows em estação real | REPORTED_NOT_REPRODUCED | Relato de aprovação, artefatos históricos indisponíveis nesta entrega |
+| Conformidade com FO-IMU, escala ACC/IFOG/MEMS | EXTERNAL_PENDING | G5 por claim, capturas e metadados externos |
+| Latência física absoluta a partir de tempo de recepção isolado | NOT_SUPPORTED | O perfil legado carece de timestamp físico por sensor |
+
+A descoberta local inclui um novo teste que verifica os cinco casos do corpus. Total 162,
+158 passaram e quatro testes Qt foram pulados por dependências opcionais ausentes.
+O controle inicial de G4 rejeitou um mutante detectado por dois subtestes do mesmo teste.
+O executor foi corrigido para reconhecer múltiplas falhas de asserção, mantendo a
+exigência do teste esperado e a rejeição de erros de execução. A matriz final executou
+os 28 casos. O workflow pesado fica disponível por acionamento manual.

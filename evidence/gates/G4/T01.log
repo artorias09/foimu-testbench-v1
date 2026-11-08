@@ -1,0 +1,6 @@
+test_live_truth_mutant_killed_by_file_source (test_observed_boundary.BoundaryTests.test_live_truth_mutant_killed_by_file_source) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.421s
+
+OK

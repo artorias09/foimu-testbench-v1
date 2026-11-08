@@ -1,0 +1,16 @@
+test_counter_episode_file_source (test_observed_boundary.BoundaryTests.test_counter_episode_file_source) ... ok
+test_file_source_uses_only_two_files_and_projection (test_observed_boundary.BoundaryTests.test_file_source_uses_only_two_files_and_projection) ... ok
+test_full_replay_requires_original_truth (test_observed_boundary.BoundaryTests.test_full_replay_requires_original_truth) ... ok
+test_live_truth_mutant_killed_by_file_source (test_observed_boundary.BoundaryTests.test_live_truth_mutant_killed_by_file_source) ... ok
+test_modified_inputs_rejected (test_observed_boundary.BoundaryTests.test_modified_inputs_rejected) ... ok
+test_partial_reference_refused (test_observed_boundary.BoundaryTests.test_partial_reference_refused) ... ok
+test_poisoned_truth (test_observed_boundary.BoundaryTests.test_poisoned_truth) ... ok
+test_time_and_epoch_differential (test_observed_boundary.BoundaryTests.test_time_and_epoch_differential) ... ok
+test_without_truth_or_scenario (test_observed_boundary.BoundaryTests.test_without_truth_or_scenario) ... ok
+test_zero_byte_complete_stream (test_observed_boundary.BoundaryTests.test_zero_byte_complete_stream) ... ok
+test_static_observed_import_closure (test_observed_boundary.ImportBoundaryTests.test_static_observed_import_closure) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.697s
+
+OK

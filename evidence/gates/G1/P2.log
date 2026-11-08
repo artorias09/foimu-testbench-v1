@@ -1,0 +1,52 @@
+test_bounded_queue_exact_limit_rejection_no_eviction (test_p2_backend.BackendTests.test_bounded_queue_exact_limit_rejection_no_eviction) ... ok
+test_corruption_and_unobservable_final_drop (test_p2_backend.BackendTests.test_corruption_and_unobservable_final_drop) ... ok
+test_disk_budget_cannot_report_complete (test_p2_backend.BackendTests.test_disk_budget_cannot_report_complete) ... ok
+test_failure_in_finalization_cannot_publish_completed_or_stale_report (test_p2_backend.BackendTests.test_failure_in_finalization_cannot_publish_completed_or_stale_report) ... ok
+test_garbage_and_silence_have_distinct_watchdogs (test_p2_backend.BackendTests.test_garbage_and_silence_have_distinct_watchdogs) ... ok
+test_initial_identity_preserved_and_source_change_recorded (test_p2_backend.BackendTests.test_initial_identity_preserved_and_source_change_recorded) ... ok
+test_invalid_capacity_rejected_before_resources (test_p2_backend.BackendTests.test_invalid_capacity_rejected_before_resources) ... ok
+test_nan_inf_preserved_in_wire_and_explicit_in_json (test_p2_backend.BackendTests.test_nan_inf_preserved_in_wire_and_explicit_in_json) ... ok
+test_normal_reopens_hashes_and_drains_without_deadlock (test_p2_backend.BackendTests.test_normal_reopens_hashes_and_drains_without_deadlock) ... ok
+test_replay_preserves_epoch_boundaries_and_partial_discard (test_p2_backend.BackendTests.test_replay_preserves_epoch_boundaries_and_partial_discard) ... ok
+test_replay_source_config_and_explicit_override (test_p2_backend.BackendTests.test_replay_source_config_and_explicit_override) ... ok
+test_rx_queue_full_explicit_partial (test_p2_backend.BackendTests.test_rx_queue_full_explicit_partial) ... ok
+test_scheduled_action_order_and_not_reached (test_p2_backend.BackendTests.test_scheduled_action_order_and_not_reached) ... ok
+test_snapshot_detaches_mutable_scenario (test_p2_backend.BackendTests.test_snapshot_detaches_mutable_scenario) ... ok
+test_stop_idempotent_and_drained (test_p2_backend.BackendTests.test_stop_idempotent_and_drained) ... ok
+test_truth_removed_same_observed (test_p2_backend.BackendTests.test_truth_removed_same_observed) ... ok
+test_unit_mismatch_and_missing_truth_inconclusive (test_p2_backend.BackendTests.test_unit_mismatch_and_missing_truth_inconclusive) ... ok
+test_worker_progress_detection_delay_with_mock_clock (test_p2_backend.BackendTests.test_worker_progress_detection_delay_with_mock_clock) ... ok
+test_writer_dead_and_disk_full (test_p2_backend.BackendTests.test_writer_dead_and_disk_full) ... ok
+test_writer_queue_full_explicit_partial_and_no_deadlock (test_p2_backend.BackendTests.test_writer_queue_full_explicit_partial_and_no_deadlock) ... ok
+test_writer_slow_does_not_directly_block_rx (test_p2_backend.BackendTests.test_writer_slow_does_not_directly_block_rx) ... ok
+test_zero_data_never_implicit_pass (test_p2_backend.BackendTests.test_zero_data_never_implicit_pass) ... ok
+test_strict_schema_rejected_and_scenario_cli (test_p2_cli.CLITests.test_strict_schema_rejected_and_scenario_cli) ... ok
+test_v2_cli_import_run_inspect_replay_and_no_overwrite (test_p2_cli.CLITests.test_v2_cli_import_run_inspect_replay_and_no_overwrite) ... ok
+test_final_identity_cannot_silently_claim_no_change (test_p2_contracts.P2ContractTests.test_final_identity_cannot_silently_claim_no_change) ... ok
+test_stop_reason_survives_finalization (test_p2_contracts.P2ContractTests.test_stop_reason_survives_finalization) ... ok
+test_epoch_discard_retains_byte_origin_and_detection_time (test_p2_evidence.EvidenceTests.test_epoch_discard_retains_byte_origin_and_detection_time) ... ok
+test_frame_spans_and_refs (test_p2_evidence.EvidenceTests.test_frame_spans_and_refs) ... ok
+test_ledger_does_not_change_legacy_rng_or_composition (test_p2_evidence.EvidenceTests.test_ledger_does_not_change_legacy_rng_or_composition) ... ok
+test_located_parser_exact_legacy_equivalence (test_p2_evidence.EvidenceTests.test_located_parser_exact_legacy_equivalence) ... ok
+test_watchdogs_garbage_and_total_silence (test_p2_evidence.EvidenceTests.test_watchdogs_garbage_and_total_silence) ... ok
+test_worker_envelope_rejects_mutable_bytes (test_p2_evidence.EvidenceTests.test_worker_envelope_rejects_mutable_bytes) ... ok
+test_b01_ingest_writes_and_parses_in_calling_thread (test_p2_legacy_characterization.LegacyP2Characterization.test_b01_ingest_writes_and_parses_in_calling_thread) ... ok
+test_b02_metadata_absent_until_legacy_finish (test_p2_legacy_characterization.LegacyP2Characterization.test_b02_metadata_absent_until_legacy_finish) ... ok
+test_independent_budgets_allow_healthy_writer_to_drain (test_p2_shutdown.ShutdownBudgetTests.test_independent_budgets_allow_healthy_writer_to_drain) ... ok
+test_confirm_only_after_checkpoint_fsync (test_p2_storage.CheckpointOrderingTests.test_confirm_only_after_checkpoint_fsync) ... ok
+test_atomic_json_keeps_failure_after_retry_window (test_p2_storage.StorageTests.test_atomic_json_keeps_failure_after_retry_window) ... ok
+test_atomic_json_retries_transient_permission_error (test_p2_storage.StorageTests.test_atomic_json_retries_transient_permission_error) ... ok
+test_backend_process_death_mid_write_and_recovery (test_p2_storage.StorageTests.test_backend_process_death_mid_write_and_recovery) ... ok
+test_checkpoint_preserves_tail_and_never_recovers_completed (test_p2_storage.StorageTests.test_checkpoint_preserves_tail_and_never_recovers_completed) ... ok
+test_failure_between_wire_and_index_preserves_unindexed_tail (test_p2_storage.StorageTests.test_failure_between_wire_and_index_preserves_unindexed_tail) ... ok
+test_full_controller_killed_inside_writer (test_p2_storage.StorageTests.test_full_controller_killed_inside_writer) ... ok
+test_malformed_checkpoint_structure_keeps_valid_prefix (test_p2_storage.StorageTests.test_malformed_checkpoint_structure_keeps_valid_prefix) ... ok
+test_manifest_detects_tampering (test_p2_storage.StorageTests.test_manifest_detects_tampering) ... ok
+test_no_overwrite (test_p2_storage.StorageTests.test_no_overwrite) ... ok
+test_partial_checkpoint_keeps_previous_confirmed_prefix (test_p2_storage.StorageTests.test_partial_checkpoint_keeps_previous_confirmed_prefix) ... ok
+test_timeline_validated_even_without_manifest_trust (test_p2_storage.StorageTests.test_timeline_validated_even_without_manifest_trust) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 6.200s
+
+OK
