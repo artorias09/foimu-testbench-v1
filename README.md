@@ -17,9 +17,9 @@ separadas de truth/observed, checkpoints, replay validado e critérios explícit
 Os comandos v1 abaixo permanecem disponíveis.
 
 ```powershell
-py -3 -m foimu_testbench run-v2 --scenario configs/v2/normal.json --out logs/p2_normal
-py -3 -m foimu_testbench inspect-v2 --run logs/p2_normal
-py -3 -m foimu_testbench replay-v2 --run logs/p2_normal --out logs/p2_replay
+py -3.12 -m foimu_testbench run-v2 --scenario configs/v2/normal.json --out logs/p2_normal
+py -3.12 -m foimu_testbench inspect-v2 --run logs/p2_normal
+py -3.12 -m foimu_testbench replay-v2 --run logs/p2_normal --out logs/p2_replay
 ```
 
 Leia [P2_BACKEND.md](docs/P2_BACKEND.md) para uso, arquitetura e limites, e
@@ -32,8 +32,8 @@ Conclusão da execução, aprovação e integridade são estados independentes.
 Extraia o ZIP e abra o PowerShell **dentro da pasta `foimu-testbench`**, onde está este README.
 
 ```powershell
-py -3 --version
-py -3 -m foimu_testbench demo --config configs/normal.json --out logs/primeiro_ensaio
+py -3.12 --version
+py -3.12 -m foimu_testbench demo --config configs/normal.json --out logs/primeiro_ensaio
 ```
 
 Se o comando `py` não existir, use `python` no lugar, desde que a versão seja 3.12.x.
@@ -53,9 +53,9 @@ Abra `logs/primeiro_ensaio/report.md`. Os demais arquivos são:
 ## Testar perda e checksum
 
 ```powershell
-py -3 -m foimu_testbench demo --config configs/loss.json --out logs/perda_01
-py -3 -m foimu_testbench demo --config configs/checksum.json --out logs/checksum_01
-py -3 -m foimu_testbench demo --config configs/jitter.json --out logs/jitter_01
+py -3.12 -m foimu_testbench demo --config configs/loss.json --out logs/perda_01
+py -3.12 -m foimu_testbench demo --config configs/checksum.json --out logs/checksum_01
+py -3.12 -m foimu_testbench demo --config configs/jitter.json --out logs/jitter_01
 ```
 
 `loss.json`: 1001 oportunidades, 100 frames retirados, 901 aceitos, 100 perdas inferidas. O frame final válido permite observar a última lacuna.
@@ -67,13 +67,13 @@ py -3 -m foimu_testbench demo --config configs/jitter.json --out logs/jitter_01
 No primeiro PowerShell:
 
 ```powershell
-py -3 -m foimu_testbench simulate --config configs/normal.json --packets 3000
+py -3.12 -m foimu_testbench simulate --config configs/normal.json --packets 3000
 ```
 
 No segundo, na mesma pasta:
 
 ```powershell
-py -3 -m foimu_testbench acquire --seconds 35 --out logs/tcp_01
+py -3.12 -m foimu_testbench acquire --seconds 35 --out logs/tcp_01
 ```
 
 O servidor escuta `127.0.0.1:8765` e começa quando o cliente se conecta. São bytes TCP com o mesmo pacote; não é uma porta COM virtual. O parser não conhece o gerador. O horário de recepção pode variar com agendamento e buffering do sistema operacional. Os 5 segundos depois de terminar a emissão podem gerar um timeout de stream: isso é esperado pela duração escolhida.
@@ -85,7 +85,7 @@ Durante desconexão o servidor aguarda cliente e pode depois recuperar o cronogr
 ## Replay
 
 ```powershell
-py -3 -m foimu_testbench replay --input logs/primeiro_ensaio/wire.bin --timing logs/primeiro_ensaio/chunks.jsonl --out logs/replay_01
+py -3.12 -m foimu_testbench replay --input logs/primeiro_ensaio/wire.bin --timing logs/primeiro_ensaio/chunks.jsonl --out logs/replay_01
 ```
 
 Mantém bytes, blocos e tempos observados. Sem `--timing`, o replay inventa intervalos nominais por bloco de53 B e registra essa limitação. Uma captura física futura poderá alimentar o mesmo parser; ainda falta o adaptador de aquisição COM nesta versão. CSV isolado não conserva framing/checksum original.
@@ -93,8 +93,8 @@ Mantém bytes, blocos e tempos observados. Sem `--timing`, o replay inventa inte
 ## Testes reproduzíveis
 
 ```powershell
-py -3 -m unittest discover -s tests -v
-py -3 -m tools.acceptance --out logs/aceitacao_01
+py -3.12 -m unittest discover -s tests -v
+py -3.12 -m tools.acceptance --out logs/aceitacao_01
 ```
 
 O segundo comando executa a suíte e um milhão de frames acelerados. `tests/fixtures/reference_gateway.c` contém a struct e o Fletcher extraídos do gateway, com origem/linhas. O vetor C está salvo em binário/hex, então não é necessário instalar compilador no Windows para rodar os testes. Isso valida o contrato de bytes contra uma referência independente; não significa executar o STM32 no PC.
@@ -104,13 +104,13 @@ O segundo comando executa a suíte e um milhão de frames acelerados. `tests/fix
 Primeiro terminal:
 
 ```powershell
-py -3 -m foimu_testbench simulate --config configs/soak_8h.json
+py -3.12 -m foimu_testbench simulate --config configs/soak_8h.json
 ```
 
 Segundo terminal:
 
 ```powershell
-py -3 -m foimu_testbench acquire --config configs/soak_8h.json --seconds 28810 --out logs/oito_horas_01
+py -3.12 -m foimu_testbench acquire --config configs/soak_8h.json --seconds 28810 --out logs/oito_horas_01
 ```
 
 São 2.880.000 oportunidades no simulador, 152,64 MB só de bytes crus, além de CSV e JSONL. Reserve vários GB, mantenha a máquina ligada e sem suspensão. O host não recebe um contador largo ou número total pelo protocolo legado, então `packets_expected` do cliente fica `null`; compare o total com a configuração do emissor. A pausa final de10 s entra nas métricas de ausência de dados. Um comando preparado não significa que esse ensaio já foi executado. Ainda falta telemetria periódica de RSS/CPU/disco para aprovar a Fase de longa duração.
@@ -145,3 +145,9 @@ Não acrescente campos “status” ou timestamps ao frame legado sem criar um p
 4. [Resultados executados](docs/VALIDACAO.md): o que efetivamente passou e o que não foi validado.
 
 O próximo passo conjunto é rodar o primeiro ensaio acima no seu Windows e comparar os números do relatório. A primeira confirmação a pedir ao IEAv é o firmware ACC de16 B e os builds realmente instalados; isso muda quais mocks devemos implementar depois.
+
+## Baseline P3.5A
+
+Os comandos locais e os jobs estão em [CI_PLAN.md](docs/CI_PLAN.md).
+O estado de liberação e os limites de cada conclusão estão em [STATUS.md](docs/STATUS.md).
+Os manifestos locais em evidence/gates identificam o commit executável verificado.
