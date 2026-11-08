@@ -29,3 +29,23 @@ Se a captura limpa em transporte confirmado não estabilizar em A0 A0, 53 bytes 
 checksum do perfil, e revisão diferente, transporte ou artefato de captura não explicarem
 a divergência, registrar LAYOUT HYPOTHESIS REFUTED e parar a evolução dependente do layout
 até replanejamento. Este documento prepara o gate, cuja execução depende do IEAv.
+
+## Revisão 2, congelamento anterior à recepção
+
+Todos os itens abaixo têm status HYPOTHESIS para a unidade instalada. A confiança expressa
+a expectativa sobre a captura antes da observação. G e MAN remetem às referências do quadro acima.
+
+| ID | Escopo | Comportamento esperado | Fonte | Confiança | Sustenta | Refuta |
+|---|---|---|---|---|---|---|
+| E1 | comprimento | 53 bytes/candidato | G struct packed, MAN | moderada | Distância repetida de 53 entre limites confirmados pelo consumidor independente | Outro comprimento estável explica os mesmos bytes |
+| E2 | framing | A0 A0 inicia o frame | G header, MAN | moderada | Assinatura nos limites confirmados em várias janelas | Outra assinatura nos limites, após verificar transporte |
+| E3 | counter | uint8 no offset 2, rollover modular | G struct/TX | moderada | Progressão e voltas no campo, concordância byte a byte | Outro offset/largura demonstrado pelo firmware instalado ou consumidor |
+| E4 | checksum | Fletcher mod 255 do payload [2,51), LE em [51,53) | G TX e MAN Listing 2 | moderada | Recomputação consistente em frames alinhados | Outra regra explica discrepâncias sistemáticas em transporte íntegro |
+| E5 | taxa | aproximadamente 100 Hz em regime | G TIM3, MAN | moderada, condicional | Contagens por janela de tempo de recepção confiável em C1 | Outra taxa sustentada, além da incerteza de medição e buffering, corroborada pelo laboratório |
+| E6 | endianness | campos multibyte little-endian | G struct/MCU, contrato auditado | moderada | Campos com bytes assimétricos batem com decodificação independente | Interpretação alternativa corroborada nos mesmos spans |
+
+Histórico: revisão 1 na baseline eeed2dd. Revisão 2 individualiza comprimento e header,
+inclui endian e critérios positivos. Nenhuma captura real foi consultada. Após a abertura,
+registrar toda revisão com documento, versão/commit anteriores e novos, evidência já vista,
+motivo e impacto por claim. Preservar a análise realizada com o pré-registro anterior.
+O código formal de parada desta revisão é LAYOUT_HYPOTHESIS_REFUTED.

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "divergence",
+  "type": "object",
+  "required": [
+    "divergence_id",
+    "capture_id",
+    "scope",
+    "observation",
+    "expected",
+    "byte_span",
+    "frame_range",
+    "classification",
+    "evidence",
+    "impact_on_claim",
+    "status"
+  ],
+  "properties": {
+    "divergence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capture_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected": {
+      "type": "string",
+      "minLength": 1
+    },
+    "byte_span": {
+      "anyOf": [
+        {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "frame_range": {
+      "anyOf": [
+        {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "classification": {
+      "enum": [
+        "PARSER",
+        "FIRMWARE",
+        "TRANSPORT",
+        "CAPTURE_ARTIFACT",
+        "UNKNOWN"
+      ]
+    },
+    "evidence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "impact_on_claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "open",
+        "explained",
+        "closed"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
