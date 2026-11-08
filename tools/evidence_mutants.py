@@ -1,4 +1,5 @@
 """Execute targeted source mutations outside the working tree. Require a failing assertion."""
+import re
 import shutil
 import subprocess
 import sys
@@ -62,7 +63,7 @@ def main():
                 src = src.replace("        for name in ('rx','processing'):", "        shutdown_start = time.monotonic_ns()\n        for name in ('rx','processing'):")
             path.write_text(src.replace(before, after), encoding='utf-8')
             result = execute(tmp, target)
-            if result.returncode != 1 or 'FAILED (failures=1)' not in result.stderr or f'FAIL: {test.split(".")[-1]} (' not in result.stderr or 'AssertionError' not in result.stderr:
+            if result.returncode != 1 or not re.search(r'^FAILED \(failures=[1-9][0-9]*\)$', result.stderr, re.MULTILINE) or f'FAIL: {test.split(".")[-1]} (' not in result.stderr or 'AssertionError' not in result.stderr:
                 raise RuntimeError(f'Mutante {number}: sobrevivente ou ensaio inválido\n{result.stderr}')
             print(f'E{number:02d} KILLED {test}', flush=True)
 

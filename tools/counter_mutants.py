@@ -1,5 +1,6 @@
 """Run each counter mutant in a fresh temporary source tree, requiring assertion failure."""
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -45,7 +46,7 @@ def main():
                 raise ValueError(f'Alvo de mutação ambíguo M{index}')
             path.write_text(source.replace(old, new), encoding='utf8')
             result = run_case(tmp, test)
-            if result.returncode != 1 or 'FAILED (failures=1)' not in result.stderr or f'FAIL: {test.split(".")[-1]} (' not in result.stderr or 'AssertionError' not in result.stderr:
+            if result.returncode != 1 or not re.search(r'^FAILED \(failures=[1-9][0-9]*\)$', result.stderr, re.MULTILINE) or f'FAIL: {test.split(".")[-1]} (' not in result.stderr or 'AssertionError' not in result.stderr:
                 raise RuntimeError(f'M{index}: sobrevivente ou execução inválida\n{result.stderr}')
             print(f'M{index:02} KILLED {test}')
 
