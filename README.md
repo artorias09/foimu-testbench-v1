@@ -1,4 +1,4 @@
-# FO-IMU testbench — primeira versão executável
+# FO-IMU testbench: primeira versão executável
 
 **** O projeto reproduz a saída binária do gateway anexado: 53 bytes, header A0 A0, counter8, floats/inteiros little-endian e Fletcher-16. Os sinais são sintéticos. Os repositórios IEAv originais não foram alterados.
 
