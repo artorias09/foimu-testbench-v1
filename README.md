@@ -1,153 +1,167 @@
-# FO-IMU testbench — primeira versão executável
+# FO-IMU Virtual Testbench
 
-**** O projeto reproduz a saída binária do gateway anexado: 53 bytes, header A0 A0, counter8, floats/inteiros little-endian e Fletcher-16. Os sinais são sintéticos. Os repositórios IEAv originais não foram alterados.
+Ambiente virtual de teste, validação e diagnóstico para a interface digital da FO-IMU, desenvolvido a partir dos repositórios e materiais técnicos fornecidos pelo IEAv.
 
-Para os comandos sem GUI, você precisa apenas do PC e CPython 3.12.x. Esta etapa não requer ESP32, Raspberry, LabVIEW, pip ou Docker. O código foi executado em Python 3.12.14/Linux neste ambiente; a execução no seu Windows ainda precisa ser confirmada.
+O objetivo é reproduzir o **contrato digital observado no gateway**, exercitar falhas e validar o comportamento do software antes de qualquer ensaio ativo no hardware real. O projeto não tenta simular a física completa da IMU nem substituir a validação experimental da unidade.
 
-## Bancada gráfica P3
+## Por que este projeto existe
 
-A GUI permite configurar um ensaio virtual L1, acompanhar sinais, métricas e eventos, solicitar parada e reabrir a Run e seu relatório. O serviço local continua a aquisição ao fechar a janela.
+A bancada foi criada para permitir que protocolo, aquisição, armazenamento, replay, diagnóstico e recuperação sejam estudados de forma reproduzível no PC. Isso ajuda a:
 
-**P3 implementada. P3 não liberada.** Gate Linux executado. Gate Windows 10/11 com Python 3.12 pendente. Instruções para instalar as dependências opcionais e abrir os dois processos em [P3_GUI.md](docs/P3_GUI.md). Resultados medidos e roteiro do gate Windows em [P3_VALIDACAO.md](docs/P3_VALIDACAO.md).
+- entender o comportamento esperado da cadeia digital antes de usar o hardware;
+- reproduzir erros sem colocar a unidade física em risco;
+- localizar problemas por bytes, frames, eventos e épocas;
+- separar o que o simulador **sabe** (`truth`) do que o software realmente **observa** (`observed`);
+- testar se os próprios mecanismos de diagnóstico detectam falhas intencionais;
+- preparar a comparação posterior com capturas reais da FO-IMU.
 
-## Incremento v0.2 P2: backend sem GUI
+## Estado atual
 
-O caminho v2 acrescenta RunController, três workers com filas limitadas, evidências
-separadas de truth/observed, checkpoints, replay validado e critérios explícitos.
-Os comandos v1 abaixo permanecem disponíveis.
-
-```powershell
-py -3.12 -m foimu_testbench run-v2 --scenario configs/v2/normal.json --out logs/p2_normal
-py -3.12 -m foimu_testbench inspect-v2 --run logs/p2_normal
-py -3.12 -m foimu_testbench replay-v2 --run logs/p2_normal --out logs/p2_replay
-```
-
-Leia [P2_BACKEND.md](docs/P2_BACKEND.md) para uso, arquitetura e limites, e
-[P2_VALIDACAO.md](docs/P2_VALIDACAO.md) para resultados e cobertura executada.
-P2 usa transporte virtual e replay. Não inclui GUI nem captura TCP v2.
-Conclusão da execução, aprovação e integridade são estados independentes.
-
-## Primeiro ensaio no Windows
-
-Extraia o ZIP e abra o PowerShell **dentro da pasta `foimu-testbench`**, onde está este README.
-
-```powershell
-py -3.12 --version
-py -3.12 -m foimu_testbench demo --config configs/normal.json --out logs/primeiro_ensaio
-```
-
-Se o comando `py` não existir, use `python` no lugar, desde que a versão seja 3.12.x.
-
-Esperado: 1000 pacotes recebidos, zero perdas inferidas, zero erros de checksum/framing. É um ensaio acelerado com relógio virtual: não espere dez segundos. Os resultados vão para uma **pasta nova**; para repetir, use outro nome. O programa recusa sobrescrever uma pasta existente.
-
-Abra `logs/primeiro_ensaio/report.md`. Os demais arquivos são:
-
-| Arquivo | O que prova |
+| Área | Estado |
 |---|---|
-| report.json | métricas, estatísticas por canal, configuração, versão, hash do código e limites de inferência |
-| samples.csv | frames aceitos, counter, campos e timestamp de recepção do modelo |
-| wire.bin | bytes realmente entregues ao parser, inclusive corrupção quando habilitada |
-| chunks.jsonl | limites dos blocos, offsets, tempos e eventos de conexão |
-| config.resolved.json | configuração completa usada, incluindo seed |
+| Pipeline virtual de aquisição/processamento | ✅ implementado |
+| Protocolo legado 53 B / parser incremental | ✅ implementado e testado |
+| Replay reproduzível | ✅ implementado |
+| Persistência, checkpoints e recovery | ✅ implementados |
+| Injeção de falhas e cenários | ✅ implementada |
+| GUI de bancada | ✅ implementada |
+| Fronteira `truth` / `observed` | ✅ validada localmente |
+| Semântica de counter8 e reacquisition | ✅ validada localmente |
+| Semântica de estados/evidências | ✅ validada localmente |
+| Corpus dourado sintético | ✅ 5 casos congelados |
+| Mutation testing curado | ✅ 28/28 mutantes detectados |
+| Suíte local | ✅ 162 descobertos; 158 passam sem GUI; 4 Qt aguardam ambiente gráfico |
+| CI Linux + Windows + GUI (G1) | ⏳ `NOT_RUN` |
+| Preparação para captura real (P3.5B) | ✅ aprovada |
+| Ancoragem com FO-IMU real (G5) | ⏳ aguardando dados IEAv |
+| Calibração/escala física | ⏳ não validada |
+| HIL / serial físico | ⏳ fase futura |
 
-## Testar perda e checksum
+**Importante:** resultados sintéticos demonstram consistência e capacidade de diagnóstico do testbench. Eles **não provam conformidade com a unidade física**. A próxima validação relevante é confrontar as hipóteses congeladas com bytes reais do IEAv.
 
-```powershell
-py -3.12 -m foimu_testbench demo --config configs/loss.json --out logs/perda_01
-py -3.12 -m foimu_testbench demo --config configs/checksum.json --out logs/checksum_01
-py -3.12 -m foimu_testbench demo --config configs/jitter.json --out logs/jitter_01
+## Hipóteses digitais atualmente pré-registradas
+
+Antes de abrir qualquer captura física, o projeto congelou as seguintes hipóteses para a unidade instalada:
+
+- frame candidato de **53 bytes**;
+- header `A0 A0`;
+- counter de **8 bits**;
+- checksum Fletcher legado;
+- taxa nominal próxima de **100 Hz**;
+- campos multibyte em **little-endian**.
+
+Elas continuam hipóteses até a etapa G5. O procedimento de ingestão e os critérios de refutação estão documentados em [HW_CAPTURE_INGESTION.md](docs/HW_CAPTURE_INGESTION.md) e [HW_CAPTURE_EXPECTATIONS.md](docs/HW_CAPTURE_EXPECTATIONS.md).
+
+## Arquitetura em uma visão
+
+```mermaid
+flowchart LR
+    S[Simulador / cenários] -->|bytes| A[Aquisição]
+    A --> P[Parser + processamento]
+    P --> D[Diagnóstico]
+    D --> O[Observed]
+    S --> T[Truth]
+    O --> V[Validação / evidências]
+    T --> V
+    A --> W[Persistência / replay]
+    W --> P
+    P --> G[GUI]
 ```
 
-`loss.json`: 1001 oportunidades, 100 frames retirados, 901 aceitos, 100 perdas inferidas. O frame final válido permite observar a última lacuna.
+A regra central é que `truth` não pode melhorar o caminho `observed`. O mesmo fluxo de processamento usado em execução também é usado na reanálise de capturas por arquivo.
 
-`checksum.json`: 1000 oportunidades, 100 checksums alterados, 900 frames aceitos. O último corrompido não tem sucessor para revelar sua perda por counter; o total inferido pode ser99, embora o oráculo saiba que100 foram corrompidos. Headers falsos também podem produzir mais candidatos de checksum inválido que frames injetados. Essa distinção é intencional, não “arredondada” para passar no teste.
+Detalhes: [PROJECT_ARCHITECTURE.md](docs/PROJECT_ARCHITECTURE.md).
 
-## Dois programas separados, usando tempo real
+## Execução rápida
 
-No primeiro PowerShell:
+Requisito suportado nesta baseline:
 
-```powershell
-py -3.12 -m foimu_testbench simulate --config configs/normal.json --packets 3000
+```text
+CPython >=3.12,<3.13
 ```
 
-No segundo, na mesma pasta:
+### Teste legado simples
 
 ```powershell
-py -3.12 -m foimu_testbench acquire --seconds 35 --out logs/tcp_01
+py -3.12 -m foimu_testbench demo --config configs/normal.json --out logs/demo_normal
 ```
 
-O servidor escuta `127.0.0.1:8765` e começa quando o cliente se conecta. São bytes TCP com o mesmo pacote; não é uma porta COM virtual. O parser não conhece o gerador. O horário de recepção pode variar com agendamento e buffering do sistema operacional. Os 5 segundos depois de terminar a emissão podem gerar um timeout de stream: isso é esperado pela duração escolhida.
-
-Para testar reconexão, inicie outro ensaio do servidor com `--disconnect-at 100` e outro diretório no cliente. O servidor fecha uma conexão antes do índice100 e aceita a próxima; o cliente se reconecta. Ao perder a conexão, ele descarta um frame parcial e reinicia a referência de counter. Não atribui perda física exata ao intervalo desconectado.
-
-Durante desconexão o servidor aguarda cliente e pode depois recuperar o cronograma com burst. Esse é o comportamento deste emulador TCP, não uma afirmação sobre o firmware real. `Ctrl+C` encerra a aquisição e salva o que já recebeu. Erros de disco ainda não possuem um mecanismo completo de recuperação.
-
-## Replay
+### Backend v2
 
 ```powershell
-py -3.12 -m foimu_testbench replay --input logs/primeiro_ensaio/wire.bin --timing logs/primeiro_ensaio/chunks.jsonl --out logs/replay_01
+py -3.12 -m foimu_testbench run-v2 --scenario configs/v2/normal.json --out logs/run_v2
+py -3.12 -m foimu_testbench inspect-v2 --run logs/run_v2
+py -3.12 -m foimu_testbench replay-v2 --run logs/run_v2 --out logs/replay_v2
 ```
 
-Mantém bytes, blocos e tempos observados. Sem `--timing`, o replay inventa intervalos nominais por bloco de53 B e registra essa limitação. Uma captura física futura poderá alimentar o mesmo parser; ainda falta o adaptador de aquisição COM nesta versão. CSV isolado não conserva framing/checksum original.
-
-## Testes reproduzíveis
+### Suíte de testes
 
 ```powershell
 py -3.12 -m unittest discover -s tests -v
-py -3.12 -m tools.acceptance --out logs/aceitacao_01
 ```
 
-O segundo comando executa a suíte e um milhão de frames acelerados. `tests/fixtures/reference_gateway.c` contém a struct e o Fletcher extraídos do gateway, com origem/linhas. O vetor C está salvo em binário/hex, então não é necessário instalar compilador no Windows para rodar os testes. Isso valida o contrato de bytes contra uma referência independente; não significa executar o STM32 no PC.
+Para a GUI, instale as dependências opcionais de `requirements-gui.txt`. A documentação específica está em [P3_GUI.md](docs/P3_GUI.md).
 
-## Ensaio de oito horas, posteriormente
+## O que já foi validado internamente
 
-Primeiro terminal:
+A baseline atual inclui, entre outros:
 
-```powershell
-py -3.12 -m foimu_testbench simulate --config configs/soak_8h.json
-```
+- conservação de bytes sob fragmentação e processamento;
+- replay com preservação da evidência observada;
+- shutdown/recovery e persistência em filas limitadas;
+- counter8 com rollover, saltos ambíguos e reacquisition;
+- separação estrutural entre `truth` e `observed`;
+- estados `execution`, `evaluation` e `integrity` independentes;
+- cobertura/evidência explícita para conclusões positivas;
+- propriedades determinísticas da árvore de evidências;
+- 28 mutantes curados para validar o próprio mecanismo de verificação;
+- corpus dourado com normal, checksum corrompido, counter ambíguo, mudança de época e cauda truncada;
+- dry-run completo do procedimento de recebimento e análise de uma captura externa.
 
-Segundo terminal:
+O status detalhado, incluindo limites de cada claim, está em [STATUS.md](docs/STATUS.md).
 
-```powershell
-py -3.12 -m foimu_testbench acquire --config configs/soak_8h.json --seconds 28810 --out logs/oito_horas_01
-```
+## Próxima etapa: dados reais
 
-São 2.880.000 oportunidades no simulador, 152,64 MB só de bytes crus, além de CSV e JSONL. Reserve vários GB, mantenha a máquina ligada e sem suspensão. O host não recebe um contador largo ou número total pelo protocolo legado, então `packets_expected` do cliente fica `null`; compare o total com a configuração do emissor. A pausa final de10 s entra nas métricas de ausência de dados. Um comando preparado não significa que esse ensaio já foi executado. Ainda falta telemetria periódica de RSS/CPU/disco para aprovar a Fase de longa duração.
+A preparação P3.5B está concluída. O próximo gate científico é **G5**, usando capturas brutas da FO-IMU real sem alterar previamente o parser para fazê-las “passar”.
 
-## O que está pronto e o que ainda falta na baseline v0.1.0
+O pedido preparado ao IEAv prioriza:
 
-| Recurso | Estado nesta entrega |
-|---|---|
-| Auditoria dos seis snapshots e dois documentos | feita, com limites de leitura de LabVIEW/Altium declarados |
-| Codec53 B e parser incremental | implementados e testados |
-| Sinais sintéticos, relógio virtual e TCP real | implementados |
-| Logging binário, CSV, sidecar temporal, relatórios JSON/Markdown | implementados |
-| Drop, checksum, byte, header, truncamento, jitter por configuração | implementados |
-| Burst/fragmentação, NaN/Inf, duplicata, wrap e ordem | cobertos por testes; nem todos expostos como falhas configuráveis |
-| Reconexão TCP e silêncio de stream | implementados/testados; timeout de sensor não inferível |
-| Estatísticas por canal e8 posições térmicas | implementadas; não há validação de faixa física |
-| COM/USB serial e programa real VISA | ainda não integrados |
-| Mocks de IFOG/ACC/MEMS e scheduler original | especificados; ainda não implementados |
-| Congelamento, ausência de sensor, atrasos crescentes e desordem configurável | próximos passos da Fase2 |
-| Perfil de boot e reprodução dos travamentos originais | próximos passos; o gerador normal representa regime estável ideal |
-| Comparador automático A/B e profiling prolongado | especificados; ainda não implementados |
-| Dashboard gráfico | posterior; a interface inicial é CLI e arquivos de relatório |
-| ESP32 e HIL | especificados; nenhum sketch gravado ou hardware validado |
+1. captura estática;
+2. captura desde o power-on;
+3. posteriormente, movimento conhecido por eixo;
+4. reconexão somente se autorizada.
 
-Não acrescente campos “status” ou timestamps ao frame legado sem criar um perfil separado: isso quebraria a compatibilidade que queremos testar.
+Cada divergência será classificada por escopo (`PARSER`, `FIRMWARE`, `TRANSPORT`, `CAPTURE_ARTIFACT` ou `UNKNOWN`) antes de qualquer correção.
 
-## Leitura recomendada
+## Limites atuais
 
-1. [Auditoria completa](docs/AUDITORIA_FASE_0.md): arquitetura, versões, interfaces, sincronização, riscos e hardware.
-2. [Especificação](docs/ESPECIFICACAO_TESTBENCH.md): métricas, oráculos e critérios provisórios.
-3. [Evidências de código](docs/EVIDENCIAS.md): trechos numerados das fontes.
-4. [Resultados executados](docs/VALIDACAO.md): o que efetivamente passou e o que não foi validado.
+Este projeto ainda **não afirma**:
 
-O próximo passo conjunto é rodar o primeiro ensaio acima no seu Windows e comparar os números do relatório. A primeira confirmação a pedir ao IEAv é o firmware ACC de16 B e os builds realmente instalados; isso muda quais mocks devemos implementar depois.
+- calibração física dos canais;
+- precisão da FO-IMU;
+- sincronismo físico entre sensores;
+- jitter interno do sensor a partir de timestamps do host;
+- conformidade da unidade real com o layout digital pré-registrado;
+- robustez de um enlace serial físico/HIL ainda não integrado.
 
-## Baseline P3.5A
+## Documentação principal
 
-Os comandos locais e os jobs estão em [CI_PLAN.md](docs/CI_PLAN.md).
-O estado de liberação e os limites de cada conclusão estão em [STATUS.md](docs/STATUS.md).
-Os manifestos locais em evidence/gates identificam o commit executável verificado.
+- [Status atual](docs/STATUS.md)
+- [Arquitetura](docs/PROJECT_ARCHITECTURE.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Backend P2](docs/P2_BACKEND.md)
+- [GUI P3](docs/P3_GUI.md)
+- [Truth boundary](docs/TRUTH_BOUNDARY.md)
+- [Counter semantics](docs/COUNTER_SEMANTICS.md)
+- [State/evidence semantics](docs/STATE_SEMANTICS.md)
+- [Trusted Computing Base](docs/TRUSTED_COMPUTING_BASE.md)
+- [Plano de CI](docs/CI_PLAN.md)
+- [Ingestão de captura física](docs/HW_CAPTURE_INGESTION.md)
+- [Expectativas para captura física](docs/HW_CAPTURE_EXPECTATIONS.md)
+- [Política de dados externos](docs/EXTERNAL_DATA_POLICY.md)
+
+## Proveniência e publicação
+
+Parte da documentação histórica foi construída a partir de materiais de firmware fornecidos pelo IEAv. O escopo de publicação desses materiais está sendo tratado separadamente; capturas reais e novos materiais externos não devem ser publicados automaticamente.
+
+O testbench preserva a proveniência das referências utilizadas e mantém separado o que é hipótese, observação, truth sintético e evidência externa.
