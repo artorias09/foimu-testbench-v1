@@ -30,8 +30,8 @@ A bancada foi criada para permitir que protocolo, aquisição, armazenamento, re
 | Semântica de estados/evidências | ✅ validada localmente |
 | Corpus dourado sintético | ✅ 5 casos congelados |
 | Mutation testing curado | ✅ 28/28 mutantes detectados |
-| Suíte local | ✅ 162 descobertos; 158 passam sem GUI; 4 Qt aguardam ambiente gráfico |
-| CI Linux + Windows + GUI (G1) | ⏳ `NOT_RUN` |
+| Suíte local | ✅ 162 descobertos; 158 passam sem GUI; 4 Qt dependem da GUI instalada |
+| CI Linux + Windows + GUI (G1) | ✅ aprovado: core 158/158 e GUI 162/162 em ambas |
 | Preparação para captura real (P3.5B) | ✅ aprovada |
 | Ancoragem com FO-IMU real (G5) | ⏳ aguardando dados IEAv |
 | Calibração/escala física | ⏳ não validada |
@@ -118,7 +118,7 @@ A baseline atual inclui, entre outros:
 - corpus dourado com normal, checksum corrompido, counter ambíguo, mudança de época e cauda truncada;
 - dry-run completo do procedimento de recebimento e análise de uma captura externa.
 
-O status detalhado, incluindo limites de cada claim, está em [STATUS.md](docs/STATUS.md).
+O status detalhado, incluindo limites de cada claim, está em [STATUS.md](docs/STATUS.md). A P3.5A está **completamente aprovada** nos gates internos G0–G4; G5 continua reservado à ancoragem externa com dados reais.
 
 ## Próxima etapa: dados reais
 
