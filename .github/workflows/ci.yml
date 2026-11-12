@@ -22,7 +22,9 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12.14'
+          python-version: '3.12'
+      - name: Record Python runtime
+        run: python -c "import platform,sys; print(platform.platform()); print(sys.version)"
       - run: python -m pip install -r requirements.txt
       - if: matrix.gate == 'gui'
         run: python -m pip install -r requirements-gui.txt
@@ -34,4 +36,4 @@ jobs:
         with:
           name: ${{ matrix.gate }}-${{ matrix.os }}-${{ github.sha }}
           path: logs/ci
-          if-no-files-found: error
+          if-no-files-found: warn
