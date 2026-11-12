@@ -80,6 +80,7 @@ def main():
             tests(out, label, (pattern,), min_count=minimum)
     elif args.job == 'gui':
         tests(out, 'window', ('test_p3_window.*',), exact=4)
+        tests(out, 'full-suite-gui', exact=162)
     elif args.job == 'boundary':
         tests(out, 'boundary', ('test_observed_boundary.*',), min_count=11)
     elif args.job == 'properties':
