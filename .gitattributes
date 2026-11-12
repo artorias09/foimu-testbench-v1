@@ -1,0 +1,4 @@
+
+tests/corpus/** -text
+
+evidence/gates/** -text

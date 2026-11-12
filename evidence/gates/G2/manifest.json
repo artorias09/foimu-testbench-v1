@@ -1,0 +1,31 @@
+{
+  "gate_id": "G2",
+  "schema_version": 1,
+  "commit": "414c8b172dd6717ad6b84667db95200e99a89eb3",
+  "tree": "67f8b7c8d0cc194b8c4d5642641319fb58e2f372",
+  "branch": "feature/v02-p35-state-evidence",
+  "date_utc": "2026-11-08T04:04:42.402198+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "commands": [
+    "python -m tools.ci_gate boundary --out ../closing/boundary"
+  ],
+  "results": {
+    "total": 11,
+    "passed": 11,
+    "failed": 0,
+    "skipped": []
+  },
+  "artifacts": [
+    "boundary.json",
+    "boundary.log"
+  ],
+  "sha256": {
+    "boundary.json": "90831fc4bfa4c9f6510b84b39c01c84848da53d9d3ba88a2d5dd35f957321be6",
+    "boundary.log": "22ce2f94ae739ddc52e162f0e54f00004da13c9a1d00a27f32f3fcbbd65dc173"
+  },
+  "limitations": [
+    "Evidência observed completa com projeção confiável."
+  ],
+  "status": "passed"
+}

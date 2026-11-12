@@ -14,6 +14,10 @@ def positive(value):
 
 
 def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    if argv and argv[0] in ('run-v2', 'replay-v2', 'inspect-v2'):
+        from .cli_v2 import main as main_v2
+        return main_v2(argv)
     parser = argparse.ArgumentParser(description="FO-IMU digital interface testbench (synthetic, no optical physics)")
     sub = parser.add_subparsers(dest="command", required=True)
     for name in ("demo", "simulate", "acquire", "replay"):

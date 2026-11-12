@@ -1,0 +1,13 @@
+test_alias_256 (test_counter.CounterTests.test_alias_256) ... ok
+test_arbitrary_jump_and_reorder (test_counter.CounterTests.test_arbitrary_jump_and_reorder) ... ok
+test_epoch_reset (test_counter.CounterTests.test_epoch_reset) ... ok
+test_pairs (test_counter.CounterTests.test_pairs) ... ok
+test_seeded_transitions (test_counter.CounterTests.test_seeded_transitions) ... ok
+test_stale_sequence (test_counter.CounterTests.test_stale_sequence) ... ok
+test_timing_separate (test_counter.CounterTests.test_timing_separate) ... ok
+test_view_diagnostic_equivalence (test_counter.CounterTests.test_view_diagnostic_equivalence) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.069s
+
+OK

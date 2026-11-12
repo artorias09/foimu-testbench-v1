@@ -7,7 +7,7 @@ Atualizado para a preparação P3.5B.
 Estado atual:
 
 ```text
-P3.5A IMPLEMENTADA, LIBERAÇÃO PENDENTE
+P3.5A COMPLETAMENTE APROVADA
 P3.5B PREPARAÇÃO APROVADA
 G5 AGUARDANDO DADOS IEAv
 ```
@@ -35,13 +35,13 @@ A confiança atual é **interna/digital**. A conformidade com a FO-IMU física p
 | Gate | Estado | Escopo |
 |---|---|---|
 | G0 | `passed` local | identidade/rastreabilidade local |
-| G1 | `NOT_RUN` | CI Linux + Windows + GUI ainda não executado |
+| G1 | `passed` | CI Linux + Windows + GUI executado com zero falhas/skips inesperados |
 | G2 | `passed` local | fronteira `truth/observed` |
 | G3 | `passed` local | propriedades, counter, estados/evidência e corpus |
 | G4 | `passed` local | 28 mutantes curados |
 | G5 | `EXTERNAL_PENDING` | ancoragem contra dados reais IEAv |
 
-G1 não deve ser promovido a `passed` apenas porque os workflows existem. Ele exige execução real em Linux e Windows, incluindo os quatro testes Qt sem skips.
+G1 foi executado em GitHub Actions no commit `196cb8825e1d82f62d0d6bd7939bcbcf19653034`: Ubuntu (CPython 3.12.16) e Windows (CPython 3.12.10), com core 158/158, 4/4 testes Qt e suíte completa 162/162 com GUI em ambas as plataformas.
 
 ## Evidência local consolidada
 
@@ -152,11 +152,11 @@ Ainda não podemos afirmar:
 - sincronismo físico entre IFOG, ACC, MEMS e temperatura;
 - comportamento do transporte físico/HIL ainda não integrado.
 
-## Bloqueios atuais
+## Pendências externas atuais
 
-### G1
+### Publicação / governança
 
-A execução de CI remota está pendente. O repositório público contém material histórico derivado de firmware IEAv e o escopo de publicação ainda precisa ser confirmado antes de ampliar a publicação da baseline atual.
+A autorização de publicação de material histórico derivado de firmware IEAv continua separada da aprovação técnica da P3.5A. A aprovação de G1 não autoriza tornar capturas ou firmware externos públicos.
 
 ### G5
 

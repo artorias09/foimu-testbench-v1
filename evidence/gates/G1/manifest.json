@@ -1,0 +1,173 @@
+{
+  "gate_id": "G1",
+  "schema_version": 2,
+  "status": "passed",
+  "branch": "feature/v02-p35b-current",
+  "commit": "196cb8825e1d82f62d0d6bd7939bcbcf19653034",
+  "tree": "617146dc78f09ea6e7ce064d97d20d7ac61c25d0",
+  "date_utc": "2026-11-12T12:26:24Z",
+  "workflow": {
+    "name": "FO-IMU CI",
+    "run_id": 43217558096,
+    "event": "push",
+    "run_url": "https://github.com/artorias09/foimu-testbench-v1/actions/runs/43217558096"
+  },
+  "platforms": {
+    "ubuntu_latest": {
+      "python": "CPython 3.12.16",
+      "core": {
+        "total": 158,
+        "passed": 158,
+        "failed": 0,
+        "skipped": 0
+      },
+      "gui_window": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0
+      },
+      "full_suite_gui": {
+        "total": 162,
+        "passed": 162,
+        "failed": 0,
+        "skipped": 0
+      },
+      "boundary": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "counter": {
+        "total": 8,
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0
+      },
+      "state_evidence": {
+        "total": 9,
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0
+      },
+      "p1": {
+        "total": 31,
+        "passed": 31,
+        "failed": 0,
+        "skipped": 0
+      },
+      "p2_p21": {
+        "total": 47,
+        "passed": 47,
+        "failed": 0,
+        "skipped": 0
+      },
+      "p3_without_window": {
+        "total": 18,
+        "passed": 18,
+        "failed": 0,
+        "skipped": 0
+      },
+      "properties": "passed",
+      "mutants": {
+        "killed": 28,
+        "survived": 0,
+        "invalid": 0
+      }
+    },
+    "windows_latest": {
+      "python": "CPython 3.12.10",
+      "core": {
+        "total": 158,
+        "passed": 158,
+        "failed": 0,
+        "skipped": 0
+      },
+      "gui_window": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0
+      },
+      "full_suite_gui": {
+        "total": 162,
+        "passed": 162,
+        "failed": 0,
+        "skipped": 0
+      },
+      "boundary": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "counter": {
+        "total": 8,
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0
+      },
+      "state_evidence": {
+        "total": 9,
+        "passed": 9,
+        "failed": 0,
+        "skipped": 0
+      },
+      "p1": {
+        "total": 31,
+        "passed": 31,
+        "failed": 0,
+        "skipped": 0
+      },
+      "p2_p21": {
+        "total": 47,
+        "passed": 47,
+        "failed": 0,
+        "skipped": 0
+      },
+      "p3_without_window": {
+        "total": 18,
+        "passed": 18,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "id": 13944402172,
+      "name": "properties-ubuntu-latest-196cb8825e1d82f62d0d6bd7939bcbcf19653034",
+      "sha256": "4a1a0194d0aeabba01d7c7e22fe5b3c3a480c2c96eaae63af9bd575839cee9b6"
+    },
+    {
+      "id": 13944177714,
+      "name": "mutants-ubuntu-latest-196cb8825e1d82f62d0d6bd7939bcbcf19653034",
+      "sha256": "63fb3396ea52b1e143dae2d642114525d309654a51e35e63b579c720bfee6f51"
+    },
+    {
+      "id": 13943937985,
+      "name": "core-ubuntu-latest-196cb8825e1d82f62d0d6bd7939bcbcf19653034",
+      "sha256": "0cc671b1a2fc528e5b67b77ee616d061983e915bd408f24b44e4fc5667f9dec7"
+    },
+    {
+      "id": 13943644112,
+      "name": "gui-ubuntu-latest-196cb8825e1d82f62d0d6bd7939bcbcf19653034",
+      "sha256": "4456a554c408c620654750aaae680c6f03f5082a3af6a463e87915c064731174"
+    },
+    {
+      "id": 13942959582,
+      "name": "gui-windows-latest-196cb8825e1d82f62d0d6bd7939bcbcf19653034",
+      "sha256": "2e151f439040193e8d308a1051f155c73c70883a0ec451377316b8a127d24a03"
+    },
+    {
+      "id": 13942619907,
+      "name": "core-windows-latest-196cb8825e1d82f62d0d6bd7939bcbcf19653034",
+      "sha256": "3bd703d03afcef868b1fd3bab4bcf9e4ceb0bc3b5e2c767f97b70e1e212e72ea"
+    }
+  ],
+  "limitations": [
+    "G1 validates the digital testbench in GitHub-hosted Ubuntu and Windows runners; it does not validate FO-IMU physical hardware.",
+    "Historical physical-Windows observations remain separate evidence."
+  ]
+}

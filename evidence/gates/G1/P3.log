@@ -1,0 +1,23 @@
+test_counter_gap_epoch_offset_and_time (test_p3.PlotTests.test_counter_gap_epoch_offset_and_time) ... ok
+test_event_filters (test_p3.PlotTests.test_event_filters) ... ok
+test_nonfinite_and_missing (test_p3.PlotTests.test_nonfinite_and_missing) ... ok
+test_thermal_slot_units (test_p3.PlotTests.test_thermal_slot_units) ... ok
+test_bad_envelope (test_p3.ProtocolTests.test_bad_envelope) ... ok
+test_bad_length_duplicate_truncation (test_p3.ProtocolTests.test_bad_length_duplicate_truncation) ... ok
+test_disconnect_does_not_start_run (test_p3.ProtocolTests.test_disconnect_does_not_start_run) ... ok
+test_roundtrip (test_p3.ProtocolTests.test_roundtrip) ... ok
+test_slow_consumer_keeps_latest (test_p3.ProtocolTests.test_slow_consumer_keeps_latest) ... ok
+test_blocked_presentation_does_not_block_writer (test_p3.ServiceTests.test_blocked_presentation_does_not_block_writer) ... ok
+test_completed_without_client_and_states (test_p3.ServiceTests.test_completed_without_client_and_states) ... ok
+test_display_window_max_60_seconds (test_p3.ServiceTests.test_display_window_max_60_seconds) ... ok
+test_duplicate_start_and_payload_collision (test_p3.ServiceTests.test_duplicate_start_and_payload_collision) ... ok
+test_open_partial_ignores_unconfirmed_tail (test_p3.ServiceTests.test_open_partial_ignores_unconfirmed_tail) ... ok
+test_projection_matches_final_and_never_reads_truth (test_p3.ServiceTests.test_projection_matches_final_and_never_reads_truth) ... ok
+test_reopen_and_report_readonly (test_p3.ServiceTests.test_reopen_and_report_readonly) ... ok
+test_snapshot_rate_and_bounds (test_p3.ServiceTests.test_snapshot_rate_and_bounds) ... ok
+test_stop_idempotent_drain (test_p3.ServiceTests.test_stop_idempotent_drain) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.583s
+
+OK

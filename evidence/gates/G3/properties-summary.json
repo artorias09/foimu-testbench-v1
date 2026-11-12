@@ -1,0 +1,12 @@
+{
+  "seeds": 200,
+  "first_seed": 0,
+  "last_seed": 199,
+  "bytes": 1854905,
+  "frames": 12801,
+  "violations": 0,
+  "counter_seeds": 100,
+  "counter_transitions": 25600,
+  "tree_seeds": 40,
+  "trees": 2000
+}

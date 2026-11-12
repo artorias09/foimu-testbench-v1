@@ -41,7 +41,7 @@ O roadmap é orientado por **ganho de confiança**, não por quantidade de funci
 - mutation matrix 28/28;
 - preparação de CI.
 
-Estado: **implementada; liberação pendente por G1**.
+Estado: **completamente aprovada**. G1 foi fechado em CI Linux/Windows com GUI e suíte completa.
 
 ### P3.5B — preparação de ancoragem externa
 

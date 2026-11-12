@@ -1,0 +1,1 @@
+{"byte_span":{"end":72,"start":53},"component_path":"FO-IMU/Host","domain":"observed","epistemic_status":"observed_fact","epoch_id":"0","facet":"Protocolo","kind":"discard","payload":{},"rule_version":"observed-v2.1","severity":"warning","time":{"clock_id":"experiment","meaning":"host_receive","unit":"ns","value":20000000}}

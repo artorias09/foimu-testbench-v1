@@ -1,0 +1,47 @@
+{
+  "gate_id": "G3",
+  "schema_version": 1,
+  "commit": "414c8b172dd6717ad6b84667db95200e99a89eb3",
+  "tree": "67f8b7c8d0cc194b8c4d5642641319fb58e2f372",
+  "branch": "feature/v02-p35-state-evidence",
+  "date_utc": "2026-11-08T04:04:42.405527+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "commands": [
+    "python -m tools.ci_gate properties --out ../closing/properties"
+  ],
+  "results": {
+    "seeds": 200,
+    "first_seed": 0,
+    "last_seed": 199,
+    "bytes": 1854905,
+    "frames": 12801,
+    "violations": 0,
+    "counter_seeds": 100,
+    "counter_transitions": 25600,
+    "tree_seeds": 40,
+    "trees": 2000,
+    "tests": {
+      "total": 32,
+      "passed": 32,
+      "failed": 0,
+      "skipped": []
+    }
+  },
+  "artifacts": [
+    "corpus.json",
+    "properties-summary.json",
+    "properties.json",
+    "properties.log"
+  ],
+  "sha256": {
+    "corpus.json": "8b58472aedcff5e75de8f77379554e96944dace5eb14a1c396482eefb18fe58f",
+    "properties-summary.json": "e27f99001c6bc1bf300ccf5fbcc957da2b5f97592bf14a0e2ceec547fbd8e945",
+    "properties.json": "6755dc21de566c52535670d112f8408ff812ab4e916a5c443ecace0e3d142b38",
+    "properties.log": "caf8fbdb467fcf9c37addb2988d4c8fcb98bec4d5858b4d6c7ee394e5f12c79d"
+  },
+  "limitations": [
+    "Corpus sintético com seeds fixas e cinco goldens digitais."
+  ],
+  "status": "passed"
+}

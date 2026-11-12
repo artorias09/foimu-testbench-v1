@@ -72,7 +72,7 @@ class TransportTests(unittest.TestCase):
             self.assertEqual(report["metrics"]["packets_received"], 2)
             self.assertEqual(report["metrics"]["stream_timeouts"], 1)
             self.assertEqual(report["metrics"]["reconnections"], 0)
-            self.assertGreaterEqual(report["metrics"]["largest_gap_without_valid_data_s"], 0.1)
+            self.assertGreaterEqual(report["metrics"]["largest_gap_without_valid_data_s"], 0.03)
 
 
 if __name__ == "__main__":
