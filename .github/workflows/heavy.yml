@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12.14'
+          python-version: '3.12'
       - run: python -m pip install -r requirements-gui.txt
       # P3 invokes P2, which invokes legacy acceptance, including the million-frame gate.
       - run: python -m tools.acceptance_p3 --out logs/heavy
