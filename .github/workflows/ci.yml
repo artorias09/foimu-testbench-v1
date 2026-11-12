@@ -1,5 +1,9 @@
 name: FO-IMU CI
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -17,10 +21,10 @@ jobs:
       QT_QPA_PLATFORM: offscreen
       PYTHONUTF8: '1'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7.1.0
         with:
           python-version: '3.12'
       - name: Record Python runtime
@@ -32,7 +36,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libegl1 libgl1 libxkbcommon-x11-0 libxcb-cursor0
       - run: python -m tools.ci_gate ${{ matrix.gate }} --out logs/ci
       - if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: ${{ matrix.gate }}-${{ matrix.os }}-${{ github.sha }}
           path: logs/ci
